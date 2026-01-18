@@ -24,7 +24,7 @@ L3-project/
 
 ### Interactive Slides
 The primary documentation is available as an interactive presentation:
-- **Live Version:** [https://chrispedder.github.io/L3-project/slides/](https://chrispedder.github.io/L3-project/slides/)
+- **Live Version:** [https://chrispedder.github.io/L3-project/slides/](https://chrispedder.github.io/L3-project/)
 - **Local Viewing:** See [slides/README.md](slides/README.md) for instructions
 
 ### Contents
