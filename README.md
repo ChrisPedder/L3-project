@@ -14,6 +14,7 @@ L3-project/
 │   ├── index.html      # Interactive documentation viewer
 │   ├── slides.md       # Main documentation content
 │   ├── images/         # Build photos and diagrams
+│   ├── videos/         # Build and test videos
 │   └── README.md       # Slides-specific documentation
 ├── README.md           # This file
 └── ...
@@ -52,7 +53,7 @@ For L3 certification with Tripoli, this project demonstrates:
 | Parameter | Value |
 |-----------|-------|
 | Motor Class | M |
-| Airframe Diameter | TBD |
+| Airframe Diameter | 6" |
 | Length | TBD |
 | Dry Weight | TBD |
 | Recovery | TBD |

@@ -19,23 +19,23 @@
     <style>
         /* Custom academic styling */
         .reveal {
-            font-size: 32px;
+            font-size: 24px;
         }
 
         .reveal h1 {
-            font-size: 2.2em;
+            font-size: 1.8em;
             color: #2c3e50;
             margin-bottom: 0.5em;
         }
 
         .reveal h2 {
-            font-size: 1.6em;
+            font-size: 1.3em;
             color: #34495e;
             margin-bottom: 0.8em;
         }
 
         .reveal h3 {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: #546e7a;
         }
 
@@ -165,14 +165,7 @@
     <div class="reveal">
         <div class="slides">
             <!-- Part A -->
-            <section data-markdown="part_a.md"
-                     data-separator="^\n---\n$"
-                     data-separator-vertical="^\n----\n$"
-                     data-separator-notes="^Note:">
-            </section>
-
-            <!-- Part B -->
-            <section data-markdown="part_b.md"
+            <section data-markdown="slides.md"
                      data-separator="^\n---\n$"
                      data-separator-vertical="^\n----\n$"
                      data-separator-notes="^Note:">
@@ -240,6 +233,13 @@
                 RevealZoom,
                 RevealSearch
             ]
+        });
+
+        Reveal.on('slidechanged', function(event) {
+            // Pause all videos on previous slide
+            if (event.previousSlide) {
+                event.previousSlide.querySelectorAll('video').forEach(v => v.pause());
+            }
         });
 
         // Re-render Mermaid diagrams when slides change

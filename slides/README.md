@@ -9,6 +9,7 @@ slides/
 ├── index.html          # Main presentation file
 ├── slides.md           # All documentation content
 ├── images/             # (Optional) Directory for images
+├── videos/             # (Optional) Directory for videos
 └── README.md           # This file
 ```
 
@@ -24,7 +25,7 @@ Once you've enabled GitHub Pages for your repository:
    ```bash
    # Using Python 3
    cd slides
-   python -m http.server 8000
+   uv run python -m http.server 8000
    # Then visit: http://localhost:8000
    ```
 
