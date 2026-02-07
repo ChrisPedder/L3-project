@@ -64,13 +64,53 @@ After sanding and cleaning, the motor retainer is then mounted to the centering 
 
 ---
 
-## Motor tube construction
+## Motor tube construction 1
 
-After sanding and cleaning, the motor retainer is then mounted to the centering ring using the nuts and bolts provided. These are locked in place with a dab of cyanoacrylate glue (they will be glued over afterwards with proline 4500).
+The end of the 98mm fibreglass motor tube is sanded with 240 grit sandpaper, and then bond prepped with acetone and then isopropyl alcohol
+
+<img src="images/motor_tube_cleaned.png" width="400" height="480">
+
+---
+
+## Motor tube construction 2
+
+The tube is then marked for fin locations later, so that we can accurately align the fins when building the motor tube and fin module outside of the main body tube.
+
+<img src="images/motor_tube_fin_marked.png" width="400" height="480">
+
+---
+
+## Motor tube construction 3
+
+The tube is then marked for fin locations later, so that we can accurately align the fins when building the motor tube and fin module outside of the main body tube.
+
+<img src="images/motor_tube_fin_marked.png" width="400" height="480">
+
+---
+
+## Motor tube construction 4
+
+The boat tail centering ring, and the motor retainer centering ring are then glued in place using proline 4500, and allowed to set overnight.
+
+<img src="images/motor_tube_centering_ring_glue.png" width="400" height="480">
+
+---
+
+## Boat tail attachment 1
+
+The boat tail coupler needs to be slotted where the fins will pass through - the slots are marked using the fin slots in the body tube, and then cut out with a dremel.
+
+<img src="images/boat_tail_slotted.png" width="400" height="480">
+
+---
+
+## Boat tail attachment 2
+
+The motor mount with the retainer and centering ring is then glued into the bond-prepped boat tail, and held in place using the coupler whilst the proline-4500 cures.
 
 <div style="display: flex; gap: 20px; justify-content: center;">
-  <img src="images/motor_retainer_ring_vertical.png" width="300">
-  <img src="images/motor_retainer_ring_above.png" width="300">
+  <img src="images/boat_tail_centering_ring_glue_1.png" width="300">
+  <img src="images/boat_tail_centering_ring_glue_2.png" width="300">
 </div>
 
 ---
