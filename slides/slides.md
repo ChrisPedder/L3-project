@@ -141,7 +141,7 @@ Proline 4500 is painted on the inside of the coupler, and on the motor tube, and
 
 3d printed parts are used to hold the fins in place during the curing process, and to maintain alignment. The root edges of the fins are bonded to the motor tube and the boat tail using proline 4500. The fins are checked for alignment in the jig using a digital plumb line.
 
-<img src="images/fin_attachment.png" width="400" height="480">
+<img src="images/fin_attachent.png" width="400" height="480">
 
 
 ---
