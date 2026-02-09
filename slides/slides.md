@@ -82,9 +82,9 @@ The tube is then marked for fin locations later, so that we can accurately align
 
 ## Motor tube construction 3
 
-The tube is then marked for fin locations later, so that we can accurately align the fins when building the motor tube and fin module outside of the main body tube.
+The tube is then re-bond prepped, and prepared with proline 4500 epoxy.
 
-<img src="images/motor_tube_fin_marked.png" width="400" height="480">
+<img src="images/motor_tube_proline.png" width="400" height="480">
 
 ---
 
@@ -112,5 +112,36 @@ The motor mount with the retainer and centering ring is then glued into the bond
   <img src="images/boat_tail_centering_ring_glue_1.png" width="300">
   <img src="images/boat_tail_centering_ring_glue_2.png" width="300">
 </div>
+
+---
+
+## Boat tail attachment 3
+
+Once the epoxy has cured, the coupler is removed and bond-prepped, and the motor tube also prepped for bonding.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/motor_tube_centering_ring_prep.png" width="300">
+  <img src="images/motor_tube_prep.png" width="300">
+</div>
+
+---
+
+## Boat tail attachment 4
+
+Proline 4500 is painted on the inside of the coupler, and on the motor tube, and the two parts are mated for bonding.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/motor_tube_gluing.png" width="300">
+  <img src="images/motor_tube_coupler_.png" width="300">
+</div>
+
+---
+
+## Fin attachment 1
+
+3d printed parts are used to hold the fins in place during the curing process, and to maintain alignment. The root edges of the fins are bonded to the motor tube and the boat tail using proline 4500. The fins are checked for alignment in the jig using a digital plumb line.
+
+<img src="images/fin_attachment.png" width="400" height="480">
+
 
 ---
