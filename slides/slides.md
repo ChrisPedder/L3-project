@@ -132,7 +132,7 @@ Proline 4500 is painted on the inside of the coupler, and on the motor tube, and
 
 <div style="display: flex; gap: 20px; justify-content: center;">
   <img src="images/motor_tube_gluing.png" width="300">
-  <img src="images/motor_tube_coupler.png" width="300">
+  <img src="images/motor_tube_coupler_curing.png" width="300">
 </div>
 
 ---
