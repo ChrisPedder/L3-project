@@ -2,6 +2,20 @@
 
 Repository to allow my TAPs to follow along with my Level III Tripoli rocket build.
 
+## 💬 TAPs – How to Leave Feedback on Documents
+
+You can comment directly on specific sections of any PDF document hosted on this site. Here's how:
+
+1. **Open a document** — go to the [PDF Documents](https://chrispedder.github.io/L3-project/pdf-viewer/) page and click the document you want to review.
+2. **Select some text** — highlight the word, sentence, or passage you want to comment on.
+3. **Click "Annotate"** — a small tooltip will appear. Click it to open the annotation editor.
+4. **Sign in** — you'll need a free [Hypothes.is account](https://hypothes.is/signup). Sign up takes a moment and only needs to be done once.
+5. **Write your comment** and click "Post". Your annotation will be anchored to the exact text you selected.
+
+You can also open the Hypothes.is sidebar (the small `<` tab in the top-right corner of the page) to browse all existing annotations.
+
+> **General comments** that aren't about a specific passage can be left in the Giscus discussion widget at the bottom of each document page. These use your GitHub account.
+
 ## 🚀 Project Overview
 
 This repository documents my Level 3 High Power Rocketry (HPR) certification attempt with the Tripoli Rocketry Association. It serves as a comprehensive build log and technical reference for my Technical Advisor Panel (TAPs) to review progress, provide feedback, and verify compliance with certification requirements.
