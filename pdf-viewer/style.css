@@ -106,6 +106,41 @@ body {
   border: none;
 }
 
+/* ---------- PDF.js text layer ---------- */
+/* Renders invisible but selectable text over the canvas so that
+   Hypothes.is (and browser find-in-page) can interact with it. */
+
+.text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+  line-height: 1;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+}
+
+.text-layer :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.text-layer ::selection {
+  background: rgba(0, 0, 255, 0.25);
+  mix-blend-mode: multiply;
+}
+
+/* Hypothes.is highlight styling */
+.text-layer .annotator-hl {
+  background: rgba(255, 212, 0, 0.3);
+  mix-blend-mode: multiply;
+}
+
 /* ---------- PDF list (index page) ---------- */
 
 .pdf-list {

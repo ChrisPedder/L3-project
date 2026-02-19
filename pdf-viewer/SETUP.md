@@ -103,43 +103,63 @@ only need to edit this file once.
 
 ---
 
-## 4. Optional: Hypothes.is for inline PDF annotations
+## 4. Hypothes.is (inline PDF annotations)
 
-[Hypothes.is](https://web.hypothes.is) provides collaborative, inline
-annotation directly on top of web content, including embedded PDFs. It is
-independent of Giscus and can be used alongside or instead of it.
+[Hypothes.is](https://web.hypothes.is) is enabled on all viewer pages. It
+provides collaborative, inline annotation directly on top of the PDF text —
+reviewers can highlight a word, sentence, or passage and attach a comment to
+that exact location, similar to commenting in Adobe Acrobat.
 
-To enable Hypothes.is on a viewer page, add the following single line before the
-closing `</body>` tag:
+### How it works
+
+- The PDF is rendered with a **text layer** (invisible, selectable text
+  positioned over the canvas). This allows Hypothes.is to anchor annotations
+  to specific text.
+- A small Hypothes.is toolbar appears in the top-right corner of each viewer
+  page. Reviewers can open it to see existing annotations or create new ones.
+- No API keys or server configuration are needed — annotations are stored by
+  the Hypothes.is service.
+- Reviewers need a free [Hypothes.is account](https://hypothes.is/signup) to
+  leave annotations. They can annotate **publicly** (visible to everyone) or
+  **privately** (visible only to themselves).
+
+### How to annotate
+
+1. Visit a viewer page (e.g. the L3 Design Document).
+2. Select some text in the PDF.
+3. Click the **Annotate** button that appears, or use the Hypothes.is sidebar.
+4. Sign in with a Hypothes.is account and write your comment.
+
+### Disabling Hypothes.is
+
+To remove Hypothes.is from a viewer page, delete this line from the HTML:
 
 ```html
 <script src="https://hypothes.is/embed.js" async></script>
 ```
 
-No account setup or API keys are required — annotations are stored by the
-Hypothes.is service. Visitors can annotate publicly or privately once they
-create a free Hypothes.is account.
-
-> **Tip:** If you want Hypothes.is on *every* viewer page, add the script line
-> to the template you copy when creating new pages.
+Giscus (the page-level comment widget below the PDF) is independent and will
+continue to work regardless.
 
 ---
 
 ## 5. Dependencies & assumptions
 
-| Dependency | Loaded from | Version |
-|------------|-------------|---------|
-| PDF.js     | cdnjs CDN   | 4.4.168 |
-| Giscus     | giscus.app  | latest  |
+| Dependency   | Loaded from    | Version |
+|--------------|----------------|---------|
+| PDF.js       | cdnjs CDN      | 4.4.168 |
+| Giscus       | giscus.app     | latest  |
+| Hypothes.is  | hypothes.is    | latest  |
 
 - **No build tools** are required. All files are plain HTML, CSS, and JS.
 - The site must be served over **HTTPS** (GitHub Pages provides this by
   default).
 - PDF files must be accessible from the same origin or served with appropriate
   CORS headers if hosted externally.
-- The viewer renders PDFs onto a `<canvas>` element via PDF.js. Very large PDFs
-  may be slow on mobile devices; for those cases consider also offering a direct
-  download link.
+- The viewer renders PDFs onto a `<canvas>` element with a transparent text
+  layer on top (for text selection and Hypothes.is annotations). Very large
+  PDFs may be slow on mobile devices; for those cases consider also offering a
+  direct download link.
 
 ---
 

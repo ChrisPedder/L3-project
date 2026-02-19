@@ -27,6 +27,7 @@
            ============================================================ -->
       <div id="pdf-container" class="pdf-container">
         <canvas id="pdf-canvas"></canvas>
+        <div id="text-layer" class="text-layer"></div>
       </div>
 
       <!-- Page navigation controls -->
@@ -67,16 +68,18 @@
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
 
-    const canvas  = document.getElementById("pdf-canvas");
-    const ctx     = canvas.getContext("2d");
-    const info    = document.getElementById("page-info");
-    const prevBtn = document.getElementById("prev-page");
-    const nextBtn = document.getElementById("next-page");
+    const canvas    = document.getElementById("pdf-canvas");
+    const ctx       = canvas.getContext("2d");
+    const textLayer = document.getElementById("text-layer");
+    const info      = document.getElementById("page-info");
+    const prevBtn   = document.getElementById("prev-page");
+    const nextBtn   = document.getElementById("next-page");
 
     let pdfDoc    = null;
     let pageNum   = 1;
     let rendering = false;
     let pending   = null;
+    let currentTextLayer = null;
 
     async function renderPage(num) {
       rendering = true;
@@ -95,7 +98,25 @@
       container.style.paddingTop = "0";
       container.style.height     = viewport.height + "px";
 
+      // Render the canvas (visual layer)
       await page.render({ canvasContext: ctx, viewport }).promise;
+
+      // Clear and render the text layer (selectable text for Hypothes.is)
+      if (currentTextLayer) {
+        currentTextLayer.cancel();
+      }
+      textLayer.innerHTML = "";
+      textLayer.style.width  = viewport.width + "px";
+      textLayer.style.height = viewport.height + "px";
+
+      const textContent = await page.getTextContent();
+      currentTextLayer = new pdfjsLib.TextLayer({
+        textContentSource: textContent,
+        container: textLayer,
+        viewport: viewport,
+      });
+      await currentTextLayer.render();
+
       rendering = false;
       info.textContent = `Page ${num} of ${pdfDoc.numPages}`;
 
@@ -146,5 +167,8 @@
       injectGiscus(".giscus-container");
     }
   </script>
+
+  <!-- Hypothes.is – inline annotation on the PDF text layer -->
+  <script src="https://hypothes.is/embed.js" async></script>
 </body>
 </html>
