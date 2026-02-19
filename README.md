@@ -16,16 +16,34 @@ L3-project/
 │   ├── images/         # Build photos and diagrams
 │   ├── videos/         # Build and test videos
 │   └── README.md       # Slides-specific documentation
+├── pdf-viewer/
+│   ├── index.html      # PDF document listing
+│   ├── example.html    # L3 Design Document viewer page
+│   ├── giscus-config.js # Centralised Giscus comment settings
+│   ├── style.css       # Shared styles
+│   ├── SETUP.md        # Setup and usage guide
+│   └── docs/           # PDF files
 ├── README.md           # This file
 └── ...
 ```
 
+## 🔗 Live Site
+
+| Page | Link |
+|------|------|
+| **Interactive Slides** | [chrispedder.github.io/L3-project/slides/](https://chrispedder.github.io/L3-project/slides/) |
+| **PDF Documents & Comments** | [chrispedder.github.io/L3-project/pdf-viewer/](https://chrispedder.github.io/L3-project/pdf-viewer/) |
+| **L3 Design Document** | [chrispedder.github.io/L3-project/pdf-viewer/example.html](https://chrispedder.github.io/L3-project/pdf-viewer/example.html) |
+
 ## 📋 Documentation
 
 ### Interactive Slides
-The primary documentation is available as an interactive presentation:
-- **Live Version:** [https://chrispedder.github.io/L3-project/slides/](https://chrispedder.github.io/L3-project/)
+The primary documentation is available as an interactive presentation built with Reveal.js.
 - **Local Viewing:** See [slides/README.md](slides/README.md) for instructions
+
+### PDF Viewer
+Design documents and other PDFs are hosted with an embedded viewer and a Giscus comment widget for discussion.
+- **Adding new PDFs:** See [pdf-viewer/SETUP.md](pdf-viewer/SETUP.md) for instructions
 
 ### Contents
 The documentation covers:
@@ -75,8 +93,8 @@ For L3 certification with Tripoli, this project demonstrates:
 
 Thank you for taking the time to review my L3 project. The interactive slides provide detailed documentation of each build phase. If you have questions or feedback:
 
-1. **View the documentation:** [Interactive Slides](https://chrispedder.github.io/L3-project/slides/)
-2. **Review specific sections:** Use arrow keys to navigate, ESC for overview mode
+1. **View the slides:** [Interactive Slides](https://chrispedder.github.io/L3-project/slides/) — use arrow keys to navigate, ESC for overview mode
+2. **View and comment on PDFs:** [PDF Documents](https://chrispedder.github.io/L3-project/pdf-viewer/) — leave comments via the Giscus widget below each document
 3. **Provide feedback:** Open an issue or contact me directly
 
 ## 📚 Resources
