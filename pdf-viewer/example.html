@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L3 Design Document – PDF Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <nav class="breadcrumb">
+      <a href="index.html">PDF Documents</a> &rsaquo; L3 Design Document
+    </nav>
+
+    <header class="site-header">
+      <h1>L3 Design Document</h1>
+      <p>This is my original plan for the build.</p>
+    </header>
+
+    <main>
+      <!-- ============================================================
+           PDF Viewer
+           Change PDF_URL below to point to your PDF file.
+           The path can be relative (e.g. "docs/my-file.pdf") or an
+           absolute URL (e.g. "https://example.com/paper.pdf").
+           ============================================================ -->
+      <div id="pdf-container" class="pdf-container">
+        <canvas id="pdf-canvas"></canvas>
+      </div>
+
+      <!-- Page navigation controls -->
+      <div id="pdf-controls" style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;">
+        <button id="prev-page" aria-label="Previous page">&laquo; Previous</button>
+        <span id="page-info" style="font-size:0.9rem; color:var(--colour-muted);">Loading&hellip;</span>
+        <button id="next-page" aria-label="Next page">Next &raquo;</button>
+      </div>
+
+      <!-- ============================================================
+           Giscus Comments
+           Configuration is loaded from giscus-config.js.
+           See SETUP.md for instructions on enabling Giscus.
+           ============================================================ -->
+      <section class="comments-section">
+        <h2>Discussion</h2>
+        <div class="giscus-container"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      L3 Project &middot; PDF Viewer
+    </footer>
+
+  </div>
+
+  <!-- PDF.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+
+  <script type="module">
+    // ── PDF path ──────────────────────────────────────────────────
+    // Change this to the path or URL of the PDF you want to display.
+    const PDF_URL = "docs/L3 Design Document.pdf";
+    // ──────────────────────────────────────────────────────────────
+
+    // Import PDF.js (loaded from CDN above)
+    const pdfjsLib = await import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs");
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+
+    const canvas  = document.getElementById("pdf-canvas");
+    const ctx     = canvas.getContext("2d");
+    const info    = document.getElementById("page-info");
+    const prevBtn = document.getElementById("prev-page");
+    const nextBtn = document.getElementById("next-page");
+
+    let pdfDoc    = null;
+    let pageNum   = 1;
+    let rendering = false;
+    let pending   = null;
+
+    async function renderPage(num) {
+      rendering = true;
+      const page     = await pdfDoc.getPage(num);
+      // Scale to fill the container width
+      const container = document.getElementById("pdf-container");
+      const desiredWidth = container.clientWidth;
+      const unscaledViewport = page.getViewport({ scale: 1 });
+      const scale = desiredWidth / unscaledViewport.width;
+      const viewport = page.getViewport({ scale });
+
+      canvas.height = viewport.height;
+      canvas.width  = viewport.width;
+
+      // Adjust container aspect ratio to match page
+      container.style.paddingTop = "0";
+      container.style.height     = viewport.height + "px";
+
+      await page.render({ canvasContext: ctx, viewport }).promise;
+      rendering = false;
+      info.textContent = `Page ${num} of ${pdfDoc.numPages}`;
+
+      if (pending !== null) {
+        renderPage(pending);
+        pending = null;
+      }
+    }
+
+    function queueRender(num) {
+      if (rendering) { pending = num; } else { renderPage(num); }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (pageNum <= 1) return;
+      pageNum--;
+      queueRender(pageNum);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      queueRender(pageNum);
+    });
+
+    // Load the PDF
+    try {
+      pdfDoc = await pdfjsLib.getDocument(PDF_URL).promise;
+      renderPage(pageNum);
+    } catch (err) {
+      info.textContent = "Could not load PDF. Check the file path.";
+      console.error("PDF.js error:", err);
+    }
+
+    // Re-render on window resize for responsiveness
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => queueRender(pageNum), 200);
+    });
+  </script>
+
+  <!-- Giscus config (centralised) -->
+  <script src="giscus-config.js"></script>
+  <script>
+    // Inject the Giscus widget once the config script has loaded.
+    if (typeof injectGiscus === "function") {
+      injectGiscus(".giscus-container");
+    }
+  </script>
+</body>
+</html>

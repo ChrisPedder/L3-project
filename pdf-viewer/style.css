@@ -1,0 +1,188 @@
+/* ============================================================
+   PDF Viewer – Shared Styles
+   Minimal, professional design matching the slides site palette.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --colour-bg:        #f8f9fa;
+  --colour-surface:   #ffffff;
+  --colour-heading:   #2c3e50;
+  --colour-body:      #34495e;
+  --colour-muted:     #7f8c8d;
+  --colour-accent:    #3498db;
+  --colour-accent-dk: #2980b9;
+  --colour-border:    #dee2e6;
+  --shadow-card:      0 0 20px rgba(0, 0, 0, 0.08);
+  --radius:           6px;
+  --max-width:        960px;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  background: var(--colour-bg);
+  color: var(--colour-body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ---------- Layout ---------- */
+
+.page-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--colour-border);
+}
+
+.site-header h1 {
+  font-size: 1.6rem;
+  color: var(--colour-heading);
+  font-weight: 700;
+}
+
+.site-header p {
+  margin-top: 0.25rem;
+  color: var(--colour-muted);
+  font-size: 0.95rem;
+}
+
+.breadcrumb {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--colour-muted);
+}
+
+.breadcrumb a {
+  color: var(--colour-accent);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- PDF embed ---------- */
+
+.pdf-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;          /* 4:3 aspect ratio default */
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.pdf-container canvas,
+.pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ---------- PDF list (index page) ---------- */
+
+.pdf-list {
+  list-style: none;
+}
+
+.pdf-list li {
+  margin-bottom: 0.75rem;
+}
+
+.pdf-list a {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  color: var(--colour-heading);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pdf-list a:hover,
+.pdf-list a:focus-visible {
+  border-color: var(--colour-accent);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.pdf-list .pdf-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.pdf-list .pdf-desc {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--colour-muted);
+}
+
+/* ---------- Comments section ---------- */
+
+.comments-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--colour-border);
+}
+
+.comments-section h2 {
+  font-size: 1.2rem;
+  color: var(--colour-heading);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--colour-border);
+  font-size: 0.8rem;
+  color: var(--colour-muted);
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .site-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .pdf-container {
+    padding-top: 100%;        /* taller ratio on small screens */
+  }
+}
