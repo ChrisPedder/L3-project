@@ -143,5 +143,77 @@ Proline 4500 is painted on the inside of the coupler, and on the motor tube, and
 
 <img src="images/fin_attachent.png" width="400" height="480">
 
+---
+
+## Fin attachment 2
+
+Once the attachment to the motor tube has cured, fillets are applied to the joint between the motor tube and the fins. These fillets are done to strengthen the base bond to the motor tube before the kevlar cloth is applied.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/fin_fillets.png" width="300">
+  <img src="images/fin_fillets_finished.png" width="300">
+</div>
 
 ---
+
+## Fin attachment 3
+
+Next, we need to mount the middle centering ring, and use this to strengthen the bond to the fins. We do this by bond prepping the motor tube, then putting a thick bead of proline 4500 on the prepped section, and then put a thick fillet of 4500 on both sides of the centering ring, and on the joints to the fins.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/middle_centering_ring_bottom.png" width="300">
+  <img src="images/middle_centering_ring_top.png" width="300">
+</div>
+
+---
+
+## Top Centering Ring & Recovery Attachment 1
+
+We prepare the top centering ring for attachment of the two U-bolts. Four 8mm holes are drilled into the fibreglass at the required spacing.
+
+<img src="images/top_centering_ring_holes.png" width="400" height="480">
+
+---
+
+## Top Centering Ring & Recovery Attachment 2
+
+We mount the U-bolts through the holes, with 16mm washers on each side, and secure all the bolts with jb-weld.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/booster-ubolt-top.png" width="300">
+  <img src="images/booster-ubolt-bottom.png" width="300">
+</div>
+
+---
+
+## Top Centering Ring & Recovery Attachment 3
+
+Finally, we bond prep a band on the motor tube 1cm from the top, and secure the top centering ring in place with proline 4500.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/top-centering-ring-glue-top.png" width="300">
+  <img src="images/top-centering-ring-glue-bottom.png" width="300">
+</div>
+
+---
+
+## Booster Tube Prep 1
+
+In order to fit the motor mount assembly into the booster airframe, we need to open the bottom of the slots up to be able to slide the fins in. First, we carefully mark the fin slots, then use an iron straight edge taped to the tubing to keep the slots straight.
+
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/cutting-fin-slots.png" width="300">
+  <img src="images/cutting-fin-slots-2.png" width="300">
+</div>
+
+---
+
+## Booster Tube Prep 2
+
+This bit required steady nerves, a respirator and a dremel with a diamond cutoff wheel.
+
+
+<video width="360" height="360" controls>
+  <source src="videos/fin-slots-video.mp4" type="video/mp4">
+</video>
