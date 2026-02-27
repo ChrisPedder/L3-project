@@ -19,7 +19,7 @@ header-includes:
 ---
 
 \begin{center}
-\textbf{TAP Advisors:} Prof.\ Andreas Müller (L3CC), Jüerg Thüering (TAP)
+\textbf{TAP Advisors:} Prof.\ Andreas Müller (L3CC), Jürg Thüring (TAP)
 \end{center}
 
 \newpage

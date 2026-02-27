@@ -4,11 +4,13 @@ on:
   push:
     paths:
       - 'document/**'
+      - 'slides/images/**'
       - '.github/workflows/build-pdf.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  actions: write
 
 jobs:
   build-pdf:
@@ -18,15 +20,45 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Pandoc and LaTeX
+      - name: Install Pandoc, LaTeX and image tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra fonts-dejavu lmodern
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra fonts-dejavu lmodern imagemagick
 
-      - name: Build PDF
+      - name: Compress build photos for PDF embedding
+        run: |
+          mkdir -p /tmp/compressed-slides
+          for img in slides/images/*.png; do
+            [ -f "$img" ] || continue
+            filename=$(basename "$img")
+            convert "$img" -resize '1200x1200>' -quality 85 "/tmp/compressed-slides/$filename"
+          done
+          # Also compress any document-specific images
+          if [ -d "document/images" ]; then
+            mkdir -p /tmp/compressed-doc
+            for img in document/images/*; do
+              [ -f "$img" ] || continue
+              filename=$(basename "$img")
+              convert "$img" -resize '1600x1600>' -quality 85 "/tmp/compressed-doc/$filename"
+            done
+          fi
+
+      - name: Build PDF with compressed images
         run: |
           cd document
+          # Create temporary symlinks to compressed images
+          ln -sfn /tmp/compressed-doc images-compressed 2>/dev/null || true
+          ln -sfn /tmp/compressed-slides slides-compressed
+          # Rewrite image paths to use compressed versions
+          sed \
+            -e 's|../slides/images/|slides-compressed/|g' \
+            -e 's|images/|images-compressed/|g' \
+            L3_Design_Document.md > L3_Design_Document_build.md
+          # Fall back to original images if compressed version doesn't exist
+          # (handles the case where document/images/ doesn't exist yet)
+          sed -i 's|images-compressed/|images/|g' L3_Design_Document_build.md 2>/dev/null || true
           pandoc L3_Design_Document.md \
+            --resource-path=.:slides-compressed:images \
             -o L3_Design_Document.pdf \
             --pdf-engine=xelatex \
             --toc \
@@ -39,21 +71,12 @@ jobs:
             -V urlcolor=blue \
             --highlight-style=tango \
             --standalone
-
-      - name: Copy PDF to pdf-viewer docs
-        run: |
-          cp document/L3_Design_Document.pdf pdf-viewer/docs/L3_Design_Document.pdf
+          rm -f L3_Design_Document_build.md
+          ls -lh L3_Design_Document.pdf
 
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
         with:
           name: L3-Design-Document
           path: document/L3_Design_Document.pdf
-
-      - name: Commit PDF to repository
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add document/L3_Design_Document.pdf pdf-viewer/docs/L3_Design_Document.pdf
-          git diff --cached --quiet || git commit -m "Auto-build: update design document PDF"
-          git push
+          retention-days: 90
