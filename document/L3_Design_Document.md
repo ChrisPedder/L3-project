@@ -8,6 +8,9 @@ toc-depth: 3
 numbersections: true
 geometry: margin=2.5cm
 fontsize: 11pt
+mainfont: "DejaVu Serif"
+sansfont: "DejaVu Sans"
+monofont: "DejaVu Sans Mono"
 header-includes:
   - \usepackage{float}
   - \floatplacement{figure}{H}

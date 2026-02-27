@@ -21,14 +21,14 @@ jobs:
       - name: Install Pandoc and LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra lmodern
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra fonts-dejavu lmodern
 
       - name: Build PDF
         run: |
           cd document
           pandoc L3_Design_Document.md \
             -o L3_Design_Document.pdf \
-            --pdf-engine=pdflatex \
+            --pdf-engine=xelatex \
             --toc \
             --number-sections \
             -V geometry:margin=2.5cm \
