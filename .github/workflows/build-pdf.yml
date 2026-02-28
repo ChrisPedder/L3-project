@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
   actions: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-pdf:
@@ -115,3 +121,29 @@ jobs:
             git commit -m "build: update generated PDF"
             git push
           fi
+
+  # Deploy to GitHub Pages after the PDF build completes
+  deploy-pages:
+    needs: build-pdf
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository (with latest PDF commit)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          ref: main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
