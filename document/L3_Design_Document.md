@@ -117,7 +117,9 @@ The main parachute descent rate of 4.32 m/s (14.2 ft/s) is comfortably below the
 
 ## Parachute Deployment Flow
 
-![Parachute deployment sequence](images/deployment_flow.gif){width=90%}
+![Parachute deployment sequence](images/deployment_flow_frame.png){width=90%}
+
+[View animated deployment sequence](https://chrispedder.github.io/L3-project/document/images/deployment_flow.gif)
 
 # Attachment Points and Harnesses
 
