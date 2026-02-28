@@ -47,7 +47,7 @@ jobs:
           # Also compress any document-specific images
           if [ -d "document/images" ]; then
             mkdir -p /tmp/compressed-doc
-            for img in document/images/*; do
+            for img in document/images/*.{png,jpg,jpeg,gif}; do
               [ -f "$img" ] || continue
               filename=$(basename "$img")
               convert "$img" -resize '1600x1600>' -quality 85 "/tmp/compressed-doc/$filename"
