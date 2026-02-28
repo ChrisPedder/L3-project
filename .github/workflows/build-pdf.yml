@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: write
 
 jobs:
@@ -19,11 +19,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Git LFS
+        run: git lfs install
 
       - name: Install Pandoc, LaTeX and image tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra fonts-dejavu lmodern imagemagick
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra fonts-dejavu lmodern imagemagick ghostscript
 
       - name: Compress build photos for PDF embedding
         run: |
@@ -74,9 +79,37 @@ jobs:
           rm -f L3_Design_Document_build.md
           ls -lh L3_Design_Document.pdf
 
+      - name: Compress PDF with Ghostscript
+        run: |
+          cd document
+          gs -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.4 \
+            -dPDFSETTINGS=/ebook \
+            -dNOPAUSE -dBATCH -dQUIET \
+            -sOutputFile=L3_Design_Document_compressed.pdf \
+            L3_Design_Document.pdf
+          echo "Original size: $(du -h L3_Design_Document.pdf | cut -f1)"
+          echo "Compressed size: $(du -h L3_Design_Document_compressed.pdf | cut -f1)"
+          mv L3_Design_Document_compressed.pdf L3_Design_Document.pdf
+
+      - name: Copy PDF to viewer
+        run: cp document/L3_Design_Document.pdf "pdf-viewer/docs/L3 Design Document.pdf"
+
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
         with:
           name: L3-Design-Document
           path: document/L3_Design_Document.pdf
           retention-days: 90
+
+      - name: Commit PDF to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add document/L3_Design_Document.pdf "pdf-viewer/docs/L3 Design Document.pdf"
+          if git diff --cached --quiet; then
+            echo "No PDF changes to commit"
+          else
+            git commit -m "build: update generated PDF"
+            git push
+          fi
