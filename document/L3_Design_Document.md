@@ -323,7 +323,7 @@ The following dimensioned drawing shows the overall layout of the rocket, includ
 
 **Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
 
-![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100%}
+![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100% angle=90}
 
 ![Side view of completed rocket](images/side_view.png){width=90%}
 
