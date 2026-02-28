@@ -45,7 +45,7 @@
 <text x="28" y="278" font-family="Helvetica" font-size="7" fill="#666" text-anchor="middle">C</text>
 <text x="28" y="286" font-family="Helvetica" font-size="7" fill="#666" text-anchor="middle">L</text>
 
-<!-- NOSE CONE (5:1 conical — straight taper from tip to base) -->
+<!-- NOSE CONE (5.2:1 conical — straight taper from tip to base) -->
 <polygon points="55,280 331,254 331,306" class="wall-nc"/>
 <!-- Nose inner wall lines (wall thickness ~3.2mm = ~1px at this scale) -->
 <line x1="62" y1="280" x2="331" y2="256" stroke="#888" stroke-width="0.4"/>
@@ -65,9 +65,10 @@
 
 <!-- E-bay coupler -->
 <rect x="517" y="255.5" width="111" height="49" rx="0.5" fill="none" stroke="#555" stroke-width="0.8" stroke-dasharray="6,3"/>
-<text x="555" y="283" class="lbl-s" fill="#555">E-BAY</text>
+<text x="573" y="283" class="lbl-s" fill="#555">E-BAY</text>
 <line x1="517" y1="255.5" x2="517" y2="304.5" stroke="#555" stroke-width="1.2"/>
-<text x="425" y="283" class="lbl-s" fill="#999" font-style="italic">Drogue</text>
+<line x1="628" y1="255.5" x2="628" y2="304.5" stroke="#555" stroke-width="1.2"/>
+<text x="425" y="283" class="lbl-s" fill="#999" font-style="italic">Main</text>
 
 <!-- BOOSTER TUBE -->
 <rect x="573" y="254" width="415" height="2" fill="#c0c0cc" stroke="none"/>
@@ -76,7 +77,7 @@
 <line x1="573" y1="306" x2="988" y2="306" stroke="#1a1a2e" stroke-width="1.4"/>
 <line x1="573" y1="256" x2="988" y2="256" stroke="#888" stroke-width="0.4"/>
 <line x1="573" y1="304" x2="988" y2="304" stroke="#888" stroke-width="0.4"/>
-<text x="700" y="283" class="lbl-s" fill="#999" font-style="italic">Main</text>
+<text x="700" y="283" class="lbl-s" fill="#999" font-style="italic">Drogue</text>
 
 <!-- Motor mount tube -->
 <line x1="830" y1="262.7" x2="1020" y2="262.7" class="inner"/>
@@ -96,36 +97,36 @@
 <line x1="1027" y1="259" x2="1027" y2="301" stroke="#1a1a2e" stroke-width="1.8"/>
 
 <!-- FINS -->
-<path d="M 882,254 L 1003,180 L 1055,180 L 1040,241 L 1026,254 Z" class="fin"/>
-<path d="M 882,306 L 1003,380 L 1055,380 L 1040,319 L 1026,306 Z" class="fin"/>
+<path d="M 882,254 L 1003,163 L 1055,163 L 1040,241 L 1026,254 Z" class="fin"/>
+<path d="M 882,306 L 1003,397 L 1055,397 L 1040,319 L 1026,306 Z" class="fin"/>
 
 <!-- Separation joints -->
 <line x1="331" y1="249" x2="331" y2="311" class="sep" stroke-width="0.8"/>
 <circle cx="331" cy="249" r="1.5" fill="#1a1a2e"/>
 <circle cx="331" cy="311" r="1.5" fill="#1a1a2e"/>
-<line x1="573" y1="249" x2="573" y2="311" class="sep" stroke-width="0.8"/>
-<circle cx="573" cy="249" r="1.5" fill="#1a1a2e"/>
-<circle cx="573" cy="311" r="1.5" fill="#1a1a2e"/>
+<line x1="584" y1="249" x2="584" y2="311" class="sep" stroke-width="0.8"/>
+<circle cx="584" cy="249" r="1.5" fill="#1a1a2e"/>
+<circle cx="584" cy="311" r="1.5" fill="#1a1a2e"/>
 
 <!-- Rail buttons -->
 <rect x="777" y="251" width="4" height="3" rx="0.5" fill="#666" stroke="#333" stroke-width="0.5"/>
 <rect x="590" y="251" width="4" height="3" rx="0.5" fill="#666" stroke="#333" stroke-width="0.5"/>
 
 <!-- CP / CG markers -->
-<polygon points="783,311 777,323 789,323" fill="#d63031" stroke="#c0392b" stroke-width="0.5"/>
-<text x="783" y="335" class="dt-s" fill="#d63031" font-weight="bold">CP 2140</text>
-<polygon points="655,311 649,323 661,323" fill="#00b894" stroke="#00a884" stroke-width="0.5"/>
-<text x="655" y="335" class="dt-s" fill="#00b894" font-weight="bold">CG 1764</text>
-<line x1="655" y1="341" x2="783" y2="341" class="dim"/>
-<line x1="655" y1="338" x2="655" y2="344" class="dim"/>
-<line x1="783" y1="338" x2="783" y2="344" class="dim"/>
-<text x="719" y="352" class="dt-s" fill="#666">2.36 cal</text>
+<polygon points="854,311 848,323 860,323" fill="#d63031" stroke="#c0392b" stroke-width="0.5"/>
+<text x="854" y="335" class="dt-s" fill="#d63031" font-weight="bold">CP 2350</text>
+<polygon points="715,311 709,323 721,323" fill="#00b894" stroke="#00a884" stroke-width="0.5"/>
+<text x="715" y="335" class="dt-s" fill="#00b894" font-weight="bold">CG 1940</text>
+<line x1="715" y1="341" x2="854" y2="341" class="dim"/>
+<line x1="715" y1="338" x2="715" y2="344" class="dim"/>
+<line x1="854" y1="338" x2="854" y2="344" class="dim"/>
+<text x="785" y="352" class="dt-s" fill="#666">2.67 cal</text>
 
 <!-- OVERALL LENGTH -->
 <line x1="55" y1="210" x2="55" y2="250" class="ext"/>
 <line x1="1027" y1="210" x2="1027" y2="255" class="ext"/>
 <line x1="55" y1="215" x2="1027" y2="215" class="dim" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
-<text x="541" y="211" class="dt">2858</text>
+<text x="541" y="211" class="dt">2840</text>
 
 <!-- Section lengths -->
 <line x1="331" y1="225" x2="331" y2="250" class="ext"/>
@@ -136,7 +137,7 @@
 <line x1="331" y1="230" x2="573" y2="230" class="dim" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
 <text x="452" y="226" class="dt-s">712</text>
 <line x1="573" y1="230" x2="988" y2="230" class="dim" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
-<text x="781" y="226" class="dt-s">1219</text>
+<text x="781" y="226" class="dt-s">1220</text>
 <line x1="988" y1="230" x2="1027" y2="230" class="dim" marker-start="url(#arr-l)" marker-end="url(#arr-r)"/>
 <text x="1008" y="226" class="dt-s">114</text>
 
@@ -154,14 +155,14 @@
 <text x="925" y="267" class="dt-s" fill="#555" font-size="7">&#x2300;102</text>
 
 <!-- Fin span -->
-<line x1="1058" y1="180" x2="1080" y2="180" class="ext"/>
+<line x1="1058" y1="163" x2="1080" y2="163" class="ext"/>
 <line x1="1058" y1="254" x2="1080" y2="254" class="ext"/>
-<line x1="1075" y1="180" x2="1075" y2="254" class="dim" marker-start="url(#arr-u)" marker-end="url(#arr-d)"/>
-<text x="1075" y="174" class="dt-s">Span 217</text>
+<line x1="1075" y1="163" x2="1075" y2="254" class="dim" marker-start="url(#arr-u)" marker-end="url(#arr-d)"/>
+<text x="1075" y="157" class="dt-s">Span 267</text>
 
 <!-- Section labels with leaders -->
 <text x="193" y="395" class="lbl">NOSE CONE</text>
-<text x="193" y="407" class="lbl-s">5:1 conical, G10 FG</text>
+<text x="193" y="407" class="lbl-s">5.2:1 conical, G10 FG</text>
 <line x1="193" y1="385" x2="193" y2="310" class="ext" stroke="#bbb"/>
 <text x="452" y="395" class="lbl">PAYLOAD</text>
 <text x="452" y="407" class="lbl-s">6&#x22; G10 FG tube</text>
@@ -174,18 +175,19 @@
 <line x1="1008" y1="385" x2="1008" y2="310" class="ext" stroke="#bbb"/>
 
 <!-- Separation labels -->
-<text x="331" y="367" class="lbl-s" fill="#d63031">DROGUE SEP</text>
+<!-- Separation labels -->
+<text x="331" y="367" class="lbl-s" fill="#d63031">MAIN SEP</text>
 <text x="331" y="377" class="lbl-s" fill="#d63031" font-size="6.5">(3&#xd7; M3 shear pins)</text>
 <line x1="331" y1="314" x2="331" y2="359" stroke="#d63031" stroke-width="0.4" stroke-dasharray="3,2"/>
-<text x="573" y="367" class="lbl-s" fill="#d63031">MAIN SEP</text>
-<text x="573" y="377" class="lbl-s" fill="#d63031" font-size="6.5">(3&#xd7; M3 shear pins)</text>
-<line x1="573" y1="314" x2="573" y2="359" stroke="#d63031" stroke-width="0.4" stroke-dasharray="3,2"/>
+<text x="640" y="367" class="lbl-s" fill="#d63031">DROGUE SEP</text>
+<text x="640" y="377" class="lbl-s" fill="#d63031" font-size="6.5">(3&#xd7; M3 shear pins)</text>
+<line x1="584" y1="314" x2="620" y2="359" stroke="#d63031" stroke-width="0.4" stroke-dasharray="3,2"/>
 
 <!-- Key specifications box -->
 <rect x="240" y="435" width="540" height="105" fill="#f8f8fb" stroke="#ccc" stroke-width="0.5" rx="2"/>
 <text x="510" y="451" class="lbl" font-size="9">KEY SPECIFICATIONS</text>
 <text x="260" y="467" class="tb-label" text-anchor="start">Overall length:</text>
-<text x="390" y="467" class="tb-val" text-anchor="start">2858 mm (284 cm)</text>
+<text x="390" y="467" class="tb-val" text-anchor="start">2840 mm (284 cm)</text>
 <text x="560" y="467" class="tb-label" text-anchor="start">Dry mass:</text>
 <text x="660" y="467" class="tb-val" text-anchor="start">17.25 kg</text>
 <text x="260" y="481" class="tb-label" text-anchor="start">Body diameter:</text>
@@ -195,11 +197,11 @@
 <text x="260" y="495" class="tb-label" text-anchor="start">Motor mount:</text>
 <text x="390" y="495" class="tb-val" text-anchor="start">98 mm (75 mm adapter)</text>
 <text x="560" y="495" class="tb-label" text-anchor="start">Max altitude:</text>
-<text x="660" y="495" class="tb-val" text-anchor="start">2053 m</text>
+<text x="660" y="495" class="tb-val" text-anchor="start">2094 m</text>
 <text x="260" y="509" class="tb-label" text-anchor="start">Stability margin:</text>
-<text x="390" y="509" class="tb-val" text-anchor="start">2.36 cal (at launch)</text>
+<text x="390" y="509" class="tb-val" text-anchor="start">2.67 cal (at launch)</text>
 <text x="560" y="509" class="tb-label" text-anchor="start">Max velocity:</text>
-<text x="660" y="509" class="tb-val" text-anchor="start">215 m/s (Mach 0.64)</text>
+<text x="660" y="509" class="tb-val" text-anchor="start">215 m/s (Mach 0.643)</text>
 <text x="260" y="523" class="tb-label" text-anchor="start">Motor:</text>
 <text x="390" y="523" class="tb-val" text-anchor="start">AeroTech M1550 (75/6400)</text>
 <text x="560" y="523" class="tb-label" text-anchor="start">TWR:</text>

@@ -225,9 +225,9 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 |:---|:---|
 | Overall length | 284 cm |
 | Diameter | 15.5 cm |
-| Centre of pressure | 216 cm from nose tip |
+| Centre of pressure | 235 cm from nose tip |
 | Centre of gravity | 194 cm from nose tip (at launch, with motor) |
-| Stability margin | 1.45 calibres (at launch rod departure; increases as propellant burns) |
+| Stability margin | 2.64 calibres (at launch rod departure; increases as propellant burns) |
 | Burn time | ~3.7 s |
 | Time to apogee | 21.0 s |
 | Total mass (with motor) | 22,889 g |
@@ -267,7 +267,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Fins (×3) | 55 cm tip-tip | 26.7 cm span | 5 mm | G10 Fibreglass plate | 2693 g |
 | Centering rings (×3) | — | 15.2/10.2 cm | 3 mm | G10 Fibreglass plate | 68 g ea |
 | Tailcone + retainer + CR | 11.4 cm | 15.5/12.6 cm | — | G10 FG, 98 mm Aeropack | 741 g |
-| Rail buttons (×2) | — | 1515 profile | — | Aluminium | 9 g ea |
+| Rail buttons (×2) | — | 1515 profile | — | Delrin | 9 g ea |
 
 **Simulation mass override:** The OpenRocket model includes an additional 2.5 kg mass component placed at the centre of gravity of the booster assembly. This accounts for items not individually modelled in OpenRocket: Proline 4500 epoxy across all structural bonds and fillets, Kevlar reinforcement cloth on the fin root joints (both internal and external), primer, paint, and miscellaneous hardware (wire, cable ties, etc.). The 2.5 kg figure was determined by weighing the completed booster assembly and subtracting the known component masses listed above.
 
@@ -275,8 +275,8 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
-| Coupler tube | 32.8 cm | 14.9 cm | 2.16 mm | G10 Fibreglass (Madcow) | 850 g |
-| Switch band | 5 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (cut from booster tube) | — |
+| Coupler tube | 32.8 cm | 14.9 cm | 3.175 mm | G10 Fibreglass (Madcow) | 850 g |
+| Switch band | 5 cm | 15.5 cm | 3.175 mm | G10 Fibreglass (cut from booster tube) | — |
 | Bulkheads + U-bolts (×2) | — | 14.9 cm | 6 mm (2× 3 mm laminate) | G10 Fibreglass | 277 g |
 | Sled, batteries, rods, wiring | — | — | — | ABS sled, 2× M6 rod, 2× 9V Varta | 650 g |
 
@@ -284,7 +284,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
-| Payload body tube | 71.2 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (Madcow) | 1531 g |
+| Payload body tube | 71.2 cm | 15.5 cm | 3.175 | G10 Fibreglass (Madcow) | 1531 g |
 | Nose cone | 80 cm | 15.5 cm base | 3.175 mm | G10 FG + carbon/FG tip | 1091 g |
 | Nose cone coupler | 23.5 cm | 15.2 cm OD | 2.83 mm | G10 Fibreglass (Madcow) | 572 g |
 | Tracker bay + bulkheads | 20.3 cm bay | 75 mm tube | 2.5 mm | G10/G12 FG, rod, U-bolt, GPS | 862 g |
@@ -324,10 +324,6 @@ The following dimensioned drawing shows the overall layout of the rocket, includ
 **Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
 
 ![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100% angle=90}
-
-![Side view of completed rocket](images/side_view.png){width=90%}
-
-![End view of completed rocket](images/end_view.png){width=45%}
 
 ## Fins
 
