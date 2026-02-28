@@ -28,7 +28,7 @@ header-includes:
 
 Project consists of a 6-inch diameter Madcow fibreglass airframe with a 98mm motor mount (using a 75mm adapter for the 75/6400 casing) intended for K–N motors. It is intended to be a sport scale version of the classic Canadian sounding rocket, the Black Brant II.
 
-The booster design is a 3-fin model, with large swept-back G10 fins. There is a 12" payload section with a 1" switch band between the booster and the main Madcow G10 body tube. The nose cone is a 5:1 conical Madcow fibreglass nose cone, which will contain GPS tracking electronics. Recovery systems will be deployed via classic two-break dual deploy. The overall weight of the rocket without motor is approximately 17.25 kg. Pad mass including motor and propellant is approximately 22.9 kg (75/6400 case with M1550).
+The booster design is a 3-fin model, with large swept-back G10 fins. There is a 12" payload section with a 5 cm switch band between the booster and the main Madcow G10 body tube. The nose cone is a 5.2:1 conical Madcow fibreglass nose cone, which will contain GPS tracking electronics. Recovery systems will be deployed via classic two-break dual deploy. The overall weight of the rocket without motor is approximately 17.25 kg. Pad mass including motor and propellant is approximately 22.9 kg (75/6400 case with M1550).
 
 ## Projected Altitudes
 
@@ -38,7 +38,7 @@ Given the current availability of Aerotech motors, several different scenarios h
 |:------------------|:--------------|:--------|-------------------:|
 | M1297             | 5414.6 Ns     | 75/5120 | 2058 m             |
 | M1500             | 5220 Ns       | 75/5120 | 1906 m             |
-| M1550\*           | 5600 Ns       | 75/6400 | 2053 m             |
+| M1550\*           | 5600 Ns       | 75/6400 | 2075 m             |
 
 \*denotes preferred choice.
 
@@ -49,7 +49,7 @@ To ensure safe deployment of parachutes, we will use redundant dual deployment w
 ## Primary (MissileWorks RRC3)
 
 - Drogue deployment: Apogee.
-- Main deployment: 315 m.
+- Main deployment: 300 m.
 - Arming switch: Missileworks 2 pole rotary switch.
 - Battery: Varta 9V Alkaline.
 - Brownout protection: Brownout capacitor as part of device.
@@ -57,17 +57,19 @@ To ensure safe deployment of parachutes, we will use redundant dual deployment w
 ## Backup (Altus Metrum EasyMini)
 
 - Drogue deployment: Apogee + 1 s.
-- Main deployment: 280 m.
+- Main deployment: 270 m.
 - Arming switch: Missileworks 2 pole rotary switch.
 - Battery: Varta 9V Alkaline.
 - Brownout protection: Brownout comparator as part of device (schematic: <https://altusmetrum.org/EasyTimer/v1/easytimer-sch.pdf> — same comparator for EasyMini).
 
 ## GPS and Flight Monitoring (Silicdyne Fluctus)
 
-- No deployment capabilities.
-- Ride along in nose cone to provide real-time tracking.
+- Not connected to ejection charges on this flight; used as a GPS ride-along only.
+- Housed in nose cone to provide real-time tracking.
 - Arming switch: Slide switch on bulkplate.
 - Battery: Varta 9V Alkaline.
+
+Note: The Fluctus is capable of firing ejection charges and was used as a backup deployment altimeter on L2 qualifying Flights 2 and 3. For this L3 flight, it serves a tracking-only role, with the RRC3 and EasyMini providing fully independent dual redundant deployment.
 
 ## Wiring Diagram
 
@@ -75,13 +77,13 @@ To ensure safe deployment of parachutes, we will use redundant dual deployment w
 
 # Recovery Devices
 
-Redundant dual deployment of parachutes at apogee and at 315 m above ground level is intended to safely bring the rocket back to earth.
+Redundant dual deployment of parachutes at apogee and at 300 m above ground level is intended to safely bring the rocket back to earth.
 
 ## Main Parachute
 
 The main parachute will be contained in a 6" Fruity Chutes deployment bag, with a 24" pilot chute to pull it out of the bag. The whole setup will be protected with an 18" diameter Nomex protector.
 
-- Type: Fruity Chutes 120" Iris Standard Parachute (IFC-120-N).
+- Type: Fruity Chutes 120" Iris Ultra Parachute (IFC-120-N).
 - $C_D$: 2.2
 - Mass: 1020.6 g
 - Descent rate: 4.32 m/s
@@ -90,10 +92,28 @@ The main parachute will be contained in a 6" Fruity Chutes deployment bag, with 
 
 The drogue parachute will be protected with an 18" diameter Nomex protector.
 
-- Type: Fruity Chutes 36" Iris Standard Parachute.
+- Type: Fruity Chutes 36" Iris Ultra Parachute.
 - $C_D$: 2.2
 - Mass: 141.7 g
 - Descent rate: 14.4 m/s
+
+## Descent Rate Calculations
+
+The terminal descent rate under each parachute is calculated from:
+
+$$v = \sqrt{\frac{2mg}{\rho \, C_D \, A}}$$
+
+Where $m$ is the burnout mass (17.25 kg), $g$ is gravitational acceleration (9.81 m/s²), $\rho$ is the air density at the landing altitude of 820 m ASL (1.131 kg/m³ from the ISA model), $C_D$ is the parachute drag coefficient, and $A$ is the canopy reference area.
+
+**Main parachute (120", $C_D$ = 2.2):**
+
+$$v = \sqrt{\frac{2 \times 17.25 \times 9.81}{1.131 \times 2.2 \times 7.30}} = 4.32 \text{ m/s (14.2 ft/s)}$$
+
+**Drogue parachute (36", $C_D$ = 2.2):**
+
+$$v = \sqrt{\frac{2 \times 17.25 \times 9.81}{1.131 \times 2.2 \times 0.657}} = 14.4 \text{ m/s (47.2 ft/s)}$$
+
+The main parachute descent rate of 4.32 m/s (14.2 ft/s) is comfortably below the 20 ft/s recommended maximum. The drogue descent rate of 14.4 m/s is appropriate for the drogue phase, where the objective is controlled descent rather than soft landing. These calculated values are consistent with the OpenRocket simulation output.
 
 ## Parachute Deployment Flow
 
@@ -169,6 +189,13 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 - Length: 0.7 m
 - Breaking force (peak): 2700 kg
 
+### Nose Cone Kevlar Y-Harness
+
+- Type: Fruity Chutes Kevlar
+- Width: 1.27 cm
+- Length: 0.7 m
+- Breaking force (peak): 2700 kg
+
 ### Shock Cords (×2)
 
 - Type: Fruity Chutes tubular nylon
@@ -176,7 +203,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 - Length: 9 m
 - Breaking force (peak): 1350 kg
 
-### Quick Links (2 booster, 2 e-bay, 1 nose)
+### Quick Links (2 booster, 2 e-bay, 2 nose)
 
 - Type: Fruity Chutes stainless steel
 - Diameter: 6.35 mm
@@ -186,7 +213,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 **Booster:** 2× U-bolts, 16 mm steel washers, attached to 3 mm G10 centering ring. Bolt breaking force (peak): 4000 kg. Centering ring breaking force: 5800 kg (on one washer).
 
-**Nose Cone:** ¼" threaded rod, attached to 2× ¼" stainless steel locking nuts, locked to 3 mm G10 centering ring. Centering ring breaking force: 5800 kg (on one washer). Bolt breaking force: 860–1440 kg. Threaded rod breaking force: 988 kg.
+**Nose Cone:** ¼" threaded rod (A2-70 stainless steel), attached to 2× ¼" stainless steel locking nuts, locked to 3 mm G10 centering ring. Centering ring breaking force: 5800 kg (on one washer). Bolt breaking force: 1463 kg (UTS 700 MPa × 20.5 mm² tensile stress area). Threaded rod breaking force: 988 kg.
 
 **Electronics Bay:** 2× U-bolts, 16 mm steel washers, attached to G10 bulkplate. Bolt breaking force (peak): 4000 kg. Bulkplate breaking force (peak): 5800 kg (one washer).
 
@@ -196,36 +223,36 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 |:---|:---|
 | Overall length | 284 cm |
 | Diameter | 15.5 cm |
-| Centre of pressure | 214 cm from nose tip |
-| Centre of gravity | 176 cm from nose tip (at launch, with motor) |
-| Stability margin | 2.36 calibres (at launch; increases as propellant burns) |
+| Centre of pressure | 216 cm from nose tip |
+| Centre of gravity | 194 cm from nose tip (at launch, with motor) |
+| Stability margin | 1.45 calibres (at launch rod departure; increases as propellant burns) |
 | Burn time | ~3.7 s |
-| Time to apogee | 20.9 s |
-| Total mass (with motor) | 22,895 g |
+| Time to apogee | 21.0 s |
+| Total mass (with motor) | 22,889 g |
 
 ## Flight Maxima
 
 | Parameter | Value |
 |:---|:---|
-| Max acceleration | 83.8 m/s² |
-| Max velocity | 215 m/s (Mach 0.642) |
-| Max altitude | 2053 m |
+| Max acceleration | 83.9 m/s² |
+| Max velocity | 215 m/s (Mach 0.643) |
+| Max altitude | 2075 m |
 
 ## Launch Rail Data
 
 | Parameter | Value |
 |:---|:---|
 | Rail length | 3 m |
-| Velocity at rail end | 22.5 m/s |
-| Number of rail buttons | 3 |
+| Velocity at rail end | 22.6 m/s |
+| Number of rail buttons | 2 |
 
 ## Landing Data
 
 | Parameter | Value |
 |:---|:---|
-| Total flight time | 198 s |
+| Total flight time | 199 s |
 | Distance at landing (5 m/s wind) | ~700 m (estimated) |
-| Vertical velocity at landing | 4.39 m/s (total ground speed 6.36 m/s including wind drift) |
+| Vertical velocity at landing | 4.32 m/s (total ground speed 6.05 m/s including wind drift) |
 
 # Components
 
@@ -234,18 +261,21 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
 | Body tube | 122 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (Madcow) | 2572 g |
-| Motor tube | 55.9 cm | 10.2 cm | 1.65 mm | G10 Fibreglass (Madcow) | 595 g |
+| Motor tube | 55.9 cm | 10.2 cm OD / 98 mm ID | 2.0 mm | G10 Fibreglass (Madcow) | 595 g |
 | Fins (×3) | 55 cm tip-tip | 26.7 cm span | 5 mm | G10 Fibreglass plate | 2693 g |
 | Centering rings (×3) | — | 15.2/10.2 cm | 3 mm | G10 Fibreglass plate | 68 g ea |
-| Tailcone + retainer + CR | 9.52 cm | 15.5/12.3 cm | — | G10 FG, 98 mm Aeropack | 741 g |
-| Rail buttons (×3) | — | 1515 profile | — | Aluminium | 9 g ea |
+| Tailcone + retainer + CR | 11.4 cm | 15.5/12.6 cm | — | G10 FG, 98 mm Aeropack | 741 g |
+| Rail buttons (×2) | — | 1515 profile | — | Aluminium | 9 g ea |
+
+**Simulation mass override:** The OpenRocket model includes an additional 2.5 kg mass component placed at the centre of gravity of the booster assembly. This accounts for items not individually modelled in OpenRocket: Proline 4500 epoxy across all structural bonds and fillets, Kevlar reinforcement cloth on the fin root joints (both internal and external), primer, paint, and miscellaneous hardware (wire, cable ties, etc.). The 2.5 kg figure was determined by weighing the completed booster assembly and subtracting the known component masses listed above.
 
 ## Electronics Bay
 
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
-| Coupler tube | 32.8 cm | 10.2 cm | 2.16 mm | G10 Fibreglass (Madcow) | 850 g |
-| Bulkheads + U-bolts (×2) | — | 10.2 cm | 4 mm | G10 Fibreglass | 277 g |
+| Coupler tube | 32.8 cm | 14.9 cm | 2.16 mm | G10 Fibreglass (Madcow) | 850 g |
+| Switch band | 5 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (cut from booster tube) | — |
+| Bulkheads + U-bolts (×2) | — | 14.9 cm | 6 mm (2× 3 mm laminate) | G10 Fibreglass | 277 g |
 | Sled, batteries, rods, wiring | — | — | — | ABS sled, 2× M6 rod, 2× 9V Varta | 650 g |
 
 ## Payload
@@ -253,8 +283,8 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
 | Payload body tube | 71.2 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (Madcow) | 1531 g |
-| Nose cone | 80 cm | 15.5 cm base | 2.54 mm | G10 FG + carbon/FG tip | 1091 g |
-| Nose cone coupler | 20.3 cm | 15.0 cm OD | 2.3 mm | G10 Fibreglass (Madcow) | 494 g |
+| Nose cone | 80 cm | 15.5 cm base | 3.175 mm | G10 FG + carbon/FG tip | 1091 g |
+| Nose cone coupler | 23.5 cm | 15.2 cm OD | 2.83 mm | G10 Fibreglass (Madcow) | 572 g |
 | Tracker bay + bulkheads | 20.3 cm bay | 75 mm tube | 2.5 mm | G10/G12 FG, rod, U-bolt, GPS | 862 g |
 
 ## Recovery Hardware
@@ -267,14 +297,15 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Deployment bag | 6" | Fruity Chutes, for main parachute | — |
 | Kevlar harnesses (×2) | 1.5 m each | E-bay to shock cord connection | — |
 | Booster Y-harness | 0.7 m | Centering ring U-bolts to shock cord | — |
+| Nose cone Y-harness | 0.7 m | Nose cone U-bolts to shock cord | — |
 | Tubular nylon shock cords (×2) | 9 m each | Main and drogue sections | — |
-| Quick links (×5) | Stainless steel | Harness-to-cord and cord-to-U-bolt joints | — |
+| Quick links (×6) | Stainless steel | Harness-to-cord and cord-to-U-bolt joints | — |
 | Nomex protectors (×2) | 18" each | Ejection charge heat protection | — |
 | Shear pins | M3 nylon (×6) | 3 per separation joint (drogue + main) | — |
 
 # Modifications from Stock Kit
 
-The stock Black Brant kit comes with an aluminium nose tip, which can be flown at the prefect's discretion under Tripoli rules, but can cause some worries. In order to mitigate this, a 3D-printed, fibreglass-laminated alternative can be fabricated.
+The stock Black Brant kit comes with an aluminium nose tip, which can be flown at the Prefect's discretion under Tripoli rules, but can cause some worries. In order to mitigate this, a 3D-printed, fibreglass-laminated alternative can be fabricated.
 
 Two 3 mm thick G10 fibreglass discs form the mounting points for the ¼" threaded rod to hold the rest of the nose together. These plates mount inside and outside of the nose cone, and are secured with steel washers and ¼" locking nuts. The 3D-printed nose tip is printed in ABS and undersized such that 2 layers of 150 g/m² fibreglass can be laid up on top of it to bring it up to the correct size.
 
@@ -284,11 +315,23 @@ A test version has been fabricated in ABS for validation.
 
 # Simulations and Designs
 
+## General Arrangement Drawing
+
+The following dimensioned drawing shows the overall layout of the rocket, including section lengths, separation joints, internal structure (dashed), CG and CP positions, and key specifications. All dimensions are in millimetres.
+
+**Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
+
+![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100%}
+
+![Side view of completed rocket](images/side_view.png){width=90%}
+
+![End view of completed rocket](images/end_view.png){width=45%}
+
 ## Fins
 
-Keeping with the semi-scale design, the fins are copies of the Black Brant II sounding rocket fins, including a dropped section to follow the contour of the tail cone.
+Keeping with the semi-scale design, the fins are copies of the Black Brant II sounding rocket fins, including a dropped section to follow the contour of the tail cone. The dimensioned fin profile below shows the freeform fin geometry with all vertex coordinates, root chord (422 mm), sweep (355 mm), tip chord (152 mm), and span. Material is 5 mm G10 fibreglass plate; all dimensions are in millimetres.
 
-![Fin profile dimensions](images/fin_profile.png){width=90%}
+![Fin profile — dimensioned](images/fin_profile.png){width=90%}
 
 Because of the backswept shape of the fins, which places them behind the tailcone, they are exposed to the landing force of the rocket at impact. The fins themselves are 5 mm thick G10 fibreglass, and so comfortably able to survive this impact, and similarly, if the force of the landing is transferred to the body tube by sufficiently large-radius fin fillets, it will be adequately dissipated. The weak link in this setup is the fin fillets themselves, which are subject to torsional forces which may crack them if they are not sufficiently strong.
 
@@ -310,25 +353,36 @@ In order to mitigate the risk of cracked fillets, three main approaches will be 
 
 # Flight Profiles
 
-All simulations were carried out assuming:
-
-- 5 m/s wind velocity
-- 10% variability in wind velocity
-- Easterly direction
-
-Cernier site conditions:
+All simulations were carried out with 10% variability in wind velocity, easterly direction, using the following Cernier site conditions:
 
 - Latitude: 47.1°N
 - Longitude: 6.9°E
 - Altitude: 820 m ASL
 
-## Vertical Motion (M1550)
+## Wind Sensitivity Analysis (M1550)
 
-![Altitude vs time — M1550](images/vertical_motion.png){width=70%}
+The M1550 motor was simulated at three wind speeds to characterise the sensitivity of flight performance to launch-day conditions.
 
-## Ground Track (M1550)
+| Parameter | 1 m/s wind | 3 m/s wind | 5 m/s wind |
+|:---|---:|---:|---:|
+| Max altitude | 2103 m | 2094 m | 2078 m |
+| Max velocity | 215.5 m/s | 215.4 m/s | 215.3 m/s |
+| Max Mach | 0.642 | 0.642 | 0.643 |
+| Time to apogee | 21.1 s | 21.1 s | 21.0 s |
+| Total flight time | 201 s | 200 s | 199 s |
+| Ground hit velocity | 4.54 m/s | 5.38 m/s | 6.69 m/s |
+| Launch rod velocity | 22.6 m/s | 22.6 m/s | 22.6 m/s |
+| Deployment velocity | 15.5 m/s | 15.8 m/s | 16.3 m/s |
 
-![Ground track — M1550](images/ground_track.png){width=70%}
+Altitude varies by only 25 m across the wind range, confirming that the rocket comfortably remains within the extended 7,500 ft (2,286 m) waiver ceiling under all tested conditions. Ground hit velocity increases with wind speed due to horizontal drift, but remains well below the 10.67 m/s (35 ft/s) TRA threshold in all cases.
+
+## Vertical Motion (M1550, 5 m/s wind)
+
+![Altitude vs time — M1550](images/vertical_flight_profile.png){width=70%}
+
+## Ground Track (M1550, 5 m/s wind)
+
+![Ground track — M1550](images/ground_track_profile.png){width=70%}
 
 # Ejection Charges
 
@@ -350,13 +404,15 @@ From ground testing, we find that a charge size of: **\_\_** g is sufficient. Pr
 
 # Thrust-to-Weight and Rail Departure
 
-For the preferred M1550 motor with a pad mass of 22.9 kg: Initial thrust-to-weight ratio = 1550 N / (22.9 × 9.81) = **6.9:1**. This comfortably exceeds the NFPA 1127 minimum of 3:1 average and the typical TAP expectation of 5:1 initial. Rail departure velocity on a 3 m rail is 22.5 m/s, well above the recommended minimum of 15 m/s for stable flight off the rail.
+For the preferred M1550 motor with a pad mass of 22.9 kg: Initial thrust-to-weight ratio = 1550 N / (22.9 × 9.81) = **6.9:1**. This comfortably exceeds the NFPA 1127 minimum of 3:1 average and the typical TAP expectation of 5:1 initial. Rail departure velocity on a 3 m rail is 22.6 m/s, well above the recommended minimum of 15 m/s for stable flight off the rail.
+
+The stability margin at rail departure is 1.45 calibres. While this is below the often-cited guideline of 1.5 calibres, it is above the absolute minimum of 1.0 calibre and the rocket accelerates quickly off the rail at 22.6 m/s. The margin increases rapidly with velocity as the CP moves aft, reaching 3.3 calibres by motor burnout. Combined with the high rail departure velocity and the strong thrust-to-weight ratio, this provides confident stable flight from the moment of rail departure.
 
 # Bill of Materials
 
 ## Adhesive Schedule
 
-All structural bonds use Proline 4500 two-part epoxy. This includes fin-to-motor-tube bonds, fin fillets (both internal Kevlar-reinforced and external), centering ring bonds, bulkplate bonds, and the nose cone tip-to-coupler joint. Surfaces are prepared by sanding to 80-grit and cleaning with isopropyl alcohol before bonding. All bonds are cured for a minimum of 24 hours at room temperature before handling.
+All structural bonds use Proline 4500 two-part epoxy. This includes fin-to-motor-tube bonds, fin fillets (both internal Kevlar-reinforced and external), centering ring bonds, bulkplate bonds, and the nose cone tip-to-coupler joint. Surfaces are prepared by scuffing with 240-grit sandpaper, cleaning with acetone to remove contaminants, and then wiping with isopropyl alcohol to remove acetone residue before bonding. All bonds are cured for a minimum of 24 hours at room temperature before handling.
 
 ## Fasteners
 
@@ -364,7 +420,7 @@ All structural bonds use Proline 4500 two-part epoxy. This includes fin-to-motor
 - Nose cone assembly: 1× ¼" (6.35 mm) stainless steel threaded rod (920 mm), 2× ¼" stainless steel locking nuts, stainless steel washers.
 - U-bolts: 2× stainless steel (booster centering ring), 2× stainless steel (electronics bay bulkplates), 1× stainless steel (nose cone bulkplate).
 - Shear pins: M3 nylon screws (3 per separation joint).
-- Rail buttons: 3× 1515 aluminium rail buttons.
+- Rail buttons: 2× 1515 aluminium rail buttons.
 
 ## Ejection Charge Methodology
 
@@ -380,19 +436,23 @@ Backup charges are sized at 1.5× the primary charge mass to ensure reliable sep
 
 ## Centre of Pressure Marking
 
-The calculated centre of pressure will be marked on the exterior of the airframe using a permanent adhesive decal, labelled "CP", positioned at 214 cm from the nose tip as determined by OpenRocket simulation.
+The calculated centre of pressure will be marked on the exterior of the airframe using a permanent adhesive decal, labelled "CP", positioned at 216 cm from the nose tip as determined by OpenRocket simulation.
 
 ## Landing Velocity Compliance
 
-The simulated vertical landing velocity under the main parachute is 4.39 m/s (14.4 ft/s). The total ground hit velocity including horizontal wind drift is 6.36 m/s (20.9 ft/s). The TRA non-certification threshold is 35 ft/s (10.67 m/s). This provides a margin of 2.4× against the limit on vertical descent rate. The landing kinetic energy at 4.39 m/s with a dry mass of 17.25 kg is:
+The simulated vertical landing velocity under the main parachute is 4.32 m/s (14.2 ft/s). The total ground hit velocity including horizontal wind drift is 6.05 m/s (19.8 ft/s). The TRA non-certification threshold is 35 ft/s (10.67 m/s). This provides a margin of 2.5× against the limit on vertical descent rate. The landing kinetic energy at 4.32 m/s with a dry mass of 17.25 kg is:
 
-$$KE = \frac{1}{2} \times 17.25 \times 4.39^2 = 166 \text{ J}$$
+$$KE = \frac{1}{2} \times 17.25 \times 4.32^2 = 161 \text{ J}$$
 
 ## Drogue-Only Failure Scenario
 
-In the event of a main parachute deployment failure, the rocket would descend on the drogue parachute alone at approximately 14.4 m/s (47.2 ft/s). This exceeds the 35 ft/s TRA limit and would result in non-certification. However, the dual-redundant electronics and ground-tested ejection charges are designed to minimise the probability of this failure. Under a drogue-only descent from 2,053 m with a 5 m/s crosswind, the estimated drift distance is approximately 714 m, which should remain within the typical ARGOS Cernier waiver radius.
+In the event of a main parachute deployment failure, the rocket would descend on the drogue parachute alone at approximately 14.4 m/s (47.2 ft/s). This exceeds the 35 ft/s TRA limit and would result in non-certification. However, the dual-redundant electronics and ground-tested ejection charges are designed to minimise the probability of this failure. Under a drogue-only descent from 2,075 m with a 5 m/s crosswind, the estimated drift distance is approximately 714 m, which should remain within the typical ARGOS Cernier waiver radius.
 
 **[TO BE CONFIRMED: verify waiver radius with launch organiser before flight.]**
+
+## Waiver Compliance
+
+The ARGOS Cernier site operates under a standard waiver ceiling of 6,000 ft (1,829 m) AGL, with an extended window to 7,500 ft (2,286 m) AGL available on request. The predicted apogee of 2,075 m (6,808 ft) AGL exceeds the standard waiver but falls comfortably within the extended window, with approximately 210 m (690 ft) of margin. The extended waiver will be requested in advance of the flight. All three motor options listed in the Projected Altitudes table exceed the standard 6,000 ft ceiling, so the extended window is required regardless of motor selection.
 
 # L2 to L3 Qualifying Flights
 
@@ -412,7 +472,7 @@ The nose cone internal structure is arranged as follows, from tip to base.
 
 A 6 mm stainless steel threaded rod runs the full length from the nose tip to the rear bulkplate, providing the primary structural connection through which all deployment loads are transferred. The rod passes through a 6 mm hole drilled through the forged carbon/fibreglass laminate nose tip and is secured at the tip end with a stainless steel locking nut.
 
-Inside the nose cone, a 75 mm (OD 79.4 mm) G12 fibreglass inner tube runs 542 mm down from approximately 280 mm below the cone tip. This tube serves as the tracker bay, housing the Silicdyne Fluctus GPS tracker, sled, and associated wiring. A forward centering ring (3 mm G10 fibreglass, positioned 280 mm from the nose cone base) bridges between the inner wall of the nose cone and the outer diameter of the inner tube. A mass component representing the GPS tracker and sled (150 g) sits within this inner tube.
+Inside the nose cone, a 75 mm (OD 79.4 mm) G12 fibreglass inner tube runs 542 mm down from approximately 280 mm below the cone tip. This tube serves as the tracker bay, housing the Silicdyne Fluctus GPS tracker, sled, and associated wiring. A forward centering ring (3 mm G10 fibreglass, positioned 280 mm from the nose cone base) bridges between the inner wall of the nose cone and the outer diameter of the inner tube. The GPS tracker and sled alone have a mass of 150 g; the full tracker bay assembly including inner tube, centering rings, bulkheads, threaded rod, U-bolts, sled, switch, and electronics totals 862 g as listed in the components table.
 
 At the base, a G12 fibreglass tube coupler (length 194.8 mm, OD 152.3 mm, wall 2.83 mm) extends from the nose cone base, with 150 mm protruding below the cone shoulder to mate with the payload body tube. Inside the coupler, a rear centering ring (3 mm G10 fibreglass) bridges between the coupler ID and the inner tube OD. Immediately below the centering ring (offset 2.5 mm), a 3 mm G10 fibreglass bulkplate spans the full coupler ID. This bulkplate has a central 6 mm hole for the threaded rod and cutouts to allow two stainless steel U-bolts mounted on the centering ring to pass through. The threaded rod is secured at this end with a wing nut, allowing the nose cone assembly to be disassembled for access to the tracker bay.
 
@@ -443,7 +503,7 @@ After sanding and cleaning, the motor retainer is then mounted to the centering 
 
 ## Motor Tube Construction
 
-The end of the 98mm fibreglass motor tube is sanded with 240-grit sandpaper, and then bond-prepped with acetone and then isopropyl alcohol.
+The end of the 98mm fibreglass motor tube is scuffed with 240-grit sandpaper, cleaned with acetone, and wiped with isopropyl alcohol to remove residue.
 
 ![Motor tube cleaned and prepped](../slides/images/motor_tube_cleaned.png){width=50%}
 
@@ -533,7 +593,7 @@ This required steady nerves, a respirator, and a Dremel with a diamond cutoff wh
 - [ ] Motor retainer (98mm Aeropack).
 - [ ] Electronics: RRC3 altimeter, EasyMini altimeter, Silicdyne Fluctus GPS tracker.
 - [ ] 3× fresh Varta 9V alkaline batteries (test voltage ≥ 9.0 V).
-- [ ] Recovery hardware: 120" main parachute, 36" drogue parachute, 24" pilot chute, deployment bag, 2× Nomex protectors (18"), 2× Kevlar harnesses (1.5 m), booster Y-harness (0.7 m), 2× tubular nylon shock cords (9 m), 5× quick links.
+- [ ] Recovery hardware: 120" main parachute, 36" drogue parachute, 24" pilot chute, deployment bag, 2× Nomex protectors (18"), 2× Kevlar harnesses (1.5 m), booster Y-harness (0.7 m), nose cone Y-harness (0.7 m), 2× tubular nylon shock cords (9 m), 6× quick links.
 - [ ] Black powder charges: pre-measured primary and backup charges for drogue and main, sealed in containers.
 - [ ] E-matches (minimum 6, plus spares).
 - [ ] M3 nylon shear pins (minimum 12, plus spares).
@@ -562,7 +622,7 @@ This required steady nerves, a respirator, and a Dremel with a diamond cutoff wh
 - [ ] Load pre-measured black powder charges into charge cups.
 - [ ] Secure charges with masking tape and Kapton tape to prevent accidental spillage.
 - [ ] Connect e-match leads to altimeter terminals: RRC3 drogue and main outputs, EasyMini drogue and main outputs.
-- [ ] Verify wiring: primary system (RRC3) fires at apogee (drogue) and 315 m (main). Backup system (EasyMini) fires at apogee + 1 s (drogue) and 280 m (main).
+- [ ] Verify wiring: primary system (RRC3) fires at apogee (drogue) and 300 m (main). Backup system (EasyMini) fires at apogee + 1 s (drogue) and 270 m (main).
 - [ ] Slide sled into coupler tube.
 - [ ] Install both bulkplates with U-bolts facing outward.
 - [ ] Secure bulkplates with M6 threaded rods and nyloc nuts.
@@ -572,7 +632,8 @@ This required steady nerves, a respirator, and a Dremel with a diamond cutoff wh
 
 - [ ] Attach Kevlar harness to electronics bay U-bolt (drogue side) using quick link.
 - [ ] Attach opposite end of Kevlar harness to tubular nylon shock cord using quick link.
-- [ ] Attach other end of shock cord to nose cone U-bolt (via ¼" threaded rod assembly) using quick link.
+- [ ] Attach nose cone Y-harness to nose cone U-bolts.
+- [ ] Attach Y-harness to other end of shock cord using quick link.
 - [ ] Wrap 18" Nomex protector around drogue parachute shroud lines.
 - [ ] Fold drogue parachute and attach to shock cord midpoint.
 - [ ] Pack drogue parachute into payload tube, Nomex protector facing the electronics bay.
@@ -604,7 +665,7 @@ This required steady nerves, a respirator, and a Dremel with a diamond cutoff wh
 - [ ] Slide payload tube (with packed drogue) over electronics bay (drogue side). Secure with 3× M3 nylon shear pins.
 - [ ] Insert nose cone coupler into payload tube.
 - [ ] Verify all sections are aligned and shear pins are seated.
-- [ ] Verify CP marking (decal) is visible on airframe at 214 cm from nose tip.
+- [ ] Verify CP marking (decal) is visible on airframe at 216 cm from nose tip.
 
 ## 8. Pad Installation
 
@@ -617,8 +678,8 @@ This required steady nerves, a respirator, and a Dremel with a diamond cutoff wh
 
 ## 9. Electronics Arming (On Pad)
 
-- [ ] Arm RRC3 via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee drogue, 315 m main).
-- [ ] Arm EasyMini via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee + 1 s drogue, 280 m main).
+- [ ] Arm RRC3 via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee drogue, 300 m main).
+- [ ] Arm EasyMini via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee + 1 s drogue, 270 m main).
 - [ ] Verify both altimeters report e-match continuity on all channels (listen for continuity beep pattern).
 - [ ] If either altimeter reports no continuity: DISARM BOTH, return to step 3 to diagnose.
 - [ ] Step back from pad. Confirm with TAP/RSO that electronics are armed.

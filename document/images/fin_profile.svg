@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+<style>
+  .outline { fill: #e8e8f0; stroke: #1a1a2e; stroke-width: 1.5; }
+  .dim-line { fill: none; stroke: #cc0000; stroke-width: 0.6; }
+  .dim-text { font-family: "Courier New", monospace; font-size: 9px; fill: #cc0000; text-anchor: middle; }
+  .title { font-family: "Helvetica", sans-serif; font-size: 12px; fill: #1a1a2e; font-weight: bold; }
+  .subtitle { font-family: "Helvetica", sans-serif; font-size: 9px; fill: #555; }
+  .label { font-family: "Helvetica", sans-serif; font-size: 8px; fill: #333; text-anchor: middle; }
+</style>
+<rect width="500" height="400" fill="white"/>
+<text x="250.0" y="20" class="title" text-anchor="middle">FIN PROFILE — FREEFORM (×3)</text>
+<text x="250.0" y="34" class="subtitle" text-anchor="middle">Material: 5mm G10 Fibreglass — Scale ~1:1.25 — All dimensions in mm</text>
+<path d="M 60.0,340.0 L 344.32,166.39999999999998 466.24,166.39999999999998 430.16,309.68 397.52,340.0 Z" class="outline"/>
+<line x1="60.0" y1="365.0" x2="397.52" y2="365.0" class="dim-line"/>
+<line x1="60.0" y1="343.0" x2="60.0" y2="368.0" class="dim-line" stroke-width="0.3"/>
+<line x1="397.52" y1="343.0" x2="397.52" y2="368.0" class="dim-line" stroke-width="0.3"/>
+<text x="228.76" y="362.0" class="dim-text">Root chord: 422</text>
+<line x1="344.32" y1="151.39999999999998" x2="466.24" y2="151.39999999999998" class="dim-line"/>
+<line x1="344.32" y1="163.39999999999998" x2="344.32" y2="148.39999999999998" class="dim-line" stroke-width="0.3"/>
+<line x1="466.24" y1="163.39999999999998" x2="466.24" y2="148.39999999999998" class="dim-line" stroke-width="0.3"/>
+<text x="405.28000000000003" y="148.39999999999998" class="dim-text">Tip: 152</text>
+<line x1="491.24" y1="340.0" x2="491.24" y2="166.39999999999998" class="dim-line"/>
+<line x1="469.24" y1="340.0" x2="494.24" y2="340.0" class="dim-line" stroke-width="0.3"/>
+<line x1="469.24" y1="166.39999999999998" x2="494.24" y2="166.39999999999998" class="dim-line" stroke-width="0.3"/>
+<text x="506.24" y="253.6" class="dim-text" text-anchor="start">Span: 217</text>
+<line x1="60.0" y1="385.0" x2="344.32" y2="385.0" class="dim-line"/>
+<line x1="344.32" y1="343.0" x2="344.32" y2="388.0" class="dim-line" stroke-width="0.3"/>
+<text x="202.16" y="382.0" class="dim-text">Sweep: 355</text>
+<circle cx="60.0" cy="340.0" r="2.5" fill="#cc0000"/>
+<text x="65.0" y="332.0" font-family="Courier New" font-size="7" fill="#666" text-anchor="start">(0, 0)</text>
+<circle cx="344.32" cy="166.39999999999998" r="2.5" fill="#cc0000"/>
+<text x="349.32" y="158.39999999999998" font-family="Courier New" font-size="7" fill="#666" text-anchor="start">(355, 217)</text>
+<circle cx="466.24" cy="166.39999999999998" r="2.5" fill="#cc0000"/>
+<text x="471.24" y="158.39999999999998" font-family="Courier New" font-size="7" fill="#666" text-anchor="start">(508, 217)</text>
+<circle cx="430.16" cy="309.68" r="2.5" fill="#cc0000"/>
+<text x="425.16" y="301.68" font-family="Courier New" font-size="7" fill="#666" text-anchor="end">(463, 38)</text>
+<circle cx="397.52" cy="340.0" r="2.5" fill="#cc0000"/>
+<text x="392.52" y="332.0" font-family="Courier New" font-size="7" fill="#666" text-anchor="end">(422, 0)</text>
+<line x1="44.0" y1="340.0" x2="460.0" y2="340.0" stroke="#888" stroke-width="0.5" stroke-dasharray="5,3"/>
+<text x="48.0" y="335.0" class="label" text-anchor="start" font-size="6">BODY TUBE</text>
+<rect x="5" y="5" width="490" height="390" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+<line x1="5" y1="40" x2="495" y2="40" stroke="#1a1a2e" stroke-width="0.5"/>
+</svg>
