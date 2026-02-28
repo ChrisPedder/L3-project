@@ -84,8 +84,10 @@ jobs:
           cd document
           gs -sDEVICE=pdfwrite \
             -dCompatibilityLevel=1.4 \
-            -dPDFSETTINGS=/ebook \
+            -dPDFSETTINGS=/printer \
             -dNOPAUSE -dBATCH -dQUIET \
+            -dColorImageResolution=200 \
+            -dGrayImageResolution=200 \
             -sOutputFile=L3_Design_Document_compressed.pdf \
             L3_Design_Document.pdf
           echo "Original size: $(du -h L3_Design_Document.pdf | cut -f1)"
