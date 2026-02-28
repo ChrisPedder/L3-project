@@ -20,25 +20,67 @@ You can also open the Hypothes.is sidebar (the small `<` tab in the top-right co
 
 This repository documents my Level 3 High Power Rocketry (HPR) certification attempt with the Tripoli Rocketry Association. It serves as a comprehensive build log and technical reference for my Technical Advisor Panel (TAPs) to review progress, provide feedback, and verify compliance with certification requirements.
 
+The rocket is a sport-scale model of the Canadian Black Brant II sounding rocket, built on a 6-inch Madcow fibreglass airframe with redundant dual-deploy recovery.
+
+## 🔧 Rocket Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| **Name** | Black Brant 6″ Scale Model |
+| **Motor** | Aerotech M1550 (75/6400 casing) |
+| **Total Impulse** | 5600 Ns |
+| **Airframe Diameter** | 15.5 cm (6″) |
+| **Overall Length** | 284 cm |
+| **Dry Mass** | 17.25 kg |
+| **Pad Mass (with motor)** | 22.9 kg |
+| **Fins** | 3× swept G10 fibreglass, 5 mm thick |
+| **Motor Mount** | 98 mm (with 75 mm adapter) |
+| **Nose Cone** | 5.2:1 conical fibreglass (Madcow) |
+| **Recovery** | Dual-deploy: 120″ main + 36″ drogue (Fruity Chutes Iris Ultra) |
+| **Electronics** | MissileWorks RRC3 (primary) + Altus Metrum EasyMini (backup) + Silicdyne Fluctus GPS |
+
+### Simulated Performance (M1550, 5 m/s wind)
+
+| Parameter | Value |
+|-----------|-------|
+| Max Altitude | 2075 m |
+| Max Velocity | 215 m/s (Mach 0.64) |
+| Thrust-to-Weight | 6.9:1 |
+| Rail Departure Velocity | 22.6 m/s (3 m rail) |
+| Stability Margin | 2.64 cal (at launch); 1.45 cal (at rail departure) |
+| Landing Velocity | 4.32 m/s (main chute) |
+| Total Flight Time | ~199 s |
+
 ## 📁 Repository Structure
 
 ```
 L3-project/
-├── slides/
-│   ├── index.html      # Interactive documentation viewer
-│   ├── slides.md       # Main documentation content
-│   ├── images/         # Build photos and diagrams
-│   ├── videos/         # Build and test videos
-│   └── README.md       # Slides-specific documentation
-├── pdf-viewer/
-│   ├── index.html      # PDF document listing
-│   ├── example.html    # L3 Design Document viewer page
-│   ├── giscus-config.js # Centralised Giscus comment settings
-│   ├── style.css       # Shared styles
-│   ├── SETUP.md        # Setup and usage guide
-│   └── docs/           # PDF files
-├── README.md           # This file
-└── ...
+├── document/                    # Design document (source of truth)
+│   ├── L3_Design_Document.md    #   Markdown source — edit this
+│   ├── L3_Design_Document.pdf   #   Auto-generated PDF (do not edit)
+│   ├── images/                  #   Figures: wiring, fins, sims, profile
+│   └── README.md                #   Document build instructions
+├── slides/                      # Interactive build-log presentation
+│   ├── index.html               #   Reveal.js viewer
+│   ├── slides.md                #   Slide content (Markdown)
+│   ├── images/                  #   Build photos
+│   ├── videos/                  #   Build and test videos
+│   └── README.md                #   Slides-specific docs
+├── pdf-viewer/                  # Hosted PDF viewer with commenting
+│   ├── index.html               #   PDF listing page
+│   ├── example.html             #   L3 Design Document viewer
+│   ├── giscus-config.js         #   Centralised Giscus comment settings
+│   ├── style.css                #   Shared styles
+│   ├── SETUP.md                 #   Setup and usage guide
+│   └── docs/                    #   PDF files served on the site
+├── ork_files/                   # OpenRocket simulation files
+├── stl_files/                   # 3D-printable parts (nose tip, jigs)
+├── .github/workflows/           # CI/CD pipelines
+│   ├── build-pdf.yml            #   Build PDF from Markdown & deploy
+│   └── deploy-slides.yml        #   Deploy site to GitHub Pages
+├── BUILD.md                     # How the build system works
+├── pyproject.toml               # Python/Jupyter environment (optional)
+└── README.md                    # This file
 ```
 
 ## 🔗 Live Site
@@ -78,25 +120,12 @@ For L3 certification with Tripoli, this project demonstrates:
 - Documentation of the build process for TAP review
 - Understanding of safety procedures and regulations
 
-## 🔧 Rocket Specifications
-
-*[To be updated as the build progresses]*
-
-| Parameter | Value |
-|-----------|-------|
-| Motor Class | M |
-| Airframe Diameter | 6" |
-| Length | TBD |
-| Dry Weight | TBD |
-| Recovery | TBD |
-| Target Altitude | TBD |
-
 ## 📊 Project Status
 
-- [ ] Design finalisation
-- [ ] Component procurement
-- [ ] Airframe construction
-- [ ] Fins and motor mount
+- [x] Design finalisation
+- [x] Component procurement
+- [x] Airframe construction
+- [x] Fins and motor mount
 - [ ] Recovery system
 - [ ] Electronics bay
 - [ ] Ground testing
