@@ -242,9 +242,15 @@
             }
         });
 
-        // Re-render Mermaid diagrams when slides change
-        // Re-render Mermaid diagrams when slides change and on ready
         Reveal.on('ready', function() {
+            // Set deploy date
+            var dateEl = document.getElementById('deploy-date');
+            if (dateEl) {
+                var now = new Date();
+                var options = { day: 'numeric', month: 'long', year: 'numeric' };
+                dateEl.textContent = now.toLocaleDateString('en-GB', options);
+            }
+
             mermaid.run({
                 querySelector: '.mermaid'
             });
