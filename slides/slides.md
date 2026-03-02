@@ -1,11 +1,14 @@
 # Level Three Tripoli Project
 # Construction Log
-
 **Black Brant 6" Scale Model**
-
-*10th February 2026*
-
+*<span id="deploy-date"></span>*
 *Press Arrow keys to navigate*
+
+<script>
+const now = new Date();
+const options = { day: 'numeric', month: 'long', year: 'numeric' };
+document.getElementById('deploy-date').textContent = now.toLocaleDateString('en-GB', options);
+</script>
 
 ---
 
