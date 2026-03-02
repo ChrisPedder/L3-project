@@ -570,6 +570,18 @@ Finally, we bond-prep a band on the motor tube 1 cm from the top, and secure the
 ![Top centering ring glued — top view](../slides/images/top-centering-ring-glue-top.png){width=45%}
 ![Top centering ring glued — bottom view](../slides/images/top-centering-ring-glue-bottom.png){width=45%}
 
+## Fin Attachment Strengthening
+
+In order to further strengthen the attachment of the fins (which are large and backswept, leading to significant landing forces), they are laminated to the motor tube with 100 g/m² Kevlar cloth. Kevlar is chosen for its impact resistance and ability to distribute shocks. The surface is first bond-prepped with 240-grit sandpaper, then acetone, then IPA. We use West System 105/205 for this lamination.
+
+![Kevlar lamination — first fin](../slides/images/fin_root_kevlar_1.png){width=45%}
+![Kevlar lamination — layup detail](../slides/images/fin_root_kevlar_2.png){width=45%}
+
+The process is repeated for subsequent fins and then left to cure.
+
+![Kevlar lamination — subsequent fins](../slides/images/fin_root_kevlar_3.png){width=45%}
+![Kevlar lamination — curing](../slides/images/fin_root_kevlar_4.png){width=45%}
+
 ## Booster Tube Preparation
 
 In order to fit the motor mount assembly into the booster airframe, we need to open the bottom of the slots up to be able to slide the fins in. First, we carefully mark the fin slots, then use an iron straight edge taped to the tubing to keep the slots straight.
@@ -578,6 +590,34 @@ In order to fit the motor mount assembly into the booster airframe, we need to o
 ![Fin slots being cut with Dremel](../slides/images/cutting-fin-slots-2.png){width=45%}
 
 This required steady nerves, a respirator, and a Dremel with a diamond cutoff wheel.
+
+Finally, a 50 mm long section of the booster tube is removed to use as a switch band for the electronics bay.
+
+![Switch band measurement](../slides/images/switch_band_measurement.png){width=45%}
+![Switch band cutting](../slides/images/switch_band_cutting.png){width=45%}
+
+## Nose Tip Fabrication
+
+In order to replace the stock aluminium nose tip that came with the kit, we fabricate a replacement with similar dimensions which can fit the end of the nose cone and survive the impact shocks of the nose landing at 5 m/s into the dirt. We chose a forged carbon fibre construction, using a 3D-printed mould which has been treated with mould release to lay up the fibres.
+
+![Nose tip mould — 3D print](../slides/images/nose_fab_1.png){width=45%}
+![Nose tip mould — fibre layup](../slides/images/nose_fab_2.png){width=45%}
+
+The fibres are laid up in two lengths — 20 mm carbon and 6 mm carbon for the tip and the curve around the shoulder. We use slow-setting EasyComposites IN2 infusion resin as the matrix, fill the mould, and then compress with a G-clamp whilst the resin sets (24 hrs) to remove the excess.
+
+![Nose tip — compression moulding](../slides/images/nose_fab_compression.png){width=45%}
+![Nose tip — excess resin](../slides/images/nose_fab_excess.png){width=45%}
+
+## Nose Electronics Bay Construction
+
+The nose section of the rocket contains a 75 mm fibreglass tube mounted inside the coupler, which houses tracking electronics (Silicdyne Fluctus). We first measure the fibreglass tube length necessary, and then cut to length. We then measure up the location of the top centering ring by placing it inside the nose cone, and bond into place with Proline 4500.
+
+![Nose inner tube — cut to length](../slides/images/nose_tube_cut.png){width=45%}
+![Nose inner tube — centering ring bonded](../slides/images/nose_tube_centering_ring.png){width=45%}
+
+The lower centering ring of the nose electronics bay will carry the two U-bolts for recovery, and the lid for the bay therefore needs to be slotted for these to pass through, and have a 6 mm hole drilled in its centre to allow the 6 mm allthread to pass through and hold the tracking electronics in place. These parts are cut on the CNC, and then marked up for holes.
+
+![Nose bay lower centering ring — CNC cutout](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
 
 \newpage
 
