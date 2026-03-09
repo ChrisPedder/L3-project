@@ -341,6 +341,98 @@ In order to mitigate the risk of cracked fillets, three main approaches will be 
 
 3. Once the motor assembly has been attached inside of the booster body tube, the outer joint between the booster body tube and the fin will be secured using laminated strips of Kevlar, and then filleted over with a 2.5 cm radius filleting tool (3D-printed).
 
+## Fin Flutter Analysis
+
+Fin flutter is an aeroelastic instability in which aerodynamic forces couple with the structural flexibility of the fins to produce a self-reinforcing oscillation. If the airspeed exceeds the flutter boundary velocity, the oscillation amplitude grows without bound, leading to rapid structural failure of the fin. The analysis below determines the flutter boundary velocity for this rocket's fins and compares it to the maximum flight velocity.
+
+### Method
+
+The flutter boundary velocity is calculated using the simplified NACA panel flutter equation, as commonly applied in high power rocketry following the treatment by Garrison. The flutter velocity $V_f$ is given by:
+
+$$V_f = a \sqrt{ \frac{2 \, G \, (AR + 2) \, (t/c)^3}{1.337 \, AR^3 \, P \, (\lambda + 1)} }$$
+
+Where $a$ is the speed of sound, $G$ is the shear modulus of the fin material, $AR$ is the aspect ratio (semi-span squared divided by planform area), $t$ is the fin thickness, $c$ is the root chord, $P$ is the atmospheric pressure at the altitude of maximum velocity, and $\lambda$ is the taper ratio (tip chord divided by root chord).
+
+### Fin Geometry
+
+The planform area $S$ of the freeform fin is computed directly from the vertex coordinates using the shoelace formula, rather than the trapezoidal approximation, to account for the swept trailing edge geometry. The vertex coordinates (in metres, from the OpenRocket model) are:
+
+$$(0, 0), \; (0.355, 0.217), \; (0.508, 0.217), \; (0.463, 0.038), \; (0.422, 0)$$
+
+| Parameter | Value | Source |
+|:---|:---|:---|
+| Root chord ($c$) | 421.9 mm | Dimensioned fin drawing |
+| Tip chord | 152.5 mm | Dimensioned fin drawing |
+| Semi-span ($b$) | 217.0 mm | Dimensioned fin drawing |
+| Thickness ($t$) | 5.0 mm | G10 plate specification |
+| Planform area ($S$) | 651.2 cm² | Shoelace formula from vertices |
+| Taper ratio ($\lambda$) | 0.361 | $c_{\text{tip}} / c_{\text{root}}$ |
+| Thickness ratio ($t/c$) | 0.01185 | $t / c_{\text{root}}$ |
+| Aspect ratio ($AR$) | 0.723 | $b^2 / S$ |
+
+### Material Properties
+
+The fins are cut from 5 mm G10 fibreglass plate. G10 is an anisotropic glass-epoxy laminate; its shear modulus depends on the layup and the orientation of the glass weave. Published values for the in-plane shear modulus of G10 range from approximately 4.8 GPa to 5.5 GPa (per NEMA LI 1-1998). For this analysis, a conservative value of **4.8 GPa** is used. This can also be derived from the in-plane Young's modulus ($E \approx 18$ GPa) and Poisson's ratio ($\nu \approx 0.15$) via $G = E / 2(1 + \nu) = 7.8$ GPa, which yields a significantly higher value; the directly-measured published shear modulus of 4.8 GPa is used here as a more conservative choice.
+
+### Atmospheric Conditions at Maximum Velocity
+
+The maximum flight velocity of 215.2 m/s (Mach 0.64) occurs during the motor burn at approximately 370 m above ground level (1,190 m ASL). The atmospheric conditions at this altitude are taken directly from the OpenRocket simulation output:
+
+| Parameter | Value | Source |
+|:---|:---|:---|
+| Atmospheric pressure ($P$) | 88,100 Pa | OpenRocket ISA model at max-$V$ altitude |
+| Speed of sound ($a$) | 335.8 m/s | OpenRocket ISA model at max-$V$ altitude |
+
+### Calculation
+
+Substituting the values into the flutter equation:
+
+$$\text{Numerator:} \quad 2 \times 4.8 \times 10^9 \times (0.723 + 2) \times (0.01185)^3 = 43{,}523$$
+
+$$\text{Denominator:} \quad 1.337 \times (0.723)^3 \times 88{,}100 \times (0.361 + 1) = 60{,}641$$
+
+$$V_f = 335.8 \times \sqrt{\frac{43{,}523}{60{,}641}} = 335.8 \times 0.847 = \textbf{284 m/s (Mach 0.85)}$$
+
+### Result
+
+| Parameter | Value |
+|:---|:---|
+| Flutter boundary velocity ($V_f$) | 284 m/s (Mach 0.85) |
+| Maximum flight velocity ($V_{\text{max}}$) | 215 m/s (Mach 0.64) |
+| Safety factor ($V_f / V_{\text{max}}$) | **1.32** |
+
+The flutter boundary exceeds the maximum flight velocity by 32%.
+
+### Sensitivity to Shear Modulus
+
+The shear modulus is the most uncertain input to the calculation. The table below shows the flutter boundary across the published range for G10:
+
+| Shear modulus $G$ (GPa) | Flutter velocity $V_f$ (m/s) | Mach | Safety factor |
+|:---|---:|---:|---:|
+| 4.0 (very conservative) | 260 | 0.77 | 1.21 |
+| 4.5 | 275 | 0.82 | 1.28 |
+| **4.8 (analysis value)** | **284** | **0.85** | **1.32** |
+| 5.0 | 290 | 0.86 | 1.35 |
+| 5.5 | 305 | 0.91 | 1.42 |
+
+### Discussion
+
+A safety factor of 1.32 against fin flutter is adequate for a subsonic rocket at Mach 0.64, though it is not as generous as might initially be expected from 5 mm G10 plate. The reason is the combination of a long root chord (422 mm) with the 5 mm thickness, yielding a thickness ratio ($t/c$) of only 0.012. Because the flutter resistance depends on the *cube* of the thickness ratio, the long chord reduces the effective stiffness more than intuition might suggest.
+
+Several conservatisms in the calculation provide additional confidence beyond the numerical safety factor:
+
+1. **Through-the-wall construction.** The Garrison equation assumes a fin cantilevered from the body tube surface. In this build, the fins pass through the body tube and bond directly to the motor tube with Proline 4500 epoxy and Kevlar reinforcement strips. This provides an additional ~38 mm of structurally constrained root (from body tube inner wall to motor tube outer wall) that the equation does not account for, significantly increasing the effective root stiffness.
+
+2. **Kevlar root reinforcement.** The laminated Kevlar strips at the fin root joints (both internal to the motor tube and external on the body tube) add torsional stiffness that is not captured by the flat-plate assumption in the equation.
+
+3. **Epoxy fillets.** The 15 mm radius Proline 4500 fillets on both the motor tube and body tube joints further stiffen the root attachment.
+
+4. **Centering ring fixity.** The middle centering ring is filleted to each fin with Proline 4500, providing an additional structural tie point partway along the exposed root.
+
+5. **Conservative shear modulus.** The analysis uses 4.8 GPa, which is the low end of the published range for G10. With a mid-range value of 5.0 GPa, the safety factor increases to 1.35.
+
+Given these conservatisms and the subsonic flight regime, the fins are considered safe against flutter for this application.
+
 ## Full Rocket (No Motor)
 
 ![OpenRocket model — no motor](images/or_no_motor.png){width=100%}
@@ -404,7 +496,47 @@ From ground testing, we find that a charge size of: **\_\_** g is sufficient. Pr
 
 For the preferred M1550 motor with a pad mass of 22.9 kg: Initial thrust-to-weight ratio = 1550 N / (22.9 × 9.81) = **6.9:1**. This comfortably exceeds the NFPA 1127 minimum of 3:1 average and the typical TAP expectation of 5:1 initial. Rail departure velocity on a 3 m rail is 22.6 m/s, well above the recommended minimum of 15 m/s for stable flight off the rail.
 
-The stability margin at rail departure is 1.45 calibres. While this is below the often-cited guideline of 1.5 calibres, it is above the absolute minimum of 1.0 calibre and the rocket accelerates quickly off the rail at 22.6 m/s. The margin increases rapidly with velocity as the CP moves aft, reaching 3.3 calibres by motor burnout. Combined with the high rail departure velocity and the strong thrust-to-weight ratio, this provides confident stable flight from the moment of rail departure.
+## Stability Margin Analysis
+
+The stability margin of this rocket varies significantly through the flight envelope. Because the Barrowman CP position is velocity-dependent and the CG shifts forward as propellant is consumed, a single static margin figure does not adequately characterise the rocket's stability behaviour. The table below, extracted from the OpenRocket M1550 simulation, shows the stability margin at key points throughout the flight.
+
+| Flight phase | Time (s) | Velocity (m/s) | CP (mm) | CG (mm) | Margin (cal) |
+|:---|---:|---:|---:|---:|---:|
+| Rail departure | 0.33 | 22.6 | 2155 | 1930 | 1.45 |
+| Early burn (Mach 0.21) | 0.99 | 71.1 | 2319 | 1912 | 2.63 |
+| Mid burn (Mach 0.42) | 2.00 | 141.7 | 2346 | 1883 | 2.99 |
+| Late burn (Mach 0.60) | 3.01 | 202.7 | 2360 | 1855 | 3.26 |
+| Burnout (Mach 0.63) | 3.68 | 210.7 | 2365 | 1847 | 3.34 |
+| Coast (mid-flight) | 10.0 | 116.8 | 2346 | 1847 | 3.22 |
+| Near apogee | 20.0 | 18.2 | 2265 | 1847 | 2.70 |
+
+All CP and CG positions are measured from the nose tip. The airframe diameter (reference length) is 155 mm.
+
+The increase from 1.45 calibres at rail departure to 3.34 calibres at burnout is driven by two concurrent effects: the Barrowman CP moves aft by 210 mm as velocity increases, and the CG shifts forward by 83 mm as 5.6 kg of propellant is consumed. During coast, the margin remains above 3.2 calibres until the rocket decelerates below approximately 50 m/s near apogee.
+
+### Rail Departure Stability
+
+The minimum stability margin occurs at rail departure: 1.45 calibres at 22.6 m/s. While this is below the commonly cited guideline of 1.5 calibres, it is above the absolute minimum of 1.0 calibre. The margin increases rapidly with velocity, passing 1.5 calibres within 15 milliseconds of rail departure and reaching 1.9 calibres by 0.5 seconds into the flight. Combined with the rail departure velocity of 22.6 m/s (well above the 15 m/s recommended minimum) and the 6.9:1 initial thrust-to-weight ratio, the rocket achieves confident stable flight from the moment it leaves the rail.
+
+### Weathercocking Considerations
+
+The stability margin during coast (3.2 to 3.3 calibres) exceeds the commonly recommended range of 1.5 to 2.5 calibres. This raises a legitimate concern about weathercocking: an overstable rocket acts as a weathervane during the coast phase, turning into the wind rather than following a purely ballistic trajectory. On a windy day, this causes the rocket to arc into the wind after burnout, reducing peak altitude slightly and altering the ground track.
+
+The elevated stability margin is an inherent consequence of the semi-scale Black Brant II fin geometry. The large swept fins, which define the visual character of this design, produce a CP position well aft of the CG. Reducing the fin area to bring the mid-flight margin into the 1.5 to 2.5 calibre range would simultaneously reduce the rail departure margin from 1.45 calibres to below 1.0 calibre. On a 22.9 kg rocket with the CG located 194 cm from the nose tip, this would create a genuine instability risk at the most critical moment of flight. The design therefore accepts a higher-than-ideal coast stability margin as the safer trade-off.
+
+The wind sensitivity analysis (see previous section) confirms that the weathercocking tendency is manageable in practice. Across the tested wind range of 1 to 5 m/s:
+
+- Peak altitude varies by only 25 m (2,103 m to 2,078 m), remaining comfortably within the 2,286 m extended waiver ceiling under all conditions.
+- Ground hit velocity ranges from 4.54 m/s to 6.69 m/s, well below the 10.67 m/s (35 ft/s) TRA limit.
+- The rocket weathercocks into the wind during coast, which has the practical effect of reducing the landing distance from the pad compared to a neutrally stable ballistic trajectory. This is favourable for recovery within the site boundary.
+
+### Launch Day Mitigations
+
+On a windy day, the standard mitigation for weathercocking is to angle the launch rail slightly into the wind (typically 5° to 10°, at the RSO's discretion). This compensates for the tendency of the rocket to arc into the wind during coast, producing a more vertical overall trajectory. The final rail angle will be agreed with the RSO on the day based on observed wind conditions.
+
+### Summary
+
+The stability margin profile of this rocket represents a deliberate design trade-off. The semi-scale fin geometry produces a minimum margin of 1.45 calibres at rail departure (acceptable, given the high rail departure velocity and thrust-to-weight ratio) and a maximum of 3.34 calibres at burnout (higher than ideal, but manageable as confirmed by the wind sensitivity simulations). The practical consequences of the elevated coast margin are limited to modest weathercocking drift, which is predictable, well within site constraints, and mitigable by rail angle adjustment on the day.
 
 # Bill of Materials
 
