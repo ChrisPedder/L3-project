@@ -728,6 +728,38 @@ Finally, a 50 mm long section of the booster tube is removed to use as a switch 
 ![Switch band measurement](../slides/images/switch_band_measurement.png){width=45%}
 ![Switch band cutting](../slides/images/switch_band_cutting.png){width=45%}
 
+## Booster Section Assembly
+
+We now bond-prep the fin/motor tube assembly and the booster body tube, using 240 grit sandpaper, then acetone, then isopropyl alcohol.
+
+![Fin/motor tube assembly bond prep](../slides/images/booster_bond_prep.png){width=45%}
+![Booster tube bond prep](../slides/images/booster_tube_bond_prep.png){width=45%}
+
+We then paint a layer of Proline 4500 inside of the booster tube just below where the top centering ring will go, and slide the assembly partly together.
+
+![Booster tube bonding](../slides/images/booster_tube_bonding.png){width=45%}
+![Booster tube mating](../slides/images/booster_tube_mating.png){width=45%}
+
+With the coupler to the tailcone assembly still exposed, we paint a layer of Proline 4500 onto the coupler tube, and then use tongue depressors to push the booster tube fibreglass away from the coupler to allow for easier mating of the two parts.
+
+![Tailcone coupler bonding](../slides/images/booster_tube_tailcone_bonding.png){width=45%}
+![Tailcone bonding separators](../slides/images/booster_tube_tailcone_bonding_separators.png){width=45%}
+
+Once all sections of the tailcone coupler are coated and separated, we turn the booster assembly on its end, and push the two parts completely together.
+
+![Tailcone bonding complete](../slides/images/booster_tube_tailcone_bonding_complete.png){width=45%}
+![Tailcone mating complete](../slides/images/booster_tube_tailcone_mating_complete.png){width=45%}
+
+Finally, we clean off the excess Proline 4500 with acetone, and check that there is a good bead of epoxy bonding in the top centering ring.
+
+![Tailcone cleaning](../slides/images/booster_tube_tailcone_cleaning.png){width=45%}
+![Tailcone bond check](../slides/images/booster_tube_tailcone_check.png){width=45%}
+
+In order to ensure a good bond to the middle centering ring, small fillets of Proline 4500 are added along the fin joints to provide extra strength and to seal the fin slots. Then, a 5 mm hole is drilled in the airframe, and West Systems epoxy is injected to bond the centre ring, and the back of the top ring in place.
+
+![Fin fillets](../slides/images/booster_tube_fin_fillets.png){width=45%}
+![Epoxy injection](../slides/images/booster_tube_epoxy_injection.png){width=45%}
+
 ## Nose Tip Fabrication
 
 In order to replace the stock aluminium nose tip that came with the kit, we fabricate a replacement with similar dimensions which can fit the end of the nose cone and survive the impact shocks of the nose landing at 5 m/s into the dirt. We chose a forged carbon fibre construction, using a 3D-printed mould which has been treated with mould release to lay up the fibres.
@@ -740,13 +772,15 @@ The fibres are laid up in two lengths — 20 mm carbon and 6 mm carbon for the t
 ![Nose tip — compression moulding](../slides/images/nose_fab_compression.png){width=45%}
 ![Nose tip — excess resin](../slides/images/nose_fab_excess.png){width=45%}
 
-The nose tip is demoulded, and surface imperfections filled with West Systems epoxy with colloidal silica filler, and then drilled and threaded to take the 6 mm stainless steel threaded rod.
+The nose tip is demoulded, and surface imperfections filled with West Systems epoxy with colloidal silica filler.
 
-![Nose tip — drilled and threaded](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
+![Nose tip demoulding](../slides/images/nose_tip_demoulding_1.png){width=45%}
+![Nose tip surface filling](../slides/images/nose_tip_demoulding_1.png){width=45%}
 
-The mounting of the nose tip then carries the closure ring for the nose electronics bay, which is threaded onto the other end of the 6 mm threaded rod.
+The nose tip is drilled and threaded to take the 6 mm stainless steel threaded rod. The mounting of the nose tip then carries the closure ring for the nose electronics bay, which is threaded onto the other end of the 6 mm threaded rod, and then secured with a washer and a wing nut.
 
-![Nose tip — closure ring mounting](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
+![Nose tip drilling and threading](../slides/images/nose_tip_demoulding_1.png){width=45%}
+![Nose tip closure ring mounting](../slides/images/nose_tip_demoulding_1.png){width=45%}
 
 ## Nose Electronics Bay Construction
 
@@ -755,9 +789,51 @@ The nose section of the rocket contains a 75 mm fibreglass tube mounted inside t
 ![Nose inner tube — cut to length](../slides/images/nose_tube_cut.png){width=45%}
 ![Nose inner tube — centering ring bonded](../slides/images/nose_tube_centering_ring.png){width=45%}
 
-The lower centering ring of the nose electronics bay will carry the two U-bolts for recovery, and the lid for the bay therefore needs to be slotted for these to pass through, and have a 6 mm hole drilled in its centre to allow the 6 mm allthread to pass through and hold the tracking electronics in place. These parts are cut on the CNC, and then marked up for holes.
+The lower centering ring of the nose electronics bay will carry the two U-bolts for recovery, and the lid for the bay therefore needs to be slotted for these to pass through, and have a 6 mm hole drilled in its centre to allow the 6 mm allthread to pass through and hold the tracking electronics in place. These parts are cut on the CNC, and then marked up for holes and drilled out.
 
-![Nose bay lower centering ring — CNC cutout](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
+![Nose bay lower centering ring — CNC cutout](../slides/images/nose_tube_centering_ring_bottom.png){width=45%}
+![Nose bay lower centering ring — drilled](../slides/images/nose_tube_centering_ring_drilled.png){width=45%}
+
+The U-bolts are then anchored to the lower centering ring using 8 mm bolts which are held in place with JB-Weld.
+
+![U-bolt mounting 1](../slides/images/nose_tube_centering_ring_ubolt_1.png){width=45%}
+![U-bolt mounting 2](../slides/images/nose_tube_centering_ring_ubolt_2.png){width=45%}
+
+The internal tube with the upper centering ring mounted, and the inside of the nose cone are both bond prepped, and a generous bead of Proline 4500 is placed on the inside of the nose cone where the top of the tube and the centering ring will sit. The whole assembly is then slid into place, and held in the correct location using the coupler and the lower centering ring (which are not yet bonded) until cure.
+
+![Nose ebay mounting 1](../slides/images/nose_tube_ebay_mount_1.png){width=45%}
+![Nose ebay mounting 2](../slides/images/nose_tube_ebay_mount_2.png){width=45%}
+
+Once the Proline has cured, we can then remove the coupler and lower centering ring, bond-prep the bonding surfaces for them, and then bond the coupler into the nose cone, and the lower centering ring into place.
+
+![Nose ebay mounting 3](../slides/images/nose_tube_ebay_mount_3.png){width=45%}
+![Nose ebay mounting 4](../slides/images/nose_tube_ebay_mount_4.png){width=45%}
+
+## Main Electronics Bay Construction
+
+The main electronics bay coupler tube, and the 5 cm section of booster tube are bond prepped with 240 grit sandpaper, then acetone, then isopropyl alcohol. The switch band is secured in the middle of the coupler, leaving a 14 cm shoulder on each end.
+
+![Ebay bond prep](../slides/images/ebay_bond_prep.png){width=45%}
+![Ebay switch band bonding](../slides/images/ebay_switch_band_bond.png){width=45%}
+
+The stepped lids for the electronics bay are created by bonding body tube bulk plates to coupler bulk plates, using the 6 mm central hole to centre them. They are bond prepped in the usual way, and bonded with Proline 4500.
+
+![Ebay lids bonding 1](../slides/images/ebay_lids_bond_1.png){width=45%}
+![Ebay lids bonding 2](../slides/images/ebay_lids_bond_2.png){width=45%}
+
+Once the lids have cured, they are marked up for 8 mm holes to take the stainless steel threaded rods to hold the electronics bay together, and the stainless steel U-bolts for recovery point attachment. The holes are then drilled, and the U-bolts attached and the threads secured with JB-Weld.
+
+![Ebay lids U-bolt 1](../slides/images/ebay_lids_ubolt_1.png){width=45%}
+![Ebay lids U-bolt 2](../slides/images/ebay_lids_ubolt_2.png){width=45%}
+
+The stainless steel 8 mm allthread is then cut to length, and secured through the lower bulkhead using a stopper bolt, two washers and a normal 8 mm bolt, all secured with JB-Weld.
+
+![Ebay allthread 1](../slides/images/ebay_lids_allthread_1.png){width=45%}
+![Ebay allthread 2](../slides/images/ebay_lids_allthread_2.png){width=45%}
+
+The top lid of the electronics bay is secured using two more washers and stainless steel 8 mm wing nuts. The final structural setup of the electronics bay is shown below.
+
+![Ebay final structure](../slides/images/ebay_structure.png){width=50%}
 
 \newpage
 
