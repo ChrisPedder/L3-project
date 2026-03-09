@@ -740,6 +740,14 @@ The fibres are laid up in two lengths — 20 mm carbon and 6 mm carbon for the t
 ![Nose tip — compression moulding](../slides/images/nose_fab_compression.png){width=45%}
 ![Nose tip — excess resin](../slides/images/nose_fab_excess.png){width=45%}
 
+The nose tip is demoulded, and surface imperfections filled with West Systems epoxy with colloidal silica filler, and then drilled and threaded to take the 6 mm stainless steel threaded rod.
+
+![Nose tip — drilled and threaded](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
+
+The mounting of the nose tip then carries the closure ring for the nose electronics bay, which is threaded onto the other end of the 6 mm threaded rod.
+
+![Nose tip — closure ring mounting](../slides/images/nose_tube_centering_ring_bottom.png){width=50%}
+
 ## Nose Electronics Bay Construction
 
 The nose section of the rocket contains a 75 mm fibreglass tube mounted inside the coupler, which houses tracking electronics (Silicdyne Fluctus). We first measure the fibreglass tube length necessary, and then cut to length. We then measure up the location of the top centering ring by placing it inside the nose cone, and bond into place with Proline 4500.

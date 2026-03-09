@@ -270,6 +270,20 @@ The fibres are layed up in two length - 20mm carbon and 6mm carbon for the tip, 
   <img src="images/nose_fab_excess.png" width="300">
 </div>
 
+---
+
+## Nose Tip Fabrication 3
+
+The nose tip is demoulded, and surface imperfections filled with west systems with colloidal silica filler, and then drilled and threaded to take the 6mm stainless steel threaded rod.
+
+<img src="images/nose_tube_centering_ring_bottom.png" width="400" height="480">
+
+---
+
+## Nose Tip Fabrication 4
+
+The mounting of the nose tip then carries the closure ring for the nose electronics bay, which is threaded onto the other end of the 6mm threaded rod 
+<img src="images/nose_tube_centering_ring_bottom.png" width="400" height="480">
 
 ---
 
