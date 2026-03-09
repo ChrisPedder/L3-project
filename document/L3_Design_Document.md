@@ -73,7 +73,7 @@ Note: The Fluctus is capable of firing ejection charges and was used as a backup
 
 ## Wiring Diagram
 
-![Recovery electronics wiring schematic](images/wiring_diagram.png){width=90%}
+![Recovery electronics wiring schematic](images/wiring_diagram.jpg){width=90%}
 
 # Recovery Devices
 
@@ -117,7 +117,7 @@ The main parachute descent rate of 4.32 m/s (14.2 ft/s) is comfortably below the
 
 ## Parachute Deployment Flow
 
-![Parachute deployment sequence](images/deployment_flow_frame.png){width=90%}
+![Parachute deployment sequence](images/deployment_flow_frame.jpg){width=90%}
 
 [View animated deployment sequence](https://chrispedder.github.io/L3-project/document/images/deployment_flow.gif)
 
@@ -323,13 +323,13 @@ The following dimensioned drawing shows the overall layout of the rocket, includ
 
 **Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
 
-![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100% angle=90}
+![General arrangement drawing — dimensioned](images/rocket_profile.jpg){width=100% angle=90}
 
 ## Fins
 
 Keeping with the semi-scale design, the fins are copies of the Black Brant II sounding rocket fins, including a dropped section to follow the contour of the tail cone. The dimensioned fin profile below shows the freeform fin geometry with all vertex coordinates, root chord (422 mm), sweep (355 mm), tip chord (152 mm), and span. Material is 5 mm G10 fibreglass plate; all dimensions are in millimetres.
 
-![Fin profile — dimensioned](images/fin_profile.png){width=90%}
+![Fin profile — dimensioned](images/fin_profile.jpg){width=90%}
 
 Because of the backswept shape of the fins, which places them behind the tailcone, they are exposed to the landing force of the rocket at impact. The fins themselves are 5 mm thick G10 fibreglass, and so comfortably able to survive this impact, and similarly, if the force of the landing is transferred to the body tube by sufficiently large-radius fin fillets, it will be adequately dissipated. The weak link in this setup is the fin fillets themselves, which are subject to torsional forces which may crack them if they are not sufficiently strong.
 
@@ -435,11 +435,11 @@ Given these conservatisms and the subsonic flight regime, the fins are considere
 
 ## Full Rocket (No Motor)
 
-![OpenRocket model — no motor](images/or_no_motor.png){width=100%}
+![OpenRocket model — no motor](images/or_no_motor.jpg){width=100%}
 
 ## Full Rocket (With M1550 Motor)
 
-![OpenRocket model — with M1550 motor](images/or_with_motor.png){width=100%}
+![OpenRocket model — with M1550 motor](images/or_with_motor.jpg){width=100%}
 
 # Flight Profiles
 
@@ -468,11 +468,11 @@ Altitude varies by only 25 m across the wind range, confirming that the rocket c
 
 ## Vertical Motion (M1550, 5 m/s wind)
 
-![Altitude vs time — M1550](images/vertical_flight_profile.png){width=70%}
+![Altitude vs time — M1550](images/vertical_flight_profile.jpg){width=70%}
 
 ## Ground Track (M1550, 5 m/s wind)
 
-![Ground track — M1550](images/ground_track_profile.png){width=70%}
+![Ground track — M1550](images/ground_track_profile.jpg){width=70%}
 
 # Ejection Charges
 
@@ -624,216 +624,222 @@ We are using an Aeropack 98mm motor retainer, with a 75mm adaptor for this proje
 
 Once the CNC has finished, we are left with a tabbed cutout, which needs to be cut free of the matrix and sanded.
 
-![Motor retainer centering ring — CNC cutout](../slides/images/motor_retainer_cnc_1.png){width=50%}
+![Motor retainer centering ring — CNC cutout](../slides/images/motor_retainer_cnc_1.jpg){width=50%}
 
 After sanding and cleaning, the motor retainer is then mounted to the centering ring using the nuts and bolts provided. These are locked in place with a dab of cyanoacrylate glue (they will be glued over afterwards with Proline 4500).
 
-![Motor retainer mounted — side view](../slides/images/motor_retainer_ring_vertical.png){width=45%}
-![Motor retainer mounted — top view](../slides/images/motor_retainer_ring_above.png){width=45%}
+![Motor retainer mounted — side view](../slides/images/motor_retainer_ring_vertical.jpg){width=45%}
+![Motor retainer mounted — top view](../slides/images/motor_retainer_ring_above.jpg){width=45%}
 
 ## Motor Tube Construction
 
 The end of the 98mm fibreglass motor tube is scuffed with 240-grit sandpaper, cleaned with acetone, and wiped with isopropyl alcohol to remove residue.
 
-![Motor tube cleaned and prepped](../slides/images/motor_tube_cleaned.png){width=50%}
+![Motor tube cleaned and prepped](../slides/images/motor_tube_cleaned.jpg){width=50%}
 
 The tube is then marked for fin locations, so that we can accurately align the fins when building the motor tube and fin module outside of the main body tube.
 
-![Motor tube marked for fin locations](../slides/images/motor_tube_fin_marked.png){width=50%}
+![Motor tube marked for fin locations](../slides/images/motor_tube_fin_marked.jpg){width=50%}
 
 The tube is then re-bond-prepped and prepared with Proline 4500 epoxy.
 
-![Proline 4500 applied to motor tube](../slides/images/motor_tube_proline.png){width=50%}
+![Proline 4500 applied to motor tube](../slides/images/motor_tube_proline.jpg){width=50%}
 
 The boat tail centering ring and the motor retainer centering ring are then glued in place using Proline 4500, and allowed to set overnight.
 
-![Centering rings glued to motor tube](../slides/images/motor_tube_centering_ring_glue.png){width=50%}
+![Centering rings glued to motor tube](../slides/images/motor_tube_centering_ring_glue.jpg){width=50%}
 
 ## Boat Tail Assembly
 
 The boat tail coupler needs to be slotted where the fins will pass through. The slots are marked using the fin slots in the body tube, and then cut out with a Dremel.
 
-![Boat tail coupler slotted for fins](../slides/images/boat_tail_slotted.png){width=50%}
+![Boat tail coupler slotted for fins](../slides/images/boat_tail_slotted.jpg){width=50%}
 
 The motor mount with the retainer and centering ring is then glued into the bond-prepped boat tail, and held in place using the coupler whilst the Proline 4500 cures.
 
-![Boat tail centering ring gluing — view 1](../slides/images/boat_tail_centering_ring_glue_1.png){width=45%}
-![Boat tail centering ring gluing — view 2](../slides/images/boat_tail_centering_ring_glue_2.png){width=45%}
+![Boat tail centering ring gluing — view 1](../slides/images/boat_tail_centering_ring_glue_1.jpg){width=45%}
+![Boat tail centering ring gluing — view 2](../slides/images/boat_tail_centering_ring_glue_2.jpg){width=45%}
 
 Once the epoxy has cured, the coupler is removed and bond-prepped, and the motor tube also prepped for bonding.
 
-![Motor tube centering ring — bond prep](../slides/images/motor_tube_centering_ring_prep.png){width=45%}
-![Motor tube — bond prep](../slides/images/motor_tube_prep.png){width=45%}
+![Motor tube centering ring — bond prep](../slides/images/motor_tube_centering_ring_prep.jpg){width=45%}
+![Motor tube — bond prep](../slides/images/motor_tube_prep.jpg){width=45%}
 
 Proline 4500 is painted on the inside of the coupler, and on the motor tube, and the two parts are mated for bonding.
 
-![Motor tube gluing](../slides/images/motor_tube_gluing.png){width=45%}
-![Motor tube coupler curing](../slides/images/motor_tube_coupler_curing.png){width=45%}
+![Motor tube gluing](../slides/images/motor_tube_gluing.jpg){width=45%}
+![Motor tube coupler curing](../slides/images/motor_tube_coupler_curing.jpg){width=45%}
 
 ## Fin Attachment
 
 3D-printed parts are used to hold the fins in place during the curing process and to maintain alignment. The root edges of the fins are bonded to the motor tube and the boat tail using Proline 4500. The fins are checked for alignment in the jig using a digital plumb line.
 
-![Fins in 3D-printed alignment jig](../slides/images/fin_attachent.png){width=50%}
+![Fins in 3D-printed alignment jig](../slides/images/fin_attachent.jpg){width=50%}
 
 Once the attachment to the motor tube has cured, fillets are applied to the joint between the motor tube and the fins. These fillets strengthen the base bond to the motor tube before the Kevlar cloth is applied.
 
-![Fin fillets — in progress](../slides/images/fin_fillets.png){width=45%}
-![Fin fillets — completed](../slides/images/fin_fillets_finished.png){width=45%}
+![Fin fillets — in progress](../slides/images/fin_fillets.jpg){width=45%}
+![Fin fillets — completed](../slides/images/fin_fillets_finished.jpg){width=45%}
 
 Next, we mount the middle centering ring, and use this to strengthen the bond to the fins. We bond-prep the motor tube, put a thick bead of Proline 4500 on the prepped section, and then apply a thick fillet of 4500 on both sides of the centering ring and on the joints to the fins.
 
-![Middle centering ring — bottom view](../slides/images/middle_centering_ring_bottom.png){width=45%}
-![Middle centering ring — top view](../slides/images/middle_centering_ring_top.png){width=45%}
+![Middle centering ring — bottom view](../slides/images/middle_centering_ring_bottom.jpg){width=45%}
+![Middle centering ring — top view](../slides/images/middle_centering_ring_top.jpg){width=45%}
 
 ## Top Centering Ring and Recovery Attachment
 
 We prepare the top centering ring for attachment of the two U-bolts. Four 8 mm holes are drilled into the fibreglass at the required spacing.
 
-![Top centering ring — U-bolt holes drilled](../slides/images/top_centering_ring_holes.png){width=50%}
+![Top centering ring — U-bolt holes drilled](../slides/images/top_centering_ring_holes.jpg){width=50%}
 
 We mount the U-bolts through the holes, with 16 mm washers on each side, and secure all the bolts with JB-Weld.
 
-![U-bolts mounted — top view](../slides/images/booster-ubolt-top.png){width=45%}
-![U-bolts mounted — bottom view](../slides/images/booster-ubolt-bottom.png){width=45%}
+![U-bolts mounted — top view](../slides/images/booster-ubolt-top.jpg){width=45%}
+![U-bolts mounted — bottom view](../slides/images/booster-ubolt-bottom.jpg){width=45%}
 
 Finally, we bond-prep a band on the motor tube 1 cm from the top, and secure the top centering ring in place with Proline 4500.
 
-![Top centering ring glued — top view](../slides/images/top-centering-ring-glue-top.png){width=45%}
-![Top centering ring glued — bottom view](../slides/images/top-centering-ring-glue-bottom.png){width=45%}
+![Top centering ring glued — top view](../slides/images/top-centering-ring-glue-top.jpg){width=45%}
+![Top centering ring glued — bottom view](../slides/images/top-centering-ring-glue-bottom.jpg){width=45%}
 
 ## Fin Attachment Strengthening
 
 In order to further strengthen the attachment of the fins (which are large and backswept, leading to significant landing forces), they are laminated to the motor tube with 100 g/m² Kevlar cloth. Kevlar is chosen for its impact resistance and ability to distribute shocks. The surface is first bond-prepped with 240-grit sandpaper, then acetone, then IPA. We use West System 105/205 for this lamination.
 
-![Kevlar lamination — first fin](../slides/images/fin_root_kevlar_1.png){width=45%}
-![Kevlar lamination — layup detail](../slides/images/fin_root_kevlar_2.png){width=45%}
+![Kevlar lamination — first fin](../slides/images/fin_root_kevlar_1.jpg){width=45%}
+![Kevlar lamination — layup detail](../slides/images/fin_root_kevlar_2.jpg){width=45%}
 
 The process is repeated for subsequent fins and then left to cure.
 
-![Kevlar lamination — subsequent fins](../slides/images/fin_root_kevlar_3.png){width=45%}
-![Kevlar lamination — curing](../slides/images/fin_root_kevlar_4.png){width=45%}
+![Kevlar lamination — subsequent fins](../slides/images/fin_root_kevlar_3.jpg){width=45%}
+![Kevlar lamination — curing](../slides/images/fin_root_kevlar_4.jpg){width=45%}
 
 ## Booster Tube Preparation
 
 In order to fit the motor mount assembly into the booster airframe, we need to open the bottom of the slots up to be able to slide the fins in. First, we carefully mark the fin slots, then use an iron straight edge taped to the tubing to keep the slots straight.
 
-![Fin slots marked on booster tube](../slides/images/cutting-fin-slots.png){width=45%}
-![Fin slots being cut with Dremel](../slides/images/cutting-fin-slots-2.png){width=45%}
+![Fin slots marked on booster tube](../slides/images/cutting-fin-slots.jpg){width=45%}
+![Fin slots being cut with Dremel](../slides/images/cutting-fin-slots-2.jpg){width=45%}
 
 This required steady nerves, a respirator, and a Dremel with a diamond cutoff wheel.
 
 Finally, a 50 mm long section of the booster tube is removed to use as a switch band for the electronics bay.
 
-![Switch band measurement](../slides/images/switch_band_measurement.png){width=45%}
-![Switch band cutting](../slides/images/switch_band_cutting.png){width=45%}
+![Switch band measurement](../slides/images/switch_band_measurement.jpg){width=45%}
+![Switch band cutting](../slides/images/switch_band_cutting.jpg){width=45%}
 
 ## Booster Section Assembly
 
 We now bond-prep the fin/motor tube assembly and the booster body tube, using 240 grit sandpaper, then acetone, then isopropyl alcohol.
 
-![Fin/motor tube assembly bond prep](../slides/images/booster_bond_prep.png){width=45%}
-![Booster tube bond prep](../slides/images/booster_tube_bond_prep.png){width=45%}
+![Fin/motor tube assembly bond prep](../slides/images/booster_bond_prep.jpg){width=45%}
+![Booster tube bond prep](../slides/images/booster_tube_bond_prep.jpg){width=45%}
 
 We then paint a layer of Proline 4500 inside of the booster tube just below where the top centering ring will go, and slide the assembly partly together.
 
-![Booster tube bonding](../slides/images/booster_tube_bonding.png){width=45%}
-![Booster tube mating](../slides/images/booster_tube_mating.png){width=45%}
+![Booster tube bonding](../slides/images/booster_tube_bonding.jpg){width=45%}
+![Booster tube mating](../slides/images/booster_tube_mating.jpg){width=45%}
 
 With the coupler to the tailcone assembly still exposed, we paint a layer of Proline 4500 onto the coupler tube, and then use tongue depressors to push the booster tube fibreglass away from the coupler to allow for easier mating of the two parts.
 
-![Tailcone coupler bonding](../slides/images/booster_tube_tailcone_bonding.png){width=45%}
-![Tailcone bonding separators](../slides/images/booster_tube_tailcone_bonding_separators.png){width=45%}
+![Tailcone coupler bonding](../slides/images/booster_tube_tailcone_bonding.jpg){width=45%}
+![Tailcone bonding separators](../slides/images/booster_tube_tailcone_bonding_separators.jpg){width=45%}
 
 Once all sections of the tailcone coupler are coated and separated, we turn the booster assembly on its end, and push the two parts completely together.
 
-![Tailcone bonding complete](../slides/images/booster_tube_tailcone_bonding_complete.png){width=45%}
-![Tailcone mating complete](../slides/images/booster_tube_tailcone_mating_complete.png){width=45%}
+![Tailcone bonding complete](../slides/images/booster_tube_tailcone_bonding_complete.jpg){width=45%}
+![Tailcone mating complete](../slides/images/booster_tube_tailcone_mating_complete.jpg){width=45%}
 
 Finally, we clean off the excess Proline 4500 with acetone, and check that there is a good bead of epoxy bonding in the top centering ring.
 
-![Tailcone cleaning](../slides/images/booster_tube_tailcone_cleaning.png){width=45%}
-![Tailcone bond check](../slides/images/booster_tube_tailcone_check.png){width=45%}
+![Tailcone cleaning](../slides/images/booster_tube_tailcone_cleaning.jpg){width=45%}
+![Tailcone bond check](../slides/images/booster_tube_tailcone_check.jpg){width=45%}
 
 In order to ensure a good bond to the middle centering ring, small fillets of Proline 4500 are added along the fin joints to provide extra strength and to seal the fin slots. Then, a 5 mm hole is drilled in the airframe, and West Systems epoxy is injected to bond the centre ring, and the back of the top ring in place.
 
-![Fin fillets](../slides/images/booster_tube_fin_fillets.png){width=45%}
-![Epoxy injection](../slides/images/booster_tube_epoxy_injection.png){width=45%}
+![Fin fillets](../slides/images/booster_tube_fin_fillets.jpg){width=45%}
+![Epoxy injection](../slides/images/booster_tube_epoxy_injection.jpg){width=45%}
 
 ## Nose Tip Fabrication
 
 In order to replace the stock aluminium nose tip that came with the kit, we fabricate a replacement with similar dimensions which can fit the end of the nose cone and survive the impact shocks of the nose landing at 5 m/s into the dirt. We chose a forged carbon fibre construction, using a 3D-printed mould which has been treated with mould release to lay up the fibres.
 
-![Nose tip mould — 3D print](../slides/images/nose_fab_1.png){width=45%}
-![Nose tip mould — fibre layup](../slides/images/nose_fab_2.png){width=45%}
+![Nose tip mould — 3D print](../slides/images/nose_fab_1.jpg){width=45%}
+![Nose tip mould — fibre layup](../slides/images/nose_fab_2.jpg){width=45%}
 
 The fibres are laid up in two lengths — 20 mm carbon and 6 mm carbon for the tip and the curve around the shoulder. We use slow-setting EasyComposites IN2 infusion resin as the matrix, fill the mould, and then compress with a G-clamp whilst the resin sets (24 hrs) to remove the excess.
 
-![Nose tip — compression moulding](../slides/images/nose_fab_compression.png){width=45%}
-![Nose tip — excess resin](../slides/images/nose_fab_excess.png){width=45%}
+![Nose tip — compression moulding](../slides/images/nose_fab_compression.jpg){width=45%}
+![Nose tip — excess resin](../slides/images/nose_fab_excess.jpg){width=45%}
 
 The nose tip is demoulded, and surface imperfections filled with West Systems epoxy with colloidal silica filler.
 
-![Nose tip demoulding](../slides/images/nose_tip_demoulding_1.png){width=45%}
-![Nose tip surface filling](../slides/images/nose_tip_demoulding_1.png){width=45%}
+![Nose tip demoulding](../slides/images/nose_tip_demoulding_1.jpg){width=45%}
+![Nose tip surface filling](../slides/images/nose_tip_demoulding_1.jpg){width=45%}
 
 The nose tip is drilled and threaded to take the 6 mm stainless steel threaded rod. The mounting of the nose tip then carries the closure ring for the nose electronics bay, which is threaded onto the other end of the 6 mm threaded rod, and then secured with a washer and a wing nut.
 
-![Nose tip drilling and threading](../slides/images/nose_tip_demoulding_1.png){width=45%}
-![Nose tip closure ring mounting](../slides/images/nose_tip_demoulding_1.png){width=45%}
+![Nose tip threaded with closure ring](../slides/images/nose_tip_threaded.jpg){width=50%}
 
 ## Nose Electronics Bay Construction
 
 The nose section of the rocket contains a 75 mm fibreglass tube mounted inside the coupler, which houses tracking electronics (Silicdyne Fluctus). We first measure the fibreglass tube length necessary, and then cut to length. We then measure up the location of the top centering ring by placing it inside the nose cone, and bond into place with Proline 4500.
 
-![Nose inner tube — cut to length](../slides/images/nose_tube_cut.png){width=45%}
-![Nose inner tube — centering ring bonded](../slides/images/nose_tube_centering_ring.png){width=45%}
+![Nose inner tube — cut to length](../slides/images/nose_tube_cut.jpg){width=45%}
+![Nose inner tube — centering ring bonded](../slides/images/nose_tube_centering_ring.jpg){width=45%}
 
 The lower centering ring of the nose electronics bay will carry the two U-bolts for recovery, and the lid for the bay therefore needs to be slotted for these to pass through, and have a 6 mm hole drilled in its centre to allow the 6 mm allthread to pass through and hold the tracking electronics in place. These parts are cut on the CNC, and then marked up for holes and drilled out.
 
-![Nose bay lower centering ring — CNC cutout](../slides/images/nose_tube_centering_ring_bottom.png){width=45%}
-![Nose bay lower centering ring — drilled](../slides/images/nose_tube_centering_ring_drilled.png){width=45%}
+![Nose bay lower centering ring — CNC cutout](../slides/images/nose_tube_centering_ring_bottom.jpg){width=45%}
+![Nose bay lower centering ring — drilled](../slides/images/nose_tube_centering_ring_drilled.jpg){width=45%}
 
 The U-bolts are then anchored to the lower centering ring using 8 mm bolts which are held in place with JB-Weld.
 
-![U-bolt mounting 1](../slides/images/nose_tube_centering_ring_ubolt_1.png){width=45%}
-![U-bolt mounting 2](../slides/images/nose_tube_centering_ring_ubolt_2.png){width=45%}
+![U-bolt mounting 1](../slides/images/nose_tube_centering_ring_ubolt_1.jpg){width=45%}
+![U-bolt mounting 2](../slides/images/nose_tube_centering_ring_ubolt_2.jpg){width=45%}
 
 The internal tube with the upper centering ring mounted, and the inside of the nose cone are both bond prepped, and a generous bead of Proline 4500 is placed on the inside of the nose cone where the top of the tube and the centering ring will sit. The whole assembly is then slid into place, and held in the correct location using the coupler and the lower centering ring (which are not yet bonded) until cure.
 
-![Nose ebay mounting 1](../slides/images/nose_tube_ebay_mount_1.png){width=45%}
-![Nose ebay mounting 2](../slides/images/nose_tube_ebay_mount_2.png){width=45%}
+![Nose ebay mounting 1](../slides/images/nose_tube_ebay_mount_1.jpg){width=45%}
+![Nose ebay mounting 2](../slides/images/nose_tube_ebay_mount_2.jpg){width=45%}
 
 Once the Proline has cured, we can then remove the coupler and lower centering ring, bond-prep the bonding surfaces for them, and then bond the coupler into the nose cone, and the lower centering ring into place.
 
-![Nose ebay mounting 3](../slides/images/nose_tube_ebay_mount_3.png){width=45%}
-![Nose ebay mounting 4](../slides/images/nose_tube_ebay_mount_4.png){width=45%}
+![Nose ebay mounting 3](../slides/images/nose_tube_ebay_mount_3.jpg){width=45%}
+![Nose ebay mounting 4](../slides/images/nose_tube_ebay_mount_4.jpg){width=45%}
+
+## Complete Nose Assembly
+
+The completed nose assembly is shown below.
+
+![Nose assembly end view](../slides/images/nose_tube_assembly_end.jpg){width=45%}
+![Complete nose assembly](../slides/images/nose_assembly_complete.jpg){width=45%}
 
 ## Main Electronics Bay Construction
 
 The main electronics bay coupler tube, and the 5 cm section of booster tube are bond prepped with 240 grit sandpaper, then acetone, then isopropyl alcohol. The switch band is secured in the middle of the coupler, leaving a 14 cm shoulder on each end.
 
-![Ebay bond prep](../slides/images/ebay_bond_prep.png){width=45%}
-![Ebay switch band bonding](../slides/images/ebay_switch_band_bond.png){width=45%}
+![Ebay bond prep](../slides/images/ebay_bond_prep.jpg){width=45%}
+![Ebay switch band bonding](../slides/images/ebay_switch_band_bond.jpg){width=45%}
 
 The stepped lids for the electronics bay are created by bonding body tube bulk plates to coupler bulk plates, using the 6 mm central hole to centre them. They are bond prepped in the usual way, and bonded with Proline 4500.
 
-![Ebay lids bonding 1](../slides/images/ebay_lids_bond_1.png){width=45%}
-![Ebay lids bonding 2](../slides/images/ebay_lids_bond_2.png){width=45%}
+![Ebay lids bonding 1](../slides/images/ebay_lids_bond_1.jpg){width=45%}
+![Ebay lids bonding 2](../slides/images/ebay_lids_bond_2.jpg){width=45%}
 
 Once the lids have cured, they are marked up for 8 mm holes to take the stainless steel threaded rods to hold the electronics bay together, and the stainless steel U-bolts for recovery point attachment. The holes are then drilled, and the U-bolts attached and the threads secured with JB-Weld.
 
-![Ebay lids U-bolt 1](../slides/images/ebay_lids_ubolt_1.png){width=45%}
-![Ebay lids U-bolt 2](../slides/images/ebay_lids_ubolt_2.png){width=45%}
+![Ebay lids U-bolt 1](../slides/images/ebay_lids_ubolt_1.jpg){width=45%}
+![Ebay lids U-bolt 2](../slides/images/ebay_lids_ubolt_2.jpg){width=45%}
 
 The stainless steel 8 mm allthread is then cut to length, and secured through the lower bulkhead using a stopper bolt, two washers and a normal 8 mm bolt, all secured with JB-Weld.
 
-![Ebay allthread 1](../slides/images/ebay_lids_allthread_1.png){width=45%}
-![Ebay allthread 2](../slides/images/ebay_lids_allthread_2.png){width=45%}
+![Ebay allthread 1](../slides/images/ebay_lids_allthread_1.jpg){width=45%}
+![Ebay allthread 2](../slides/images/ebay_lids_allthread_2.jpg){width=45%}
 
 The top lid of the electronics bay is secured using two more washers and stainless steel 8 mm wing nuts. The final structural setup of the electronics bay is shown below.
 
-![Ebay final structure](../slides/images/ebay_structure.png){width=50%}
+![Ebay final structure](../slides/images/ebay_structure.jpg){width=50%}
 
 \newpage
 

@@ -39,7 +39,7 @@ jobs:
       - name: Compress build photos for PDF embedding
         run: |
           mkdir -p /tmp/compressed-slides
-          for img in slides/images/*.png; do
+          for img in slides/images/*.{png,jpg,jpeg}; do
             [ -f "$img" ] || continue
             filename=$(basename "$img")
             convert "$img" -resize '1200x1200>' -quality 85 "/tmp/compressed-slides/$filename"
