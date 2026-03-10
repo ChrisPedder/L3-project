@@ -141,6 +141,33 @@ body {
   mix-blend-mode: multiply;
 }
 
+/* ---------- PDF.js annotation layer ---------- */
+/* Renders clickable link regions over the canvas so that hyperlinks
+   embedded in the PDF (e.g. URLs added by LaTeX/Pandoc) are interactive. */
+
+.annotation-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;           /* above text-layer (z-index: 2) */
+  overflow: hidden;
+  pointer-events: none;  /* pass clicks through except on links */
+}
+
+.annotation-layer a {
+  pointer-events: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+.annotation-layer a:hover {
+  opacity: 1;
+  background: rgba(52, 152, 219, 0.12);
+  border-radius: 2px;
+}
+
 /* ---------- PDF list (index page) ---------- */
 
 .pdf-list {
