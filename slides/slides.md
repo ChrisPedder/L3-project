@@ -316,6 +316,17 @@ In order to ensure a good bond to the middle centering ring, small fillets of pr
 
 ---
 
+## Booster Section Assembly 7
+
+To strengthen the fin joints further and reduce the risk of cracked fillets, we first layer a strip of west-systems infused kevlar over the fin root bond to absorb oscillations and impact energy, and then lay a 2cm radius fillet of west systems thickened with colloidal silica over the top whilst the earlier epoxy is still "green".
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/fin_fillet_kevlar.jpg" width="300">
+  <img src="images/fin_fillet_west.jpg" width="300">
+</div>
+
+---
+
 ## Nose Tip Fabrication 1
 
 In order to replace the stock aluminium nose tip that came with the kit, we need to fabricate something with similar dimension which can fit the end of the nose cone, and is able to survive the impact shocks of the nose landing at 5m/s into the dirt. We chose a forged carbon fibre construction, using a 3d printed mould which has been treated with mould release to lay up the fibres.
