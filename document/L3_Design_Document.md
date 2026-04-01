@@ -73,7 +73,7 @@ Note: The Fluctus is capable of firing ejection charges and was used as a backup
 
 ## Wiring Diagram
 
-![Recovery electronics wiring schematic](images/wiring_diagram.jpg){width=90%}
+![Recovery electronics wiring schematic](images/wiring_diagram.png){width=90%}
 
 # Recovery Devices
 
@@ -117,7 +117,7 @@ The main parachute descent rate of 4.32 m/s (14.2 ft/s) is comfortably below the
 
 ## Parachute Deployment Flow
 
-![Parachute deployment sequence](images/deployment_flow_frame.jpg){width=90%}
+![Parachute deployment sequence](images/deployment_flow_frame.png){width=90%}
 
 [View animated deployment sequence](https://chrispedder.github.io/L3-project/document/images/deployment_flow.gif)
 
@@ -339,13 +339,14 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 # Modifications from Stock Kit
 
-The stock Black Brant kit comes with an aluminium nose tip, which can be flown at the Prefect's discretion under Tripoli rules, but can cause some worries. In order to mitigate this, a 3D-printed, fibreglass-laminated alternative can be fabricated.
+The stock Black Brant kit comes with an aluminium nose tip, which can be flown at the Prefect's discretion under Tripoli rules, but can cause some worries. In order to mitigate this, a forged compressed carbon fibre alternative has been fabricated.
 
-Two 3 mm thick G10 fibreglass discs form the mounting points for the ¼" threaded rod to hold the rest of the nose together. These plates mount inside and outside of the nose cone, and are secured with steel washers and ¼" locking nuts. The 3D-printed nose tip is printed in ABS and undersized such that 2 layers of 150 g/m² fibreglass can be laid up on top of it to bring it up to the correct size.
+A mould was 3D-printed in ABS and treated with mould release. Chopped carbon fibres (20 mm and 6 mm lengths) were laid up in the mould with slow-setting EasyComposites IN2 infusion resin, then compressed with a G-clamp during the 24-hour cure to remove excess resin and consolidate the part. After demoulding, surface imperfections were filled with West Systems epoxy thickened with colloidal silica.
 
-A test version has been fabricated in ABS for validation.
+The nose tip is drilled and threaded to accept a 6 mm stainless steel threaded rod, which runs the full length of the nose cone and provides the primary structural connection for the nose assembly. The forged carbon tip carries the closure ring for the nose electronics bay on the other end of the threaded rod, secured with a washer and wing nut.
 
-![3D-printed ABS nose tip test piece](images/nose_tip_test.jpg){width=40%}
+![Nose tip mould with carbon fibre layup](../slides/images/nose_fab_2.jpg){width=45%}
+![Forged carbon nose tip — threaded with closure ring](../slides/images/nose_tip_threaded.jpg){width=45%}
 
 # Simulations and Designs
 
@@ -355,13 +356,13 @@ The following dimensioned drawing shows the overall layout of the rocket, includ
 
 **Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
 
-![General arrangement drawing — dimensioned](images/rocket_profile.jpg){width=100% angle=90}
+![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100% angle=90}
 
 ## Fins
 
 Keeping with the semi-scale design, the fins are copies of the Black Brant II sounding rocket fins, including a dropped section to follow the contour of the tail cone. The dimensioned fin profile below shows the freeform fin geometry with all vertex coordinates, root chord (422 mm), sweep (355 mm), tip chord (152 mm), and span. Material is 5 mm G10 fibreglass plate; all dimensions are in millimetres.
 
-![Fin profile — dimensioned](images/fin_profile.jpg){width=90%}
+![Fin profile — dimensioned](images/fin_profile.png){width=90%}
 
 Because of the backswept shape of the fins, which places them behind the tailcone, they are exposed to the landing force of the rocket at impact. The fins themselves are 5 mm thick G10 fibreglass, and so comfortably able to survive this impact, and similarly, if the force of the landing is transferred to the body tube by sufficiently large-radius fin fillets, it will be adequately dissipated. The weak link in this setup is the fin fillets themselves, which are subject to torsional forces which may crack them if they are not sufficiently strong.
 
@@ -467,11 +468,11 @@ Given these conservatisms and the subsonic flight regime, the fins are considere
 
 ## Full Rocket (No Motor)
 
-![OpenRocket model — no motor](images/or_no_motor.jpg){width=100%}
+![OpenRocket model — no motor](images/or_no_motor.png){width=100%}
 
 ## Full Rocket (With M1550 Motor)
 
-![OpenRocket model — with M1550 motor](images/or_with_motor.jpg){width=100%}
+![OpenRocket model — with M1550 motor](images/or_with_motor.png){width=100%}
 
 # Flight Profiles
 
@@ -500,11 +501,11 @@ Altitude varies by only 25 m across the wind range, confirming that the rocket c
 
 ## Vertical Motion (M1550, 5 m/s wind)
 
-![Altitude vs time — M1550](images/vertical_flight_profile.jpg){width=70%}
+![Altitude vs time — M1550](images/vertical_flight_profile.png){width=70%}
 
 ## Ground Track (M1550, 5 m/s wind)
 
-![Ground track — M1550](images/ground_track_profile.jpg){width=70%}
+![Ground track — M1550](images/ground_track_profile.png){width=70%}
 
 # Ejection Charges
 
