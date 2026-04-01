@@ -1,9 +1,13 @@
 name: Deploy Slides to GitHub Pages
 
 on:
-  # Runs on pushes to main branch
+  # Runs on pushes to main branch, but not when the PDF build workflow
+  # will handle deployment (it rebuilds the PDF then deploys itself)
   push:
     branches: ["main"]
+    paths-ignore:
+      - 'document/**'
+      - 'slides/images/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
