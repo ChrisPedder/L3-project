@@ -482,3 +482,49 @@ The stainless steel 8mm all-thread is then cut to length, and secured through th
 The top lid of the ebay is secured using two more washers and stainless steel 8mm wingnuts. The final structural setup of the electronics bay is given in the image below.
 
 <img src="images/ebay_structure.jpg" width="400" height="480">
+
+---
+
+## Main Electronics Sled.
+
+The electronics sled is 3d printed in carbon-reinforced PLA. It is designed to have two cutouts for twist switches, and four cutouts for pull pin (NC) omicron switches for arming/safing of individual ejection charges. The coupler has two 10mm holes, and four 8mm holes drilled through the switch band to allow arming, and to allow for pressure equalisation during ascent. The sled has a 3d printed holder for 2 9V batteries on the reverse.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/main_ebay_bare.jpg" width="300">
+  <img src="images/main_ebay_controls_vents.jpg" width="300">
+</div>
+
+---
+
+## Main Electronics Mounting.
+
+The electronics are then mounted to the sled, wired in place, and then all the connections tested with an ohmmeter to ensure connectivity.
+
+<img src="images/main_ebay_mounted.jpg" width="400" height="480">
+
+---
+
+## Nose Electronics Sled.
+
+The electronics sled for the nose was printed from PETG. It is designed to slide along the 6mm threaded rod in the nose cone, and is epoxied to the fibreglass closure disk. It contains a mount for a 9v battery, and a GPS tracker to aid in finding the rocket.
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="images/nose_tracker_battery_mount.jpg" width="300">
+  <img src="images/nose_tracker_ebay.jpg" width="300">
+</div>
+
+---
+
+## Nose Electronics Activation.
+
+The gps tracker is turned on by means of a twist switch mounted on the bulkhead, which can be switched to the "on" position before final assembly of the rocket.
+
+<img src="images/nose_tracker_switch.jpg" width="400" height="480">
+
+---
+
+## Painting.
+
+The rocket paint scheme selected was the Black Brant Wallops Island test scheme seen on the right in these schemes from Peter Alway.
+
+<img src="images/black_brant_wallops_island.jpg" width="400" height="480">

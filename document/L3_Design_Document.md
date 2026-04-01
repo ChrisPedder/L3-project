@@ -121,6 +121,38 @@ The main parachute descent rate of 4.32 m/s (14.2 ft/s) is comfortably below the
 
 [View animated deployment sequence](https://chrispedder.github.io/L3-project/document/images/deployment_flow.gif)
 
+## Deployment Charges
+
+Black powder charge sizes were calculated using the [Speed Motion Rockets ejection charge calculator](http://speedmotionrockets.com/Spreadsheets.html), based on the internal volume of each compartment and a target pressurisation of 15 psi.
+
+### Drogue Side
+
+- Compartment diameter: 15.5 cm
+- Compartment length: 59 cm
+- Packing fraction: 0.1
+- **Calculated charge: 3.9 g**
+- **Primary charge: 3.9 g**
+- **Backup charge: 5.1 g** (calculated × 1.3)
+
+### Main Side
+
+- Compartment diameter: 15.5 cm
+- Compartment length: 40 cm
+- Packing fraction: 0.9
+- **Calculated charge: 5.0 g**
+- **Primary charge: 5.7 g** (increased from calculated value after ground testing)
+- **Backup charge: 7.4 g** (primary × 1.3)
+
+The main side primary charge was increased from the calculated 5.0 g to 5.7 g following ground testing. The main compartment is tightly packed with the deployment bag, pilot chute, and Nomex protector (packing fraction 0.9), and the additional charge ensures reliable deployment of the bag and pilot chute under these conditions.
+
+### Ground Testing
+
+Both deployment charges were ground tested to verify reliable separation and parachute deployment.
+
+[View drogue ejection charge test](https://chrispedder.github.io/L3-project/slides/videos/drogue_ejection_charge.mp4)
+
+[View main ejection charge test](https://chrispedder.github.io/L3-project/slides/videos/main_ejection_charge.mp4)
+
 # Attachment Points and Harnesses
 
 There are three distinct points in flight where force is exerted on the harnesses and attachment points:
@@ -845,6 +877,38 @@ The stainless steel 8 mm allthread is then cut to length, and secured through th
 The top lid of the electronics bay is secured using two more washers and stainless steel 8 mm wing nuts. The final structural setup of the electronics bay is shown below.
 
 ![Ebay final structure](../slides/images/ebay_structure.jpg){width=50%}
+
+## Main Electronics Sled
+
+The electronics sled is 3D printed in carbon-reinforced PLA. It is designed to have two cutouts for twist switches, and four cutouts for pull pin (NC) omicron switches for arming/safing of individual ejection charges. The coupler has two 10 mm holes and four 8 mm holes drilled through the switch band to allow arming and to allow for pressure equalisation during ascent. The sled has a 3D-printed holder for two 9V batteries on the reverse.
+
+![Main ebay sled — bare](../slides/images/main_ebay_bare.jpg){width=45%}
+![Main ebay — controls and vents](../slides/images/main_ebay_controls_vents.jpg){width=45%}
+
+## Main Electronics Mounting
+
+The electronics are then mounted to the sled, wired in place, and then all the connections tested with an ohmmeter to ensure connectivity.
+
+![Main ebay — electronics mounted](../slides/images/main_ebay_mounted.jpg){width=50%}
+
+## Nose Electronics Sled
+
+The electronics sled for the nose was printed from PETG. It is designed to slide along the 6 mm threaded rod in the nose cone, and is epoxied to the fibreglass closure disk. It contains a mount for a 9V battery and a GPS tracker to aid in finding the rocket.
+
+![Nose tracker — battery mount](../slides/images/nose_tracker_battery_mount.jpg){width=45%}
+![Nose tracker — ebay assembly](../slides/images/nose_tracker_ebay.jpg){width=45%}
+
+## Nose Electronics Activation
+
+The GPS tracker is turned on by means of a twist switch mounted on the bulkhead, which can be switched to the "on" position before final assembly of the rocket.
+
+![Nose tracker — twist switch](../slides/images/nose_tracker_switch.jpg){width=50%}
+
+## Painting
+
+The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
+
+![Black Brant Wallops Island paint scheme](../slides/images/black_brant_wallops_island.jpg){width=50%}
 
 \newpage
 
