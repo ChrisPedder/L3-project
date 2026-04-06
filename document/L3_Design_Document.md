@@ -511,19 +511,19 @@ Altitude varies by only 25 m across the wind range, confirming that the rocket c
 
 ## Drogue
 
-The drogue section of the airframe has a diameter of 15.2 cm, and a length of 65 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **3.65 g**.
+The drogue section of the airframe has a diameter of 15.2 cm, and a length of 65 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **3.8 g**.
 
 **[TO BE COMPLETED ONCE ASSEMBLED]**
 
-From ground testing, we find that a charge size of: **\_\_** g is sufficient. Primary: **\_\_** g. Backup: **\_\_** g.
+From ground testing, we find that a charge size of: **3.8** g is sufficient. Primary: **3.8** g. Backup: **5.0** g.
 
 ## Main
 
-The main section of the airframe has a diameter of 15.2 cm, and a length of 35 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **1.75 g**.
+The main section of the airframe has a diameter of 15.2 cm, and a length of 35 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **5.5 g**.
 
 **[TO BE COMPLETED ONCE ASSEMBLED]**
 
-From ground testing, we find that a charge size of: **\_\_** g is sufficient. Primary: **\_\_** g. Backup: **\_\_** g.
+From ground testing, we find that a charge size of: **5.7** g is sufficient. Primary: **5.7** g. Backup: **7.4** g.
 
 # Thrust-to-Weight and Rail Departure
 
@@ -591,9 +591,9 @@ Ejection charges are sized using the ideal gas law to achieve a target pressure 
 
 $$m = \frac{P \times V}{R \times T \times 3.47}$$
 
-Where $P$ is the target pressure in Pa, $V$ is the volume of the section in cubic metres, $R$ is the specific gas constant, and $T$ is the combustion temperature of black powder (approximately 1739 K). The factor 3.47 accounts for the gas yield of FFFF black powder per gram.
+Where $P$ is the target pressure in Pa, $V$ is the volume of the section in cubic metres, $R$ is the specific gas constant, and $T$ is the combustion temperature of black powder (approximately 1739 K). The factor 3.47 accounts for the gas yield of FFFF black powder per gram. In addition, the calculator on [Speed Motion Rockets](https://Speedmotionrockets.com) was found to be very useful in estimating the required size of the main charge, where the bay is approximately 90% filled with recovery gear.
 
-Backup charges are sized at 1.5× the primary charge mass to ensure reliable separation in the event that the primary charge is insufficient. All charges will be ground-tested before flight, with at least two successful ground ejection tests per section. The ground test procedure is: assemble the section with parachute and harness as for flight, install the charge, fire electrically from a safe distance (minimum 5 m), and verify clean separation with no damage to the airframe or recovery components.
+Backup charges are sized at 1.3× the primary charge mass to ensure reliable separation in the event that the primary charge is insufficient. All charges will be ground-tested before flight, with at least two successful ground ejection tests per section. The ground test procedure is: assemble the section with parachute and harness as for flight, install the charge, fire electrically from a safe distance (minimum 5 m), and verify clean separation with no damage to the airframe or recovery components.
 
 # Safety and Compliance
 
@@ -611,7 +611,7 @@ $$KE = \frac{1}{2} \times 17.25 \times 4.32^2 = 161 \text{ J}$$
 
 In the event of a main parachute deployment failure, the rocket would descend on the drogue parachute alone at approximately 14.4 m/s (47.2 ft/s). This exceeds the 35 ft/s TRA limit and would result in non-certification. However, the dual-redundant electronics and ground-tested ejection charges are designed to minimise the probability of this failure. Under a drogue-only descent from 2,075 m with a 5 m/s crosswind, the estimated drift distance is approximately 714 m, which should remain within the typical ARGOS Cernier waiver radius.
 
-**[TO BE CONFIRMED: verify waiver radius with launch organiser before flight.]**
+**[TO BE CONFIRMED: verify waiver radius with launch organiser before flight - believed to be 3km, with 1.2-1.5km of usable recovery area.]**
 
 ## Waiver Compliance
 
@@ -960,7 +960,7 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 
 ## 4. Field Assembly — Recovery System (Drogue Side)
 
-- [ ] Attach Kevlar harness to electronics bay U-bolt (drogue side) using quick link.
+- [ ] Attach Kevlar harness to electronics bay U-bolt (drogue side) by loop-through on sewn loop.
 - [ ] Attach opposite end of Kevlar harness to tubular nylon shock cord using quick link.
 - [ ] Attach nose cone Y-harness to nose cone U-bolts.
 - [ ] Attach Y-harness to other end of shock cord using quick link.
@@ -971,7 +971,7 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 
 ## 5. Field Assembly — Recovery System (Main Side)
 
-- [ ] Attach Kevlar harness to electronics bay U-bolt (main side) using quick link.
+- [ ] Attach Kevlar harness to electronics bay U-bolt (main side) by loop-through on sewn loop.
 - [ ] Attach opposite end of Kevlar harness to tubular nylon shock cord using quick link.
 - [ ] Attach booster Y-harness to booster centering ring U-bolts.
 - [ ] Attach Y-harness to shock cord using quick link.
@@ -985,15 +985,15 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 ## 6. Field Assembly — Nose Cone
 
 - [ ] Install GPS tracker battery and verify GPS lock (LED indication or app confirmation).
-- [ ] Arm GPS tracker via slide switch on bulkplate.
+- [ ] Arm GPS tracker via turn switch on bulkplate.
 - [ ] Assemble nose cone: insert coupler with tracker bay, secure with ¼" threaded rod and locking nuts.
 - [ ] Verify nose cone tip is secure.
 
 ## 7. Final Assembly
 
 - [ ] Slide electronics bay into booster body tube (main side). Secure with 3× M3 nylon shear pins.
-- [ ] Slide payload tube (with packed drogue) over electronics bay (drogue side). Secure with 3× M3 nylon shear pins.
-- [ ] Insert nose cone coupler into payload tube.
+- [ ] Slide payload tube (with packed main) over electronics bay (main side). Secure with 3× 6-72 machine screws.
+- [ ] Insert nose cone coupler into payload tube, secure with 3x M3 nylon shear pins.
 - [ ] Verify all sections are aligned and shear pins are seated.
 - [ ] Verify CP marking (decal) is visible on airframe at 216 cm from nose tip.
 
@@ -1011,6 +1011,7 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 - [ ] Arm RRC3 via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee drogue, 300 m main).
 - [ ] Arm EasyMini via rotary switch. Listen for startup beep sequence: confirm correct configuration (apogee + 1 s drogue, 270 m main).
 - [ ] Verify both altimeters report e-match continuity on all channels (listen for continuity beep pattern).
+- [ ] Start onboard video recording from Runcam mounted on airframe.
 - [ ] If either altimeter reports no continuity: DISARM BOTH, return to step 3 to diagnose.
 - [ ] Step back from pad. Confirm with TAP/RSO that electronics are armed.
 
