@@ -139,11 +139,11 @@ Black powder charge sizes were calculated using the [Speed Motion Rockets ejecti
 - Compartment diameter: 15.2 cm
 - Compartment length: 40 cm
 - Packing fraction: 0.9
-- **Calculated charge: 5.0 g**
+- **Calculated charge: 5.5 g**
 - **Primary charge: 5.7 g** (increased from calculated value after ground testing)
 - **Backup charge: 7.4 g** (primary × 1.3)
 
-The main side primary charge was increased from the calculated 5.0 g to 5.7 g following ground testing. The main compartment is tightly packed with the deployment bag, pilot chute, and Nomex protector (packing fraction 0.9), and the additional charge ensures reliable deployment of the bag and pilot chute under these conditions.
+The main side primary charge was increased from the calculated 5.5 g to 5.7 g following ground testing. The main compartment is tightly packed with the deployment bag, pilot chute, and Nomex protector (packing fraction 0.9), and the additional charge ensures reliable deployment of the bag and pilot chute under these conditions.
 
 ### Ground Testing
 
@@ -247,7 +247,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 **Booster:** 2× U-bolts, 16 mm steel washers, attached to 3 mm G10 centering ring. Bolt breaking force (peak): 4000 kg. Centering ring breaking force: 5800 kg (on one washer).
 
-**Nose Cone:** ¼" threaded rod (A2-70 stainless steel), attached to 2× ¼" stainless steel locking nuts, locked to 3 mm G10 centering ring. Centering ring breaking force: 5800 kg (on one washer). Bolt breaking force: 1463 kg (UTS 700 MPa × 20.5 mm² tensile stress area). Threaded rod breaking force: 988 kg.
+**Nose Cone:** M6 threaded rod (A2-70 stainless steel), attached to 2× M6 stainless steel locking nuts, locked to 3 mm G10 centering ring. Centering ring breaking force: 5800 kg (on one washer). Bolt breaking force: 1463 kg (UTS 700 MPa × 20.5 mm² tensile stress area). Threaded rod breaking force: 988 kg.
 
 **Electronics Bay:** 2× U-bolts, 16 mm steel washers, attached to G10 bulkplate. Bolt breaking force (peak): 4000 kg. Bulkplate breaking force (peak): 5800 kg (one washer).
 
@@ -310,7 +310,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Coupler tube | 32.8 cm | 14.9 cm | 3.175 mm | G10 Fibreglass (Madcow) | 850 g |
 | Switch band | 5 cm | 15.5 cm | 3.175 mm | G10 Fibreglass (cut from booster tube) | — |
 | Bulkheads + U-bolts (×2) | — | 14.9 cm | 6 mm (2× 3 mm laminate) | G10 Fibreglass | 277 g |
-| Sled, batteries, rods, wiring | — | — | — | ABS sled, 2× M6 rod, 2× 9V Varta | 650 g |
+| Sled, batteries, rods, wiring | — | — | — | CF reinforced PLA sled, 2× M6 rod, 2× 9V Varta | 650 g |
 
 ## Payload
 
@@ -341,7 +341,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 The stock Black Brant kit comes with an aluminium nose tip, which can be flown at the Prefect's discretion under Tripoli rules, but can cause some worries. In order to mitigate this, a forged compressed carbon fibre alternative has been fabricated.
 
-A mould was 3D-printed in ABS and treated with mould release. Chopped carbon fibres (20 mm and 6 mm lengths) were laid up in the mould with slow-setting EasyComposites IN2 infusion resin, then compressed with a G-clamp during the 24-hour cure to remove excess resin and consolidate the part. After demoulding, surface imperfections were filled with West Systems epoxy thickened with colloidal silica.
+A mould was 3D-printed in PETG and treated with mould release. Chopped carbon fibres (20 mm and 6 mm lengths) were laid up in the mould with slow-setting EasyComposites IN2 infusion resin, then compressed with a G-clamp during the 24-hour cure to remove excess resin and consolidate the part. After demoulding, surface imperfections were filled with West Systems epoxy thickened with colloidal silica.
 
 The nose tip is drilled and threaded to accept a 6 mm stainless steel threaded rod, which runs the full length of the nose cone and provides the primary structural connection for the nose assembly. The forged carbon tip carries the closure ring for the nose electronics bay on the other end of the threaded rod, secured with a washer and wing nut.
 
@@ -353,8 +353,6 @@ The nose tip is drilled and threaded to accept a 6 mm stainless steel threaded r
 ## General Arrangement Drawing
 
 The following dimensioned drawing shows the overall layout of the rocket, including section lengths, separation joints, internal structure (dashed), CG and CP positions, and key specifications. All dimensions are in millimetres.
-
-**Note:** This drawing is pending update to reflect the corrected CG position (1940 mm from nose tip), stability margin (1.45 cal at rail departure), and altitude (2075 m) from the finalised OpenRocket simulation. The structural dimensions and layout shown are correct.
 
 ![General arrangement drawing — dimensioned](images/rocket_profile.png){width=100% angle=90}
 
@@ -605,9 +603,7 @@ $$KE = \frac{1}{2} \times 17.25 \times 4.32^2 = 161 \text{ J}$$
 
 ## Drogue-Only Failure Scenario
 
-In the event of a main parachute deployment failure, the rocket would descend on the drogue parachute alone at approximately 14.4 m/s (47.2 ft/s). This exceeds the 35 ft/s TRA limit and would result in non-certification. However, the dual-redundant electronics and ground-tested ejection charges are designed to minimise the probability of this failure. Under a drogue-only descent from 2,075 m with a 5 m/s crosswind, the estimated drift distance is approximately 714 m, which should remain within the typical ARGOS Cernier waiver radius.
-
-**[TO BE CONFIRMED: verify waiver radius with launch organiser before flight - believed to be 3km, with 1.2-1.5km of usable recovery area.]**
+In the event of a main parachute deployment failure, the rocket would descend on the drogue parachute alone at approximately 14.4 m/s (47.2 ft/s). This exceeds the 35 ft/s TRA limit and would result in non-certification. However, the dual-redundant electronics and ground-tested ejection charges are designed to minimise the probability of this failure. Under a drogue-only descent from 2,075 m with a 5 m/s crosswind, the estimated drift distance is approximately 714 m, which should remain within the typical ARGOS Cernier waiver radius (3.0km, with 1.2-1.5km of usable recovery area).
 
 ## Waiver Compliance
 
@@ -982,7 +978,7 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 
 - [ ] Install GPS tracker battery and verify GPS lock (LED indication or app confirmation).
 - [ ] Arm GPS tracker via turn switch on bulkplate.
-- [ ] Assemble nose cone: insert coupler with tracker bay, secure with ¼" threaded rod and locking nuts.
+- [ ] Assemble nose cone: insert coupler with tracker bay, secure with M6 threaded rod and wing nut.
 - [ ] Verify nose cone tip is secure.
 
 ## 7. Final Assembly

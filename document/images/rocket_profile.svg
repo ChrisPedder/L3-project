@@ -68,7 +68,7 @@
 <text x="573" y="283" class="lbl-s" fill="#555">E-BAY</text>
 <line x1="517" y1="255.5" x2="517" y2="304.5" stroke="#555" stroke-width="1.2"/>
 <line x1="628" y1="255.5" x2="628" y2="304.5" stroke="#555" stroke-width="1.2"/>
-<text x="425" y="283" class="lbl-s" fill="#999" font-style="italic">Main</text>
+<text x="425" y="283" class="lbl-s" fill="#999" font-style="italic">Drogue</text>
 
 <!-- BOOSTER TUBE -->
 <rect x="573" y="254" width="415" height="2" fill="#c0c0cc" stroke="none"/>
@@ -77,7 +77,7 @@
 <line x1="573" y1="306" x2="988" y2="306" stroke="#1a1a2e" stroke-width="1.4"/>
 <line x1="573" y1="256" x2="988" y2="256" stroke="#888" stroke-width="0.4"/>
 <line x1="573" y1="304" x2="988" y2="304" stroke="#888" stroke-width="0.4"/>
-<text x="700" y="283" class="lbl-s" fill="#999" font-style="italic">Drogue</text>
+<text x="700" y="283" class="lbl-s" fill="#999" font-style="italic">Main</text>
 
 <!-- Motor mount tube -->
 <line x1="830" y1="262.7" x2="1020" y2="262.7" class="inner"/>
@@ -120,7 +120,8 @@
 <line x1="715" y1="341" x2="854" y2="341" class="dim"/>
 <line x1="715" y1="338" x2="715" y2="344" class="dim"/>
 <line x1="854" y1="338" x2="854" y2="344" class="dim"/>
-<text x="785" y="352" class="dt-s" fill="#666">2.67 cal</text>
+<text x="785" y="352" class="dt-s" fill="#666">2.65 cal (static)</text>
+<text x="785" y="362" class="dt-s" fill="#666">1.45 cal (at rail departure)</text>
 
 <!-- OVERALL LENGTH -->
 <line x1="55" y1="210" x2="55" y2="250" class="ext"/>
@@ -176,10 +177,10 @@
 
 <!-- Separation labels -->
 <!-- Separation labels -->
-<text x="331" y="367" class="lbl-s" fill="#d63031">MAIN SEP</text>
+<text x="331" y="367" class="lbl-s" fill="#d63031">DROGUE SEP</text>
 <text x="331" y="377" class="lbl-s" fill="#d63031" font-size="6.5">(3&#xd7; M3 shear pins)</text>
 <line x1="331" y1="314" x2="331" y2="359" stroke="#d63031" stroke-width="0.4" stroke-dasharray="3,2"/>
-<text x="640" y="367" class="lbl-s" fill="#d63031">DROGUE SEP</text>
+<text x="640" y="367" class="lbl-s" fill="#d63031">MAIN SEP</text>
 <text x="640" y="377" class="lbl-s" fill="#d63031" font-size="6.5">(3&#xd7; M3 shear pins)</text>
 <line x1="584" y1="314" x2="620" y2="359" stroke="#d63031" stroke-width="0.4" stroke-dasharray="3,2"/>
 
@@ -197,9 +198,9 @@
 <text x="260" y="495" class="tb-label" text-anchor="start">Motor mount:</text>
 <text x="390" y="495" class="tb-val" text-anchor="start">98 mm (75 mm adapter)</text>
 <text x="560" y="495" class="tb-label" text-anchor="start">Max altitude:</text>
-<text x="660" y="495" class="tb-val" text-anchor="start">2094 m</text>
+<text x="660" y="495" class="tb-val" text-anchor="start">2075 m</text>
 <text x="260" y="509" class="tb-label" text-anchor="start">Stability margin:</text>
-<text x="390" y="509" class="tb-val" text-anchor="start">2.67 cal (at launch)</text>
+<text x="390" y="509" class="tb-val" text-anchor="start">1.45 cal (at rail departure)</text>
 <text x="560" y="509" class="tb-label" text-anchor="start">Max velocity:</text>
 <text x="660" y="509" class="tb-val" text-anchor="start">215 m/s (Mach 0.643)</text>
 <text x="260" y="523" class="tb-label" text-anchor="start">Motor:</text>
