@@ -127,16 +127,16 @@ Black powder charge sizes were calculated using the [Speed Motion Rockets ejecti
 
 ### Drogue Side
 
-- Compartment diameter: 15.5 cm
+- Compartment diameter: 15.2 cm
 - Compartment length: 59 cm
 - Packing fraction: 0.1
 - **Calculated charge: 3.9 g**
-- **Primary charge: 3.9 g**
-- **Backup charge: 5.1 g** (calculated × 1.3)
+- **Primary charge: 3.8 g**
+- **Backup charge: 5.0 g** (calculated × 1.3)
 
 ### Main Side
 
-- Compartment diameter: 15.5 cm
+- Compartment diameter: 15.2 cm
 - Compartment length: 40 cm
 - Packing fraction: 0.9
 - **Calculated charge: 5.0 g**
@@ -259,7 +259,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 | Diameter | 15.5 cm |
 | Centre of pressure | 235 cm from nose tip |
 | Centre of gravity | 194 cm from nose tip (at launch, with motor) |
-| Stability margin | 2.64 calibres (at launch rod departure; increases as propellant burns) |
+| Stability margin | 1.45 calibres (at launch rod departure; increases as propellant burns) |
 | Burn time | ~3.7 s |
 | Time to apogee | 21.0 s |
 | Total mass (with motor) | 22,889 g |
@@ -294,7 +294,7 @@ Of these three shocks, the harshest comes from the main parachute opening, which
 
 | Component | Length | Diameter | Wall/Thk | Material | Mass |
 |:---|:---|:---|:---|:---|---:|
-| Body tube | 122 cm | 15.5 cm | 2.23 mm | G10 Fibreglass (Madcow) | 2572 g |
+| Body tube | 122 cm | 15.5 cm | 3.175 mm | G10 Fibreglass (Madcow) | 2572 g |
 | Motor tube | 55.9 cm | 10.2 cm OD / 98 mm ID | 2.0 mm | G10 Fibreglass (Madcow) | 595 g |
 | Fins (×3) | 55 cm tip-tip | 26.7 cm span | 5 mm | G10 Fibreglass plate | 2693 g |
 | Centering rings (×3) | — | 15.2/10.2 cm | 3 mm | G10 Fibreglass plate | 68 g ea |
@@ -458,7 +458,7 @@ Several conservatisms in the calculation provide additional confidence beyond th
 
 2. **Kevlar root reinforcement.** The laminated Kevlar strips at the fin root joints (both internal to the motor tube and external on the body tube) add torsional stiffness that is not captured by the flat-plate assumption in the equation.
 
-3. **Epoxy fillets.** The 15 mm radius Proline 4500 fillets on both the motor tube and body tube joints further stiffen the root attachment.
+3. **Epoxy fillets.** The 15 mm radius Proline 4500 fillets on both the motor tube and body tube joints further stiffen the root attachment. For the body tube joint, these are stiffened with kevlar strips, and then a 25mm radius fillet of west systems with silica.
 
 4. **Centering ring fixity.** The middle centering ring is filleted to each fin with Proline 4500, providing an additional structural tie point partway along the exposed root.
 
@@ -513,15 +513,11 @@ Altitude varies by only 25 m across the wind range, confirming that the rocket c
 
 The drogue section of the airframe has a diameter of 15.2 cm, and a length of 65 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **3.8 g**.
 
-**[TO BE COMPLETED ONCE ASSEMBLED]**
-
 From ground testing, we find that a charge size of: **3.8** g is sufficient. Primary: **3.8** g. Backup: **5.0** g.
 
 ## Main
 
 The main section of the airframe has a diameter of 15.2 cm, and a length of 35 cm. This section will be secured using 3 M3 shear pins (force is sufficient to shear 6). In order to generate 6.9 N/cm² (10 psi) of pressure, we need a theoretical charge size of: **5.5 g**.
-
-**[TO BE COMPLETED ONCE ASSEMBLED]**
 
 From ground testing, we find that a charge size of: **5.7** g is sufficient. Primary: **5.7** g. Backup: **7.4** g.
 
@@ -579,11 +575,11 @@ All structural bonds use Proline 4500 two-part epoxy. This includes fin-to-motor
 
 ## Fasteners
 
-- Electronics bay: 2× M6 stainless steel threaded rod, 4× M6 stainless steel nyloc nuts, 4× M6 stainless steel washers.
-- Nose cone assembly: 1× ¼" (6.35 mm) stainless steel threaded rod (920 mm), 2× ¼" stainless steel locking nuts, stainless steel washers.
+- Electronics bay: 2× M8 stainless steel threaded rod, 2× M8 stainless steel nyloc nuts, 2× M8 stainless steel wing nuts, 4× M8 stainless steel washers.
+- Nose cone assembly: 1× M6  stainless steel threaded rod (920 mm), 1× M6 stainless steel wing nut nuts, stainless steel washers.
 - U-bolts: 2× stainless steel (booster centering ring), 2× stainless steel (electronics bay bulkplates), 1× stainless steel (nose cone bulkplate).
 - Shear pins: M3 nylon screws (3 per separation joint).
-- Rail buttons: 2× 1515 aluminium rail buttons.
+- Rail buttons: 2× 1515 Delrin rail buttons.
 
 ## Ejection Charge Methodology
 
@@ -599,7 +595,7 @@ Backup charges are sized at 1.3× the primary charge mass to ensure reliable sep
 
 ## Centre of Pressure Marking
 
-The calculated centre of pressure will be marked on the exterior of the airframe using a permanent adhesive decal, labelled "CP", positioned at 216 cm from the nose tip as determined by OpenRocket simulation.
+The calculated centre of pressure will be marked on the exterior of the airframe using a permanent adhesive decal, labelled "CP", positioned at 235 cm from the nose tip as determined by OpenRocket simulation.
 
 ## Landing Velocity Compliance
 
@@ -793,7 +789,7 @@ In order to ensure a good bond to the middle centering ring, small fillets of Pr
 ![Fin fillets](../slides/images/booster_tube_fin_fillets.jpg){width=45%}
 ![Epoxy injection](../slides/images/booster_tube_epoxy_injection.jpg){width=45%}
 
-To strengthen the fin joints further and reduce the risk of cracked fillets, we first layer a strip of West Systems infused kevlar over the fin root bond to absorb oscillations and impact energy, and then lay a 2 cm radius fillet of West Systems thickened with colloidal silica over the top whilst the earlier epoxy is still "green".
+To strengthen the fin joints further and reduce the risk of cracked fillets, we first layer a strip of West Systems infused kevlar over the fin root bond to absorb oscillations and impact energy, and then lay a 2.5 cm radius fillet of West Systems thickened with colloidal silica over the top whilst the earlier epoxy is still "green".
 
 ![Kevlar fin fillet reinforcement](../slides/images/fin_fillet_kevlar.jpg){width=45%}
 ![West Systems fillet over kevlar](../slides/images/fin_fillet_west.jpg){width=45%}
@@ -995,7 +991,7 @@ The rocket paint scheme selected was the Black Brant Wallops Island test scheme.
 - [ ] Slide payload tube (with packed main) over electronics bay (main side). Secure with 3× 6-72 machine screws.
 - [ ] Insert nose cone coupler into payload tube, secure with 3x M3 nylon shear pins.
 - [ ] Verify all sections are aligned and shear pins are seated.
-- [ ] Verify CP marking (decal) is visible on airframe at 216 cm from nose tip.
+- [ ] Verify CP marking (decal) is visible on airframe at 235 cm from nose tip.
 
 ## 8. Pad Installation
 
