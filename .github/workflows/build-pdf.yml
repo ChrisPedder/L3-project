@@ -54,7 +54,7 @@ jobs:
             done
           fi
 
-      - name: Build PDF with compressed images
+      - name: Build PDFs with compressed images
         run: |
           cd document
           # Create temporary symlinks to compressed images
@@ -68,6 +68,7 @@ jobs:
           # Fall back to original images if compressed version doesn't exist
           # (handles the case where document/images/ doesn't exist yet)
           sed -i 's|images-compressed/|images/|g' L3_Design_Document_build.md 2>/dev/null || true
+          # Build Design Document PDF
           pandoc L3_Design_Document.md \
             --resource-path=.:slides-compressed:images \
             -o L3_Design_Document.pdf \
@@ -84,41 +85,63 @@ jobs:
             --standalone
           rm -f L3_Design_Document_build.md
           ls -lh L3_Design_Document.pdf
+          # Build Failure Analysis PDF
+          pandoc L3_Failure_Analysis.md \
+            --resource-path=.:images \
+            -o L3_Failure_Analysis.pdf \
+            --pdf-engine=xelatex \
+            --toc \
+            --number-sections \
+            -V geometry:margin=2.5cm \
+            -V fontsize=11pt \
+            -V documentclass=article \
+            -V colorlinks=true \
+            -V linkcolor=blue \
+            -V urlcolor=blue \
+            --highlight-style=tango \
+            --standalone
+          ls -lh L3_Failure_Analysis.pdf
 
-      - name: Compress PDF with Ghostscript
+      - name: Compress PDFs with Ghostscript
         run: |
           cd document
-          gs -sDEVICE=pdfwrite \
-            -dCompatibilityLevel=1.4 \
-            -dPDFSETTINGS=/printer \
-            -dNOPAUSE -dBATCH -dQUIET \
-            -dColorImageResolution=200 \
-            -dGrayImageResolution=200 \
-            -sOutputFile=L3_Design_Document_compressed.pdf \
-            L3_Design_Document.pdf
-          echo "Original size: $(du -h L3_Design_Document.pdf | cut -f1)"
-          echo "Compressed size: $(du -h L3_Design_Document_compressed.pdf | cut -f1)"
-          mv L3_Design_Document_compressed.pdf L3_Design_Document.pdf
+          for pdf in L3_Design_Document L3_Failure_Analysis; do
+            gs -sDEVICE=pdfwrite \
+              -dCompatibilityLevel=1.4 \
+              -dPDFSETTINGS=/printer \
+              -dNOPAUSE -dBATCH -dQUIET \
+              -dColorImageResolution=200 \
+              -dGrayImageResolution=200 \
+              -sOutputFile="${pdf}_compressed.pdf" \
+              "${pdf}.pdf"
+            echo "${pdf} original: $(du -h ${pdf}.pdf | cut -f1)"
+            echo "${pdf} compressed: $(du -h ${pdf}_compressed.pdf | cut -f1)"
+            mv "${pdf}_compressed.pdf" "${pdf}.pdf"
+          done
 
-      - name: Copy PDF to viewer
-        run: cp document/L3_Design_Document.pdf "pdf-viewer/docs/L3 Design Document.pdf"
+      - name: Copy PDFs to viewer
+        run: |
+          cp document/L3_Design_Document.pdf "pdf-viewer/docs/L3 Design Document.pdf"
+          cp document/L3_Failure_Analysis.pdf "pdf-viewer/docs/L3 Failure Analysis.pdf"
 
-      - name: Upload PDF as artifact
+      - name: Upload PDFs as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: L3-Design-Document
-          path: document/L3_Design_Document.pdf
+          name: L3-Documents
+          path: |
+            document/L3_Design_Document.pdf
+            document/L3_Failure_Analysis.pdf
           retention-days: 90
 
-      - name: Commit PDF to repository
+      - name: Commit PDFs to repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add document/L3_Design_Document.pdf "pdf-viewer/docs/L3 Design Document.pdf"
+          git add document/L3_Design_Document.pdf document/L3_Failure_Analysis.pdf "pdf-viewer/docs/L3 Design Document.pdf" "pdf-viewer/docs/L3 Failure Analysis.pdf"
           if git diff --cached --quiet; then
             echo "No PDF changes to commit"
           else
-            git commit -m "build: update generated PDF"
+            git commit -m "build: update generated PDFs"
             git push
           fi
 
