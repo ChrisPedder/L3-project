@@ -144,7 +144,24 @@ This remediation addresses the flutter issue in two ways:
 
 The added mass of the fairings and composite layup on the fins shifts the centre of gravity aft, towards the tail. This reduces the static margin (distance between CG and CP), addressing the overstable nature of the current model. A less overstable rocket is more responsive to wind and produces a straighter flight path, reducing weathercocking.
 
-## 6.3 — Fin Repair
+## 6.3 — CO~2~ Ejection Systems
+
+**Problem:** The black powder ejection charges required for this airframe (3.8–5.7 g primary, 5.0–7.4 g backup) are large enough to cause significant heat damage to the Nomex blankets protecting the recovery harnesses and parachutes. Over repeated flights and ground tests, this degradation will compromise the thermal protection and risk damage to the recovery system itself.
+
+**Remediation — Replace primary ejection with CO~2~ systems:**
+
+The primary ejection method on both the drogue and main sides will be converted from black powder to CO~2~ cartridge-based systems, such as the Tinder Rocketry Raptor or Eagle. These systems use a sealed CO~2~ cartridge punctured by an electronically-fired mechanism to pressurise the compartment, providing clean, cool gas ejection with no combustion products.
+
+Advantages of CO~2~ ejection for this airframe:
+
+1. **No thermal damage.** Eliminates the heat source that destroys the Nomex blankets, extending their service life indefinitely.
+2. **Cleaner recovery bay.** No black powder residue on bulkheads, wiring, or recovery hardware.
+3. **More consistent pressurisation.** CO~2~ cartridges provide a repeatable, known gas volume, reducing the need for iterative ground-test tuning of charge mass.
+4. **Simpler field preparation.** No loose black powder to measure and pack at the launch site.
+
+The existing black powder charges will be retained as backup charges on the redundant altimeter, ensuring that dual-redundant deployment capability is maintained. This provides the best of both approaches: clean primary ejection with a proven pyrotechnic fallback.
+
+## 6.4 — Fin Repair
 
 **Problem:** One fin separated from the motor tube on landing impact.
 
@@ -161,13 +178,15 @@ The added mass of the fairings and composite layup on the fins shifts the centre
 |:--|:-------|:----------|:-------|
 | 1 | Replace 36" drogue with 24" drogue | Recovery | Planned |
 | 2 | Move harness attachment to 1/4–3/4 split | Recovery | Planned |
-| 3 | Re-bond separated fin with Proline 4500 | Booster | Planned |
-| 4 | Reconstruct fin root fillets | Booster | Planned |
-| 5 | 3D print ABS diamond airfoil fairings | Booster | Planned |
-| 6 | Bond fairings to G10 fins with fibreglass | Booster | Planned |
-| 7 | Apply 2× 210 g/m² carbon fibre overlay | Booster | Planned |
-| 8 | Apply 1× 100 g/m² fibreglass outer layer | Booster | Planned |
-| 9 | Repaint all fins | Booster | Planned |
+| 3 | Install CO~2~ ejection as primary on both sides | Ejection | Planned |
+| 4 | Retain black powder as backup charges only | Ejection | Planned |
+| 5 | Re-bond separated fin with Proline 4500 | Booster | Planned |
+| 6 | Reconstruct fin root fillets | Booster | Planned |
+| 7 | 3D print ABS diamond airfoil fairings | Booster | Planned |
+| 8 | Bond fairings to G10 fins with fibreglass | Booster | Planned |
+| 9 | Apply 2× 210 g/m² carbon fibre overlay | Booster | Planned |
+| 10 | Apply 1× 100 g/m² fibreglass outer layer | Booster | Planned |
+| 11 | Repaint all fins | Booster | Planned |
 
 \newpage
 
