@@ -26,6 +26,8 @@ The L3 certification flight of the Black Brant 6" scale model took place on 11 A
 
 The root cause of the main parachute failure was identified through analysis of onboard video footage. A secondary issue — fin flutter at motor burnout — was also observed on the footage and is documented in this report.
 
+![Pre-flight: Black Brant 6" scale model on the launch rail](images/pre_flight.jpg){ width=60% }
+
 # Timeline of Events
 
 | Event | Status |
@@ -198,3 +200,4 @@ The following onboard video clips are referenced in this report:
 |:----------|:------------|:-----|
 | Video 1 | Launch to apogee — fin flutter visible at motor burnout | [View](https://chrispedder.github.io/L3-project/slides/videos/l3_launch_to_apogee.mp4) |
 | Video 2 | Drogue descent spin and landing — shows sustained rotation and main parachute tangling | [View](https://chrispedder.github.io/L3-project/slides/videos/l3_drogue_spin_and_landing.mp4) |
+| Video 3 | Ground-level video of the flight | [View](https://chrispedder.github.io/L3-project/document/images/ground_video.mp4) |
