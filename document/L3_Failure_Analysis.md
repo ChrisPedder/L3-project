@@ -55,19 +55,23 @@ Onboard video footage captured the entire descent sequence and proved invaluable
 
 [View onboard video — drogue descent spin and landing](https://chrispedder.github.io/L3-project/slides/videos/l3_drogue_spin_and_landing.mp4)
 
-## Root Cause: Excessive Drogue Descent Rate Margin
+## Root Cause: Oversized Drogue → Flat Descent Attitude → Windmilling Fins
 
 The onboard flight computer recorded a drogue descent rate of approximately **58 ft/s (17.7 m/s)**. The design target for the drogue descent rate was **75–85 ft/s**, based on the need for a fast enough descent to avoid excessive drift while keeping loads within structural limits.
 
-However, the actual descent rate of 58 ft/s was well *below* the target range. This means the 36" drogue canopy was providing significantly more drag than intended, which in turn resulted in a slow descent that allowed the rocket to develop and sustain the rotational spin observed on the footage.
+However, the actual descent rate of 58 ft/s was well *below* the target range. This means the 36" drogue canopy was providing significantly more drag than intended, which in turn kept the booster hanging in an excessively flat attitude relative to the airflow rather than the intended inverted-V.
 
 For reference, the pre-flight calculated drogue descent rate was 47.2 ft/s (14.4 m/s) based on the standard drag equation:
 
 $$v = \sqrt{\frac{2mg}{\rho \, C_D \, A}}$$
 
-The measured 58 ft/s (17.7 m/s) is higher than the calculated 47.2 ft/s, likely due to the high altitude (lower air density) and the real-world performance of the canopy differing slightly from the assumed $C_D = 2.2$. Nevertheless, the descent was still slow enough relative to the target range to allow the spin to develop.
+The measured 58 ft/s (17.7 m/s) is higher than the calculated 47.2 ft/s, likely due to the high altitude (lower air density) and the real-world performance of the canopy differing slightly from the assumed $C_D = 2.2$. Nevertheless, the descent was still slow enough, and the hang-attitude flat enough, for the spin mechanism described below to develop.
 
-The slow drogue descent, combined with the harness geometry and aerodynamic asymmetries, created the conditions for the rocket to spin. As the spin developed, the drogue-side shock cord accumulated wraps, which then trapped the main parachute during inflation.
+Reviewing the onboard footage frame by frame confirms that the rocket is essentially spin-free for the powered and coast phases, and that rotation only begins to build *well into* the drogue descent. This rules out any carry-through of roll from the boost phase (including from the apparent fin motion near max Q, which is discussed in Section 4 and is in any case a camera-mount artefact). The spin must therefore originate from aerodynamic forces acting on the descending airframe itself.
+
+With the 36" drogue holding the booster at a flatter-than-intended attitude, the large swept fins are exposed side-on to the airflow and behave as **windmill blades**. Any small asymmetry — turbulence, a slight off-axis swing of the booster, minor fin-to-fin geometric differences — produces a small rotational torque, and the swept fin planform then sustains and accelerates that rotation as lift builds across the now-rotating fins. Over the 111 s of drogue descent, this mechanism has ample time to wind the booster up into the sustained spin seen in the footage.
+
+The story is therefore: **oversized drogue → flat descent attitude → fins catch cross-flow and act as windmill blades → spin builds over 111 s → drogue-side shock cord accumulates wraps → main deploys into the wrapped cord and cannot inflate.** A correctly-sized drogue that establishes a clean inverted-V would keep the fins trailing vertically in the wake of the airframe, where they see minimal cross-flow and cannot act as windmill blades.
 
 ## Contributing Factor: Harness Attachment Geometry
 
@@ -113,15 +117,25 @@ The hard landing under the partially-inflated main parachute resulted in the fol
 
 ## 6.1 — Drogue Parachute: Reduce Size and Modify Harness Geometry
 
-**Problem:** The 36" drogue canopy produced too much drag, resulting in a slow descent rate (58 ft/s vs. 75–85 ft/s target) that allowed the rocket to develop a sustained spin.
+**Problem:** The 36" Fruity Chutes Iris Ultra drogue produced too much effective drag, holding the booster in a flat descent attitude (58 ft/s vs. 75–85 ft/s target) in which the swept fins could act as windmill blades and develop a sustained spin.
 
-**Remediation 1 — Reduce drogue size to 24":**
+**Remediation 1 — Switch to a 30" Fruity Chutes Classic Elliptical drogue:**
 
-Replace the 36" Fruity Chutes Iris Ultra drogue with a **24"** canopy. The expected descent rate with a 24" drogue ($C_D = 2.2$, canopy area $A = \pi (0.305)^2 = 0.292$ m²) is:
+Replace the 36" Iris Ultra drogue ($C_D = 2.2$) with a **30" Fruity Chutes Classic Elliptical** ($C_D = 1.5$, canopy area $A = \pi (0.381)^2 = 0.456$ m²). The expected descent rate is:
 
-$$v = \sqrt{\frac{2 \times 17.25 \times 9.81}{1.131 \times 2.2 \times 0.292}} = 21.6 \text{ m/s (70.9 ft/s)}$$
+$$v = \sqrt{\frac{2 \times 17.25 \times 9.81}{1.131 \times 1.5 \times 0.456}} \approx 21 \text{ m/s (69 ft/s)}$$
 
-This brings the descent rate much closer to the 75–85 ft/s target range, reducing the time available for spin to develop and increasing the aerodynamic damping of any rotational motion.
+OpenRocket simulates this at roughly 72–75 ft/s, and Fruity Chutes note that real-world rates typically come in slightly lower than simulated because the simulator does not account for the airframe's own drag — so a practical descent rate in the high-60s ft/s is expected, which sits at the low end of the 75–85 ft/s target.
+
+The effective drag area ($C_D \cdot A$) comparison is the clearer story:
+
+| Canopy | $C_D$ | Area (m²) | $C_D \cdot A$ (m²) |
+|:-------|:-----:|:---------:|:------------------:|
+| 36" Iris Ultra (as flown) | 2.2 | 0.657 | 1.45 |
+| **30" Classic Elliptical (chosen)** | **1.5** | **0.456** | **0.68** |
+| 24" Classic Elliptical (considered) | 1.5 | 0.292 | 0.44 |
+
+The 30" Classic roughly halves the effective drag area relative to the 36" Iris Ultra, which should be more than enough to change the descent attitude from flat to a clean inverted-V and eliminate the windmilling mechanism. A 24" Classic was considered but would give a simulated descent rate of ~94 ft/s (real-world ~80–85 ft/s), which sits at the aggressive end of the range and — as shown below — drives the main opening shock up substantially. The 30" Classic was therefore selected as the best balance of attitude correction without an excessive increase in main deployment load.
 
 **Remediation 2 — Move harness attachment point:**
 
@@ -130,7 +144,37 @@ Relocate the shock cord separation point from the current one-third / two-thirds
 1. Shortens the drogue-side shock cord run, reducing the amount of cord available to wrap around the main.
 2. Positions the main parachute further from the drogue attachment, giving it more clearance during inflation.
 
-## 6.2 — CO~2~ Ejection Systems
+## 6.2 — Main Opening Shock at the Higher Deployment Velocity
+
+A faster drogue descent increases the velocity at which the main parachute deploys, and the peak opening force scales approximately with the square of the deployment velocity. This warrants explicit reassessment against the structural margins set out in the L3 Design Document.
+
+The original design calculation used a main deployment velocity of **16 m/s** (matching the slow drogue descent that was assumed for the design), producing a calculated peak main opening force of **1880 N**. At the new expected drogue descent rate of ~21 m/s (30" Classic), the opening force scales as:
+
+$$F_{\text{new}} \approx 1880 \text{ N} \times \left(\frac{21}{16}\right)^2 \approx 3240 \text{ N}$$
+
+For comparison, had a 24" Classic been chosen (~26 m/s descent), the scaled force would have been approximately:
+
+$$F_{24"} \approx 1880 \text{ N} \times \left(\frac{26}{16}\right)^2 \approx 4960 \text{ N}$$
+
+i.e. the 30" Classic raises the opening shock by a factor of ~1.7 relative to the original design case, whereas the 24" Classic would have raised it by a factor of ~2.6. Both figures remain within the load ratings of the hardware (forged eyebolts, u-bolts, 1" tubular Kevlar shock cord, bulkhead epoxy joints — all rated in the tens of kN), but the 30" Classic clearly preserves a much larger margin.
+
+**Where the increased shock matters most on this airframe:**
+
+1. **Shock cord and swivel at the main attachment.** The main-side shock cord run is long and runs through an inline swivel; this is the element that actually sees the peak tensile load on opening. At 3.2 kN the margin over the Kevlar rated strength is still large, but repeated cycles at higher loads accelerate abrasion and fibre fatigue; the shock cord and swivel should therefore be inspected carefully before and after each flight.
+2. **Bulkhead eyebolts and their epoxy bonds.** The forged eyebolts themselves are far over-rated, but the epoxy interface bonding them into the bulkheads is the weaker link. A step-up from ~1.9 kN to ~3.2 kN is well within ratings, but it is the kind of load increase that will expose any pre-existing voids or weak bond lines — a post-repair inspection of the bulkhead bonds is prudent.
+3. **Deployment bag and its cord.** The bag itself sees the peak load as the lines pay out; the bag's bridle, line-stow elastics and bag attachment stitching are the elements most likely to show wear.
+4. **Coupler / payload-bay joint.** The opening shock acts along the airframe axis; the coupler-to-tube friction fit and the screws that retain it transmit this load, and should be checked for elongated holes or loosening after the first flight under the new drogue.
+
+**Mitigation already in place — deployment bag for the 120" main:**
+
+The 120" main parachute is packed into and deployed from a **deployment bag**. This is material to the opening-shock picture and should not be overlooked. Unlike a free-packed canopy, which begins to inflate as soon as it leaves the airframe, a bag-deployed canopy remains closed until full line stretch is reached; only then does the bag strip off and allow the canopy to open. This has two important effects:
+
+1. It **delays inflation** until the rocket has decelerated along the shock cord, spreading the deceleration event over a longer time.
+2. It **controls the rate of inflation** (via the line-stow elastics and the orderly strip-off of the bag), preventing the near-instantaneous full-canopy inflation that produces the worst peak loads on a free-packed chute.
+
+For this reason, the simple $v^2$ scaling above should be read as an **upper-bound estimate** — the deployment bag will meaningfully reduce the peak load actually transmitted into the airframe compared to a bag-less deployment at the same velocity. This is the main reason the 30" Classic is comfortable from a loads standpoint: the combination of a moderately higher deployment velocity with a bag-controlled main inflation keeps the realised opening shock well inside the structural margins of the recovery hardware.
+
+## 6.3 — CO~2~ Ejection Systems
 
 **Problem:** The black powder ejection charges required for this airframe (3.8–5.7 g primary, 5.0–7.4 g backup) are large enough to cause significant heat damage to the Nomex blankets protecting the recovery harnesses and parachutes. Over repeated flights and ground tests, this degradation will compromise the thermal protection and risk damage to the recovery system itself.
 
@@ -147,7 +191,7 @@ Advantages of CO~2~ ejection for this airframe:
 
 The existing black powder charges will be retained as backup charges on the redundant altimeter, ensuring that dual-redundant deployment capability is maintained. This provides the best of both approaches: clean primary ejection with a proven pyrotechnic fallback.
 
-## 6.3 — Fin Repair
+## 6.4 — Fin Repair
 
 **Problem:** One fin separated from the motor tube on landing impact.
 
@@ -189,15 +233,16 @@ On visual comparison of the two videos, the fireball appears noticeably **more c
 
 | # | Action | Component | Status |
 |:--|:-------|:----------|:-------|
-| 1 | Replace 36" drogue with 24" drogue | Recovery | Planned |
+| 1 | Replace 36" Iris Ultra drogue with 30" Fruity Chutes Classic Elliptical | Recovery | Planned |
 | 2 | Move harness attachment to 1/4–3/4 split | Recovery | Planned |
-| 3 | Install CO~2~ ejection as primary on both sides | Ejection | Planned |
-| 4 | Retain black powder as backup charges only | Ejection | Planned |
-| 5 | Re-bond separated fin with Proline 4500 | Booster | Planned |
-| 6 | Reconstruct fin root fillets | Booster | Planned |
-| 7 | Repaint repaired fin to match | Booster | Planned |
-| 8 | Bench-test "short and fat" BP charge well (7.4 g) | Ejection | Complete (see §7.1) |
-| 9 | In-airframe ground ejection test with short-and-fat well and Nomex blanket | Ejection | Planned |
+| 3 | Inspect main-side shock cord, swivel and deployment bag for wear after first flight under new drogue | Recovery | Planned |
+| 4 | Install CO~2~ ejection as primary on both sides | Ejection | Planned |
+| 5 | Retain black powder as backup charges only | Ejection | Planned |
+| 6 | Re-bond separated fin with Proline 4500 | Booster | Planned |
+| 7 | Reconstruct fin root fillets | Booster | Planned |
+| 8 | Repaint repaired fin to match | Booster | Planned |
+| 9 | Bench-test "short and fat" BP charge well (7.4 g) | Ejection | Complete (see §7.1) |
+| 10 | In-airframe ground ejection test with short-and-fat well and Nomex blanket | Ejection | Planned |
 
 \newpage
 
