@@ -26,7 +26,13 @@ The L3 certification flight of the Black Brant 6" scale model took place on 11 A
 
 The root cause of the main parachute failure was identified through analysis of onboard video footage. What initially appeared to be a secondary issue — fin flutter at motor burnout — was subsequently identified as likely camera mount instability rather than genuine aeroelastic motion, and is discussed in Section 4.
 
+Ground-level photographs and video from the flight are included throughout this report. Photographs and video credited to Nikolas Rohr are used with his kind permission and are marked in their captions.
+
 ![Pre-flight: Black Brant 6" scale model on the launch rail](images/pre_flight.jpg){ width=60% }
+
+![Pre-flight: carrying the assembled rocket to the pad (photo: Nikolas Rohr)](images/rohr_preflight_carry.jpg){ width=70% }
+
+![Pre-flight: rocket on the launch rail shortly before launch (photo: Nikolas Rohr)](images/rohr_preflight_rail.jpg){ width=55% }
 
 # Timeline of Events
 
@@ -54,6 +60,14 @@ Onboard video footage captured the entire descent sequence and proved invaluable
 6. The rocket descended under a partially-inflated, tangled main parachute at a significantly higher rate than the design descent rate of 4.32 m/s (14.2 ft/s).
 
 [View onboard video — drogue descent spin and landing](https://chrispedder.github.io/L3-project/slides/videos/l3_drogue_spin_and_landing.mp4)
+
+Ground-level footage of the same flight — both the vertical ascent clip and the longer walk-out to the recovery site — was kindly provided by Nikolas Rohr and is listed in the appendix video references.
+
+[View ground-level launch ascent (photo/video: Nikolas Rohr)](https://chrispedder.github.io/L3-project/slides/videos/rohr_launch_ascent.mp4)
+
+![Recovery site in the rapeseed field, showing the booster section upright in the field with the tangled main and deployment bag strewn on the ground (photo: Nikolas Rohr)](images/rohr_landing_site.jpg){ width=70% }
+
+![The main parachute and deployment bag after recovery, showing the wrapped shock cord that had constricted the canopy and prevented it from inflating (photo: Nikolas Rohr)](images/rohr_tangled_main.jpg){ width=60% }
 
 ## Root Cause: Oversized Drogue → Flat Descent Attitude → Windmilling Fins
 
@@ -112,6 +126,8 @@ The hard landing under the partially-inflated main parachute resulted in the fol
 | Nose cone | No visible damage | None |
 | Electronics bay | No visible damage; all electronics functional | None |
 | Parachutes | No visible damage after untangling | None |
+
+![Close-up of the separated fin at the recovery site, showing the clean parting of the fin from the motor tube at the bonding joint (photo: Nikolas Rohr)](images/rohr_separated_fin.jpg){ width=55% }
 
 # Proposed Remediations
 
@@ -255,5 +271,7 @@ The following onboard video clips are referenced in this report:
 | Video 1 | Launch to apogee — apparent fin distortion at motor burnout (see Section 4) | [View](https://chrispedder.github.io/L3-project/slides/videos/l3_launch_to_apogee.mp4) |
 | Video 2 | Drogue descent spin and landing — shows sustained rotation and main parachute tangling | [View](https://chrispedder.github.io/L3-project/slides/videos/l3_drogue_spin_and_landing.mp4) |
 | Video 3 | Ground-level video of the flight | [View](https://chrispedder.github.io/L3-project/document/images/ground_video.mp4) |
-| Video 4 | Ejection charge well test — 7.4 g BP, "long and thin" (original) geometry | [View](https://chrispedder.github.io/L3-project/slides/videos/7.4g_narrow_ejection.mp4) |
-| Video 5 | Ejection charge well test — 7.4 g BP, "short and fat" (revised) geometry | [View](https://chrispedder.github.io/L3-project/slides/videos/7.4g_wide_ejection.mp4) |
+| Video 4 | Ground-level launch ascent (photo/video: Nikolas Rohr) | [View](https://chrispedder.github.io/L3-project/slides/videos/rohr_launch_ascent.mp4) |
+| Video 5 | Walk-out to recovery site (photo/video: Nikolas Rohr) | [View](https://chrispedder.github.io/L3-project/slides/videos/rohr_ground_launch.mp4) |
+| Video 6 | Ejection charge well test — 7.4 g BP, "long and thin" (original) geometry | [View](https://chrispedder.github.io/L3-project/slides/videos/7.4g_narrow_ejection.mp4) |
+| Video 7 | Ejection charge well test — 7.4 g BP, "short and fat" (revised) geometry | [View](https://chrispedder.github.io/L3-project/slides/videos/7.4g_wide_ejection.mp4) |
